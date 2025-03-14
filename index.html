@@ -6,6 +6,8 @@
         <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
+        <script src="https://unpkg.com/lottie-web@5.9.3/build/player/lottie.min.js"></script>
+
         <link rel="stylesheet" media="all" href="css/common.min.css">
     </head>
     <body><!--cz-shortcut-listen="true"-->
@@ -235,14 +237,129 @@
                     </div>
                 </div>
             </section>
+
+            <div x-data="{ 
+                isVisible: false, 
+                    scrollY: 0 
+                }"
+                x-init="setTimeout(() => isVisible = true, 2000)"
+                x-bind:style="{
+                    top: isVisible ? '0' : '100%', 
+                    opacity: 1 - scrollY / 500
+                }"
+                class="fixed left-0 w-full h-full transition-all duration-500 ease-in-out"
+                x-on:scroll.window="scrollY = window.scrollY">
+                <div class="w-22 absolute left-1/2 transform -translate-x-1/2 bottom-[-40px] ">
+                    <img 
+                        x-data="{ isVisible: false }" 
+                        x-init="setTimeout(() => isVisible = true, 2500)" 
+                        x-bind:style="isVisible ? 'opacity: 1; transform: rotate(-15deg); transition: opacity 1s, transform 1s;' : 'opacity: 0; transform: rotate(0);'"
+                        class="w-22 absolute bottom-[-40px] left-[-60px] transform origin-bottom"
+                        src="images/stick_01.png" alt="" />                        
+                    <img class="w-22 absolute bottom-0 left-[-60px]" src="images/stick_02.png" alt="" />
+                    
+                    <img 
+                        x-data="{ isVisible: false }" 
+                        x-init="setTimeout(() => isVisible = true, 2500)" 
+                        x-bind:style="isVisible ? 'opacity: 1; transform: rotate(15deg); transition: opacity 1s, transform 1s;' : 'opacity: 0; transform: rotate(0);'"
+                        class="w-22 absolute bottom-[-40px] left-[60px] transform origin-bottom"
+                        src="images/stick_03.png" alt="" />
+                    <img class="w-22 absolute bottom-0 left-[60px]" src="images/stick_04.png" alt="" />
+                </div>
+            </div>
+
         </div>
         <!-- //MAIN -->
+
+        <!-- FLOATING -->
+        <div x-data="{ show: false, hover: false }"
+            x-init="window.addEventListener('scroll', () => {
+                show = window.scrollY > 0 ? true : false;
+            })"
+            :class="show ? 'opacity-100 translate-y-0 visible' : 'opacity-0 translate-y-[30px] invisible'"
+            class="fixed bottom-30 right-20 z-10 w-65 h-60 floatingBtnWrap transition-all duration-500 ease-out"
+            @mouseenter="hover = true" @mouseleave="hover = false">
+
+            <div @mouseenter="hover = true" @mouseleave="hover = false" class="align-center floatingBtn relative w-full h-full">
+
+                <!-- 버튼들 -->
+                <div x-show="hover" 
+                    class="absolute top-[-16%] left-[16%] break-keep flex-wrap justify-center w-45 gap-1 flex">
+                    <button x-show="hover"
+                            x-transition:enter="transition transform duration-300 ease-out"
+                            x-transition:enter-start="scale-80 opacity-0"
+                            x-transition:enter-end="scale-100 opacity-100"
+                            x-transition:leave="transition transform duration-200 ease-in"
+                            x-transition:leave-start="scale-100 opacity-100"
+                            x-transition:leave-end="scale-80 opacity-0"
+                            class="text-base font-bold text-white text-center bg-pink-500 rounded-full w-full px-5 py-3">
+                        온라인 쇼핑몰
+                    </button>
+                    <button x-show="hover"
+                            x-transition:enter="transition transform duration-300 ease-out delay-100"
+                            x-transition:enter-start="scale-80 opacity-0"
+                            x-transition:enter-end="scale-100 opacity-100"
+                            x-transition:leave="transition transform duration-200 ease-in"
+                            x-transition:leave-start="scale-100 opacity-100"
+                            x-transition:leave-end="scale-80 opacity-0"
+                            class="text-base font-bold text-white text-center bg-pink-500 rounded-full w-full px-5 py-3">
+                        오프라인 쇼핑몰
+                    </button>
+                </div>
+
+                <!-- 말풍선 -->
+                <div x-show="!hover"
+                    x-transition:leave="transition transform duration-200 ease-in"
+                    x-transition:leave-start="scale-100 opacity-100"
+                    x-transition:leave-end="scale-80 opacity-0"
+                    class="absolute top-0 left-[16%] bg-pink-500 rounded-full px-5 py-3 w-45 break-keep text-balloon">
+                    <svg class="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2" xmlns="http://www.w3.org/2000/svg" width="17" height="16" fill="none">
+                        <path fill="#FE3BAB" d="M10.232 15c-.77 1.333-2.694 1.333-3.464 0L.273 3.75c-.77-1.333.192-3 1.732-3h12.99c1.54 0 2.502 1.667 1.732 3z"></path>
+                    </svg>
+                    <div class="text-base font-bold text-white text-center">상쾌환 쇼핑하러 갈래?</div>
+                </div>
+                
+                <!-- Lottie 애니메이션 -->
+                <div class="absolute w-65 h-65 bottom-[-50px] left-0">
+                    <div id="lottie-animation1" :class="hover ? 'hidden' : 'block'" class="absolute bottom-0 left-0 w-full"></div>
+                    <div id="lottie-animation2" :class="hover ? 'block' : 'hidden'" class="absolute bottom-0 left-0 w-full"></div>
+                </div>
+            </div>
+        
+            <!-- 버튼 -->
+            <button @click="window.scrollTo({ top: 0, behavior: 'smooth' })"
+                    class="rounded-full w-12 h-12 inline-flex justify-center items-center bg-blue-700 top-btn absolute bottom-5 right-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+                    <path stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.74 12 7m0 0 5 4.74M12 7v10"></path>
+                </svg>
+            </button>
+
+        </div>        
+        
+        <script>
+            var animation = lottie.loadAnimation({
+              container: document.getElementById('lottie-animation1'), // 애니메이션을 표시할 요소
+              renderer: 'svg', // 렌더링 방식 (svg, canvas, html 등)
+              loop: true, // 애니메이션 반복 여부
+              autoplay: true, // 자동 실행 여부
+              path: 'images/char.json' // 애니메이션 JSON 파일 URL
+            });
+
+            var animation = lottie.loadAnimation({
+              container: document.getElementById('lottie-animation2'), // 애니메이션을 표시할 요소
+              renderer: 'svg', // 렌더링 방식 (svg, canvas, html 등)
+              loop: true, // 애니메이션 반복 여부
+              autoplay: true, // 자동 실행 여부
+              path: 'images/char_on.json' // 애니메이션 JSON 파일 URL
+            });
+        </script>          
+        <!-- //FLOATING -->
 
         <!-- BOT NAV -->
         <nav x-data="{ translateY: '100%' }" 
             x-init="requestAnimationFrame(() => setTimeout(() => translateY = '0', 1200))"
             x-bind:style="'transform: translateY(' + translateY + '); transition: transform 0.5s ease-out'" 
-            class="fixed bottom-0 w-screen h-[5.5rem] bg-white border-t border-black/20 flex justify-between items-center z-20 px-20 will-change-transform">
+            class="fixed bottom-0 w-screen h-[5.5rem] bg-white border-t border-black/20 flex justify-between items-center px-20 will-change-transform z-20 ">
 
             <div 
                 x-data="{ width: 0 }" 
