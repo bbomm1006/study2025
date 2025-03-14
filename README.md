@@ -3,6 +3,9 @@
 예제샘플)https://www.easytomorrow.com/kr/product/stick <br/>
 readme파일 확인 방법) VSCode에서 .md 파일을 작성 후 Ctrl+Shift+V 
 
+## 애니메이션 라이브러리 사이트
+https://lottiefiles.com/kr/<br/>
+https://threejs.org/
 
 ## Tailwind 기본적인 폰트 사이즈
 | 클래스      | 크기         |
@@ -84,6 +87,130 @@ srcset은 width(화면의 너비) 또는 density(화면의 해상도)에 맞춰 
      alt="Example Image">
 ```
 
+## `rounded` 클래스
+| 클래스           | 적용 값 (`border-radius`) |
+|-----------------|-------------------------|
+| `rounded-none`  | 0px                      |
+| `rounded-sm`    | 2px                      |
+| `rounded`       | 4px                      |
+| `rounded-md`    | 6px                      |
+| `rounded-lg`    | 8px                      |
+| `rounded-xl`    | 12px                     |
+| `rounded-2xl`   | 16px                     |
+| `rounded-3xl`   | 24px                     |
+| `rounded-full`  | 9999px (완전한 원)        |
+
+# Tailwind CSS Flexbox 정리
+
+## 📌 `flex-direction` (아이템 정렬 방향)
+| 클래스 | CSS 속성 | 설명 |
+|--------|-------------------|------------------------------|
+| `flex-row` | `flex-direction: row;` | 가로 방향 (기본값) |
+| `flex-row-reverse` | `flex-direction: row-reverse;` | 가로 방향 (반대) |
+| `flex-col` | `flex-direction: column;` | 세로 방향 |
+| `flex-col-reverse` | `flex-direction: column-reverse;` | 세로 방향 (반대) |
+
+---
+
+## 📌 `flex-wrap` (줄 바꿈 설정)
+| 클래스 | CSS 속성 | 설명 |
+|--------|-------------------|------------------------------|
+| `flex-wrap` | `flex-wrap: wrap;` | 여러 줄로 자동 줄바꿈 |
+| `flex-wrap-reverse` | `flex-wrap: wrap-reverse;` | 반대 방향 줄바꿈 |
+| `flex-nowrap` | `flex-wrap: nowrap;` | 한 줄 유지 (기본값) |
+
+---
+
+## 📌 `justify-content` (주축 정렬)
+| 클래스 | CSS 속성 | 설명 |
+|--------|------------------------------|------------------------------|
+| `justify-start` | `justify-content: flex-start;` | 왼쪽 정렬 (기본값) |
+| `justify-end` | `justify-content: flex-end;` | 오른쪽 정렬 |
+| `justify-center` | `justify-content: center;` | 가운데 정렬 |
+| `justify-between` | `justify-content: space-between;` | 양쪽 정렬 (여백 균등) |
+| `justify-around` | `justify-content: space-around;` | 요소 주위 여백 균등 |
+| `justify-evenly` | `justify-content: space-evenly;` | 요소 간 여백 균등 |
+
+---
+
+## 📌 `align-items` (교차축 정렬)
+| 클래스 | CSS 속성 | 설명 |
+|--------|------------------------------|------------------------------|
+| `items-start` | `align-items: flex-start;` | 위쪽 정렬 |
+| `items-end` | `align-items: flex-end;` | 아래쪽 정렬 |
+| `items-center` | `align-items: center;` | 중앙 정렬 |
+| `items-baseline` | `align-items: baseline;` | 텍스트 기준선 정렬 |
+| `items-stretch` | `align-items: stretch;` | 컨테이너 높이 맞춤 (기본값) |
+
+---
+
+## 📌 `align-content` (다중 행 정렬)
+| 클래스 | CSS 속성 | 설명 |
+|--------|------------------------------|------------------------------|
+| `content-start` | `align-content: flex-start;` | 위쪽 정렬 |
+| `content-end` | `align-content: flex-end;` | 아래쪽 정렬 |
+| `content-center` | `align-content: center;` | 가운데 정렬 |
+| `content-between` | `align-content: space-between;` | 위아래 간격 균등 |
+| `content-around` | `align-content: space-around;` | 위아래 여백 균등 |
+| `content-evenly` | `align-content: space-evenly;` | 요소 간 여백 균등 |
+
+---
+
+## 📌 `align-self` (개별 아이템 정렬)
+| 클래스 | CSS 속성 | 설명 |
+|--------|------------------------------|------------------------------|
+| `self-auto` | `align-self: auto;` | 부모 설정을 따름 (기본값) |
+| `self-start` | `align-self: flex-start;` | 위쪽 정렬 |
+| `self-end` | `align-self: flex-end;` | 아래쪽 정렬 |
+| `self-center` | `align-self: center;` | 중앙 정렬 |
+| `self-stretch` | `align-self: stretch;` | 부모 높이 맞춤 |
+| `self-baseline` | `align-self: baseline;` | 텍스트 기준선 정렬 |
+
+---
+
+## 📌 `flex-grow` (요소 확장)
+| 클래스 | CSS 속성 | 설명 |
+|--------|-------------------|------------------------------|
+| `flex-grow-0` | `flex-grow: 0;` | 확장 안 함 (기본값) |
+| `flex-grow` | `flex-grow: 1;` | 가능한 공간 채움 |
+
+---
+
+## 📌 `flex-shrink` (요소 축소)
+| 클래스 | CSS 속성 | 설명 |
+|--------|-------------------|------------------------------|
+| `flex-shrink-0` | `flex-shrink: 0;` | 크기 유지 (축소 안 함) |
+| `flex-shrink` | `flex-shrink: 1;` | 필요 시 축소 (기본값) |
+
+---
+
+## 📌 `flex-basis` (기본 크기 설정)
+| 클래스 | CSS 속성 | 설명 |
+|--------|-------------------|------------------------------|
+| `basis-0` | `flex-basis: 0px;` | 0px |
+| `basis-auto` | `flex-basis: auto;` | 자동 (기본값) |
+| `basis-1/2` | `flex-basis: 50%;` | 50% 크기 |
+| `basis-full` | `flex-basis: 100%;` | 100% 크기 |
+
+---
+
+## 📌 `gap` (간격 조절)
+| 클래스 | CSS 속성 | 설명 |
+|--------|-------------------|------------------------------|
+| `gap-0` | `gap: 0px;` | 간격 없음 |
+| `gap-2` | `gap: 0.5rem;` | 8px 간격 |
+| `gap-4` | `gap: 1rem;` | 16px 간격 |
+| `gap-8` | `gap: 2rem;` | 32px 간격 |
+
+---
+
+## 📌 `order` (아이템 순서)
+| 클래스 | CSS 속성 | 설명 |
+|--------|-------------------|------------------------------|
+| `order-1` | `order: 1;` | 첫 번째 요소 |
+| `order-2` | `order: 2;` | 두 번째 요소 |
+| `order-last` | `order: 9999;` | 마지막 요소 |
+
 <br><br>
 
 # 질문
@@ -91,3 +218,5 @@ srcset은 width(화면의 너비) 또는 density(화면의 해상도)에 맞춰 
 2. 로고 클릭 안됨
 3. grid-m ?
 4. 영어와 한글 자간 차이 주는 법?
+5. 예제 사이트에 page_productDropdown__PneDO <-- 이런식으로 __뒤에 붙는 문구 ??
+6. 맨 위로 올렸을 때 잔상 왜..
