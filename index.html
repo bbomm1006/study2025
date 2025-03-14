@@ -85,7 +85,7 @@
                                     }">
                                     MY UNIQUE
                                     <br>
-                                    <span class="text-sky-500">ROUTINE</span>
+                                    <span class="text-custom-sky">ROUTINE</span>
                                 </div>
                             </div>
                         </div>
@@ -109,7 +109,7 @@
                                 })
                                 //0% 0%, 100% 0%, 100% 100%, 0% 100%
                             "
-                            class="font-bold absolute flex justify-center items-center top-0 w-full h-full bg-sky-500 text-white transition-[clip-path] duration-500 ease-in-out tracking-tighter text-9xl main-title"
+                            class="font-bold absolute flex justify-center items-center top-0 w-full h-full bg-custom-sky text-white transition-[clip-path] duration-500 ease-in-out tracking-tighter text-9xl main-title"
                             :style="'clip-path: ' + clip"
                             >
                             <div class="xl:flex transition-opacity duration-500 ease-in-out gap-10"
@@ -181,7 +181,7 @@
                                 <div class="text-5xl text-gray leading-none font-bold text-custom-gray page_productNameSubtitle">
                                     맛있는 숙취해소 ZERO 젤리
                                 </div>
-                                <div class="text-6xl text-sky-500 leading-tight font-bold page_productNameTitle">
+                                <div class="text-6xl text-custom-sky leading-tight font-bold page_productNameTitle">
                                     상쾌환 스틱 ZERO
                                 </div>
                             </div>
@@ -237,5 +237,57 @@
             </section>
         </div>
         <!-- //MAIN -->
+
+        <!-- BOT NAV -->
+        <nav x-data="{ translateY: '100%' }" 
+            x-init="requestAnimationFrame(() => setTimeout(() => translateY = '0', 1200))"
+            x-bind:style="'transform: translateY(' + translateY + '); transition: transform 0.5s ease-out'" 
+            class="fixed bottom-0 w-screen h-[5.5rem] bg-white border-t border-black/20 flex justify-between items-center z-20 px-20 will-change-transform">
+
+            <div 
+                x-data="{ width: 0 }" 
+                x-init="
+                    window.addEventListener('scroll', () => {
+                    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+                    const scrollPosition = window.scrollY;
+                    const scrollPercentage = (scrollPosition / scrollHeight) * 100;
+                    width = scrollPercentage;
+                    })
+                "
+                class="block absolute left-0 top-[-0.2rem] h-[0.2rem] bg-custom-sky"
+                :style="{ width: width + '%' }"></div>
+
+            <div x-data="{ open: false }" class="relative page_productDropdown">
+                <!-- 클릭 시 open 상태가 바뀌면서, SVG 회전과 드롭다운 보이기/숨기기 -->
+                <div @click="open = !open" class="text-2xl text-gray-800 font-bold flex items-center gap-1 cursor-pointer page_productNavHeader">
+                    상쾌환<span class="text-custom-sky">스틱</span>
+                    <svg :class="open ? 'rotate-180' : 'rotate-0'" class="w-6 h-6 ml-1 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <rect width="24" height="24" fill="#EBEBEB" rx="12"></rect>
+                    <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m17 10-5 5-5-5"></path>
+                    </svg>
+                </div>
+                
+                <!-- 드롭다운 리스트, open이 true일 때 표시 -->
+                <div :class="open ? 'scale-100 opacity-100' : 'scale-80 opacity-0'" class="flex flex-wrap bg-gray-200 rounded-2xl py-4 px-5 absolute top-[-10px] -translate-y-full whitespace-pre transform transition-all duration-300 page_dropdownLists">
+                    <a class="w-full text-lg font-bold text-custom-sky page_dropdownList" href="#"><span>상쾌환</span></a>
+                    <a class="w-full text-lg font-bold text-gray-900 page_dropdownList" href="#">상쾌환<span class="text-custom-sky"> BOOSTER</span></a>
+                </div>
+            </div>
+         
+          
+            <ul class="flex gap-6 text-base font-bold text-gray-400 absolute left-1/2 transform -translate-x-1/2 page_productNavMenu">
+              <li class="cursor-pointer text-gray-900">상쾌환 스틱</li>
+              <li class="cursor-pointer">제품소개</li>
+              <li class="cursor-pointer">포인트</li>
+              <li class="cursor-pointer">원료정보</li>
+              <li class="cursor-pointer">제품기본정보</li>
+            </ul>
+          
+            <a class="flex justify-center items-center gap-1 bg-yellow-300 rounded-full px-4 py-3 text-base font-bold text-[#371d1e] page_productNavButton" target="_blank" href="https://gift.kakao.com/product/10314180">
+                <svg class="x-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path fill="#371D1E" d="M11.994 4C7.015 4 3 7.212 3 11.111c0 2.531 1.67 4.748 4.176 6.013l-.848 3.167a.27.27 0 0 0 .064.276c.051.046.118.07.186.071a.27.27 0 0 0 .154-.064l3.65-2.46a12 12 0 0 0 1.624.115c4.973 0 8.994-3.212 8.994-7.118C21 7.206 16.966 4 11.994 4"></path><path fill="#FAE100" d="M6.147 9.987h-.982a.64.64 0 0 1-.347-.09.4.4 0 0 1-.18-.264.6.6 0 0 1 0-.102.4.4 0 0 1 .154-.334.64.64 0 0 1 .385-.122H8.14a.6.6 0 0 1 .347.096.37.37 0 0 1 .18.263.5.5 0 0 1 0 .097.41.41 0 0 1-.155.34.6.6 0 0 1-.379.116h-.95v3.379a.52.52 0 0 1-.319.505.5.5 0 0 1-.202.034.52.52 0 0 1-.334-.109.48.48 0 0 1-.173-.289.5.5 0 0 1 0-.141zM8.95 9.325a.44.44 0 0 1 .186-.257.6.6 0 0 1 .32-.077h.245a.64.64 0 0 1 .34.083c.11.074.188.186.219.315l1.284 3.63q.051.14.084.289.003.06 0 .122a.43.43 0 0 1-.141.334.47.47 0 0 1-.347.141.444.444 0 0 1-.463-.295l-.27-.79H8.719l-.27.79a.44.44 0 0 1-.469.295.443.443 0 0 1-.463-.366.6.6 0 0 1 0-.11.6.6 0 0 1 0-.192c0-.07.046-.148.071-.218zm.642.841-.61 1.928h1.213zM11.775 9.53a.55.55 0 0 1 .141-.391.5.5 0 0 1 .38-.148.55.55 0 0 1 .334.109c.089.075.148.18.166.295a.5.5 0 0 1 0 .135v3.38h1.767a.64.64 0 0 1 .347.096.4.4 0 0 1 .18.263v.097a.4.4 0 0 1-.154.334.64.64 0 0 1-.386.122H12.38a.64.64 0 0 1-.392-.103.5.5 0 0 1-.193-.321 2 2 0 0 1 0-.212zM15.206 9.532a.57.57 0 0 1 .141-.392.566.566 0 0 1 .713-.039c.091.075.153.18.174.296a1 1 0 0 1 0 .135v1.574l1.625-1.876q.094-.096.199-.18a.4.4 0 0 1 .218-.058c.113 0 .222.033.315.097a.4.4 0 0 1 .167.257.1.1 0 0 1 0 .038.1.1 0 0 0 0 .045.4.4 0 0 1-.051.193 1 1 0 0 1-.122.173l-1.067 1.17 1.285 1.99v.065q.101.139.154.302v.032a.46.46 0 0 1-.16.399.6.6 0 0 1-.373.122.5.5 0 0 1-.257-.058.64.64 0 0 1-.206-.225l-1.194-1.927-.572.597v1.073a.57.57 0 0 1-.141.392.52.52 0 0 1-.386.148.5.5 0 0 1-.327-.11.48.48 0 0 1-.174-.289.5.5 0 0 1 0-.141z"></path></svg>
+              카카오톡 선물하기
+            </a>
+        </nav>          
+        <!-- //BOT NAV -->
     </body>
 </html>

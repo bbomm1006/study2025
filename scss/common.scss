@@ -26,22 +26,24 @@ html,body{
         background-color: #555;  /* 핸들 호버 색상 */
     }
 }
-  
+
 /* 커스텀 색상 추가 */
 :root {
+    --custom-sky: #00a5e7;
     --custom-blue: #0f3bae;
     --custom-gray: #444;
 }
 
 /* TailwindCSS 유틸리티 클래스를 사용해 사용자 정의 색상 적용 */
+.bg-custom-sky {background-color: var(--custom-sky);}
+.text-custom-sky {color: var(--custom-sky);}
+.border-custom-sky {border-color: var(--custom-sky);}
 .bg-custom-blue {background-color: var(--custom-blue);}
 .text-custom-blue {color: var(--custom-blue);}
 .border-custom-blue {border-color: var(--custom-blue);}
 .bg-custom-gray {background-color: var(--custom-gray);}
 .text-custom-gray {color: var(--custom-gray);}
 .border-custom-gray {border-color: var(--custom-gray);}
-
-
 
 /* nav */
 a,button{cursor: pointer;}
@@ -51,7 +53,7 @@ a,button{cursor: pointer;}
 
 .page_productNameContainer{
     .page_typeButton.page_active{
-        background: var(--color-sky-500);
+        background: var(--custom-sky);
         color:#fff;
     }
 
