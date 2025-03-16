@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="kr">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+        <script src="https://unpkg.com/lottie-web@5.9.3/build/player/lottie.min.js"></script>
+
+        <link rel="stylesheet" media="all" href="css/common.min.css">
+
+        <link rel="stylesheet" media="all" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        
+        <style>
+            .test-box{
+                width:100vw; height:100vh; display: block
+            }
+            .absolute-test{
+                position: absolute; top: 0; left: 0;
+            }
+        </style>
+    </head>
+    <body class="overflow-x-hidden">
+        
+        <section id="section1" class="relative w-full h-screen">
+            <div class="test-box absolute-test bg-gray-100 "></div>
+            <div class="test-box absolute-test bg-custom-sky"></div>
+
+            <div class="test-box absolute-test bg-white"></div>
+            <div class="test-box absolute-test bg-custom-blue"></div>
+
+            <div class="test-box absolute-test bg-pink-600"></div>
+            <div class="test-box absolute-test bg-gray-900"></div>
+            <div class="test-box absolute-test bg-custom-sky"></div>
+        </section>
+
+        <section id="section2" class="w-[300vw] h-full flex">
+            <div class="test-box bg-custom-blue"></div>
+            <div class="test-box bg-green-500"></div>
+            <div class="test-box bg-pink-600"></div>
+        </section>
+
+        <section id="section3" >
+            <div class="test-box bg-gray-100"></div>
+        </section>
+
+        <section id="section4" >
+            <div class="test-box bg-gray-200"></div>
+        </section>
+
+    </body>
+</html>
