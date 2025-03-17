@@ -16,7 +16,8 @@
     <link rel="stylesheet" media="all" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-    <link rel="stylesheet" media="all" href="css/common.min.css">
+    <link rel="stylesheet" media="all" href="css/common.min.css">     
+    
 </head>
 <body>
     <!-- TOP NAV -->
@@ -42,7 +43,7 @@
     </nav>
     <!-- //TOP NAV -->
 
-    <main id="parallax__cont">
+    <main id="parallax__cont" class="overflow-hidden">
         <section id="section1" class="parallax__item">
             <div class="opacity-100">
                 <div 
@@ -57,29 +58,43 @@
                             console.log(percentage)
                         });
                     "
-                    class="sticky top-0 w-full h-dvh overflow-hidden"
+                    class="sticky top-0 w-full h-dvh overflow-hidden topInner"
                     >
+
+                    <div x-data="{ scrollY: 0, percentage: 0, borderRadius: '0%', scale: 1 }"
+                        x-init="window.addEventListener('scroll', () => {
+                            scrollY = window.scrollY;
+                            percentage = Math.min(scrollY / window.innerHeight, 3); // 최대값 3
+
+                            // border-radius 증가 (최대 50%)
+                            if (percentage >= 3) {
+                                borderRadius = `${Math.min((percentage - 2) * 100, 50)}%`;
+                                scale = 0.7; // 원 크기를 줄이기
+                            } else {
+                                borderRadius = '0%';
+                                scale = 1; // 원래 크기
+                            }
+                        })"
+                        x-bind:style="{
+                            opacity: percentage >= 0.5 ? Math.min((percentage - 0.5) * 2.5, 1) : 0, // 0.5에서 1.3 사이 서서히 투명도 증가
+                            borderRadius: borderRadius,
+                            transform: `scale(${scale})`
+                        }"
+                        class="absolute top-1/2 right-0 transform -translate-y-1/2 origin-center w-1/2 h-full bg-custom-sky transition-all duration-300 ease-out">
+                    </div>
 
                     <div 
                         x-data="{ 
-                            opacity: 1,
+                            textOpacity: 1,
                         }"
                         x-init="
-                            /*
                             window.addEventListener('scroll', () => {
                                 let scrollY = window.scrollY;
-                                let percentage = Math.min(scrollY / window.innerHeight); // Normalize (0 to 1)
+                                let percentage = Math.min(scrollY / window.innerHeight, 1); // Normalize (0 to 1)
                                 let startX = 50 * percentage; // Move from 0% to 50%
                         
                                 textOpacity = 0;
                             })
-                            */
-                            $watch('percentage', (value) => {
-                                if(value >= 0 && value < 1)
-                                {
-                                    opacity = 1;
-                                }
-                            });
                         "
                         class="flex items-center justify-center w-full h-full"
                         :style="'opacity: ' + textOpacity"
@@ -122,91 +137,104 @@
                     <div 
                         x-data="{ 
                             clip: 'polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)',
-                            opacity: 1,
+                            textOpacity: 1,
                         }"
                         x-init="
                             setTimeout(() => {
                                 clip = 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)';
                             }, 1000);
 
-                            $watch('percentage', (value)=>{
-                                if(value > 0.5 && value <= 1){
-                                    let startX = 50 * percentage;
-                                    opacity = 1 - percentage;
-                                    clip = `polygon(${startX}% 0%, 100% 0%, 100% 100%, ${startX}% 100%)`;
-                                }else{
-                                    opacity = 1;
-                                    //clip = 'polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)';
-                                }
-                                /*
-                                if(value > 0.5){
+                            $watch('percentage', (value) => {
+                                let scrollY = window.scrollY;
+                                let percentage = Math.min(scrollY / window.innerHeight, 1.5); // Normalize (0 to 1.5)
+                                let startX = 50 * Math.min(percentage, 1); // Move from 0% to 50% only up to 1
 
-                                }else if(value > 0.5 && value <= 1){
+                                clip = `polygon(${startX}% 0%, 100% 0%, 100% 100%, ${startX}% 100%)`;
 
-                                }else{
-
-                                }
-                                */
-                            })
+                            })                        
                         "
+                        x-bind:style="{
+                            opacity: percentage >= 1 ? 0 : 1, // 1 이상이면 즉시 투명도 1
+                        }"
                         class="font-bold absolute flex justify-center items-center top-0 w-full h-full bg-custom-sky text-white transition-[clip-path] duration-500 ease-in-out tracking-tighter text-9xl main-title"
-                        :style="'clip-path: ' + clip"
+                        :style="'clip-path: ' + clip + '; opacity: ' + textOpacity"
                         >
-                        <div class="w-full whitespace-nowrap overflow-hidden relative">
-                            <div class="flex justify-center items-center transition-opacity duration-500 ease-in-out gap-10"
-                                :style="'opacity: ' + textOpacity">
+                        <div x-data="{ scrollY: 0, opacity: 1 }" 
+                            x-init="window.addEventListener('scroll', () => {
+                                scrollY = window.scrollY;
+                                opacity = Math.max(1 - scrollY / 1000, 0); // 스크롤에 따라 opacity 감소
+                            })"
+                            x-bind:style="{ opacity: opacity }"
+                            class="w-full whitespace-nowrap overflow-hidden relative">
+                            <div class="flex justify-center items-center transition-opacity duration-500 ease-in-out gap-10">
                                 MY UNIQUE 
                                 <br>
                                 <span> ROUTINE</span>
                             </div>
                         </div>
+
                     </div>
 
-                    <div 
-                        x-show="percentage >= 1 && percentage < 2"
-                        
-                        x-if x-show
-                        x-data="{ 
-                            //textOpacity: 0,  // 초기 투명도 값
-                            //translateYValue: 100,  // 초기 Y값을 100px로 설정
-                            opacity:0,
+                    <div x-data="{ 
+                            isVisible: false, 
+                            scrollY: 0,
+                            percentage: 0 
                         }"
                         x-init="
-                            /*
+                            setTimeout(() => isVisible = true, 2000);
                             window.addEventListener('scroll', () => {
-                                let scrollY = window.scrollY;
-                                let percentage = Math.min(scrollY / window.innerHeight, 1); // Normalize (0 to 1)
-
-                                // 50% 이상에서 0에서 1로 변화
-                                if (percentage > 0.5 && percentage <= 1) {
-                                    textOpacity = (percentage - 0.5) * 2; // 50%에서 100%까지 opacity가 0에서 1로 증가
-                                } 
-                                // 100% 이후로 opacity가 1에서 0으로 감소하는 부분
-                                else if (percentage > 1) {
-                                    textOpacity = 2 - percentage; // 100% 이상에서 opacity가 1에서 0으로 감소
-                                }
-                                else {
-                                    textOpacity = 0;
-                                }
-                            })
-                            */
-                            $watch('percentage', (value)=>{
-                                if (percentage > 1.5 && percentage <= 2) {
-                                    opacity = (percentage - 0.5) * 2; // 50%에서 100%까지 opacity가 0에서 1로 증가
-                                }
-                                else {
-                                    opacity = 0;
-                                }
-                            })
+                                scrollY = window.scrollY;
+                                percentage = Math.min(scrollY / window.innerHeight, 2); // 최대값 2
+                            });
                         "
-                        class="grid-m flex flex-col justify-center absolute top-0 w-1/2 h-full pl-40 pl-40" 
-                        :style="{
-                            opacity: textOpacity, 
-                            transform: 'translate3d(0px, calc(100px - ' + (textOpacity * 100) + 'px), 0px)'
-                        }"
+                        x-bind:style="{
+                            top: isVisible ? '0' : '100%', 
+                            opacity: percentage <= 0.5 ? 1 : Math.max(2 - percentage * 3, 0) // 1 이하에서는 유지, 1.5에서 완전히 사라짐
+                        }"                        
+                        class="fixed left-0 w-full h-full transition-all duration-500 ease-in-out"
                     >
-                        <div class="page_productNameContainer" >
-                            <div class="flex gap-4 items-center page_buttonGroups mb-10">
+                
+                        <div class="w-22 absolute left-1/2 transform -translate-x-1/2 bottom-[-40px] ">
+                            <img 
+                                x-data="{ isVisible: false }" 
+                                x-init="setTimeout(() => isVisible = true, 2500)" 
+                                x-bind:style="isVisible ? 'opacity: 1; transform: rotate(-15deg); transition: opacity 1s, transform 1s;' : 'opacity: 0; transform: rotate(0);'"
+                                class="w-22 absolute bottom-[-40px] left-[-60px] transform origin-bottom"
+                                src="images/stick_01.png" alt="" />                        
+                            <img class="w-22 absolute bottom-0 left-[-60px]" src="images/stick_02.png" alt="" />
+                            
+                            <img 
+                                x-data="{ isVisible: false }" 
+                                x-init="setTimeout(() => isVisible = true, 2500)" 
+                                x-bind:style="isVisible ? 'opacity: 1; transform: rotate(15deg); transition: opacity 1s, transform 1s;' : 'opacity: 0; transform: rotate(0);'"
+                                class="w-22 absolute bottom-[-40px] left-[60px] transform origin-bottom"
+                                src="images/stick_03.png" alt="" />
+                            <img class="w-22 absolute bottom-0 left-[60px]" src="images/stick_04.png" alt="" />
+                        </div>
+                    </div>
+                    
+                    
+                    <div x-data="{ scrollY: 0, percentage: 0 }"
+                        x-init="window.addEventListener('scroll', () => {
+                            scrollY = window.scrollY;
+                            percentage = Math.min(scrollY / window.innerHeight, 4);
+                        })"
+                        x-bind:style="{
+                            opacity: Math.min(Math.max(percentage - 0.5, 0), 1),
+                            transform: `translateY(${Math.max(Math.pow(100 - (percentage * 100), 0.8), 0)}px)`
+                        }"
+                        class="grid-m flex flex-col justify-center absolute top-0 w-1/2 h-full pl-40">
+
+                        <div class="page_productNameContainer">
+                            <!-- 버튼 그룹 -->
+                            <div class="flex gap-4 items-center mb-10 page_buttonGroups"
+                                x-show="percentage > 0.3"
+                                x-transition:enter="transition ease-out duration-700"
+                                x-transition:enter-start="opacity-0 translate-y-10"
+                                x-transition:enter-end="opacity-100 translate-y-0"
+                                x-transition:leave="transition ease-in duration-500"
+                                x-transition:leave-start="opacity-100 translate-y-0"
+                                x-transition:leave-end="opacity-0 translate-y-10">
                                 <div class="page_typeButtons flex items-center bg-gray-100 rounded-xl p-1">
                                     <button class="text-gray-500 text-sm font-semibold flex items-center rounded-xl p-3 pr-2 page_typeButton page_active" type="button">
                                         상쾌환 스틱 ZERO
@@ -236,14 +264,41 @@
                                     </button>
                                 </div>
                             </div>
-                            <div class="text-5xl text-gray leading-none font-bold text-custom-gray page_productNameSubtitle">
+
+                            <!-- 제품 부제목 -->
+                            <div class="text-5xl text-gray leading-none font-bold text-custom-gray page_productNameSubtitle"
+                                x-show="percentage > 0.4"
+                                x-transition:enter="transition ease-out duration-700 delay-200"
+                                x-transition:enter-start="opacity-0 translate-y-10"
+                                x-transition:enter-end="opacity-100 translate-y-0"
+                                x-transition:leave="transition ease-in duration-500"
+                                x-transition:leave-start="opacity-100 translate-y-0"
+                                x-transition:leave-end="opacity-0 translate-y-10">
                                 맛있는 숙취해소 ZERO 젤리
                             </div>
-                            <div class="text-6xl text-custom-sky leading-tight font-bold page_productNameTitle">
+
+                            <!-- 제품 제목 -->
+                            <div class="text-6xl text-custom-sky leading-tight font-bold page_productNameTitle"
+                                x-show="percentage > 0.5"
+                                x-transition:enter="transition ease-out duration-700 delay-400"
+                                x-transition:enter-start="opacity-0 translate-y-10"
+                                x-transition:enter-end="opacity-100 translate-y-0"
+                                x-transition:leave="transition ease-in duration-500"
+                                x-transition:leave-start="opacity-100 translate-y-0"
+                                x-transition:leave-end="opacity-0 translate-y-10">
                                 상쾌환 스틱 ZERO
                             </div>
                         </div>
-                        <div class="b1 page_productDescriptions">
+
+                        <!-- 제품 설명 -->
+                        <div class="b1 page_productDescriptions"
+                            x-show="percentage > 0.6"
+                            x-transition:enter="transition ease-out duration-700 delay-600"
+                            x-transition:enter-start="opacity-0 translate-y-10"
+                            x-transition:enter-end="opacity-100 translate-y-0"
+                            x-transition:leave="transition ease-in duration-500"
+                            x-transition:leave-start="opacity-100 translate-y-0"
+                            x-transition:leave-end="opacity-0 translate-y-10">
                             <div class="text-gray-600 text-xl font-medium mt-5">
                                 ZERO SUGAR로 더 가벼워진 숙취해소 젤리.<br/>
                                 설탕 대신 알룰로스로 더 맛있게, 칼로리는 50% DOWN.
@@ -254,47 +309,37 @@
                                 <div class="border border-gray-700 text-gray-700 text-sm font-semibold px-2 py-1 rounded-full page_hashtag">#칼로리50%DOWN</div>
                                 <div class="border border-gray-700 text-gray-700 text-sm font-semibold px-2 py-1 rounded-full page_hashtag">#글루타치온</div>
                             </div>
-                        </div>                            
+                        </div>
+
                     </div>
 
-                    <div 
-                        x-data="{ 
-                            textOpacity: 0,  // 초기 투명도 값
-                            translateYValue: 100,  // 초기 Y값을 100px로 설정
-                            translateValue3d: 'translate3d(0px, 100px, 0px)', // 초기 translate3d 값 설정
+
+
+                    <div x-data="{ scrollY: 0, percentage: 0 }"
+                        x-init="window.addEventListener('scroll', () => {
+                            scrollY = window.scrollY;
+                            percentage = Math.min(scrollY / window.innerHeight, 4);
+                        })"
+                        x-bind:style="{
+                            opacity: Math.min(Math.max(percentage - 0.5, 0), 1),
+                            transform: `translateY(${Math.max(Math.pow(100 - (percentage * 100), 0.8), 0)}px)`
                         }"
-                        x-init="
-                            window.addEventListener('scroll', () => {
-                                let scrollY = window.scrollY;
-                                let percentage = Math.min(scrollY / window.innerHeight, 1); // Normalize (0 to 1)
-                                
-                                // 스크롤이 50% 이상부터 opacity와 translate3d 변화를 시작
-                                if (percentage > 0.5) {
-                                    textOpacity = (percentage - 0.5) * 2; // 50% 이상에서 0에서 1로 변화
-                                } else {
-                                    textOpacity = 0; // 50% 미만에서는 여전히 투명함
-                                }
-                                
-                                // translate3d를 100px에서 1.8661px로, 그 후 0px로 변화시킴
-                                translateYValue = 100 - (percentage * 98.1339); // 100px에서 1.8661px까지 변화
-
-                                // translate3d 값 업데이트
-                                translateValue3d = 'translate3d(0px, ' + translateYValue + 'px, 0px)';
-                            })
-                        "
-                        class="flex justify-center absolute top-[53%] left-[52%] z-10 transform -translate-x-1/2 -translate-y-1/2 w-[35%] h-auto pointer-events-none opacity-0"
-                        :style="'opacity: ' + textOpacity + '; transform: ' + translateValue3d"
-                        >
-                        <img class="w-full" alt="box grape" loading="lazy" width="500" height="500" decoding="async" data-nimg="1" srcset="https://www.easytomorrow.com/_next/image?url=%2Fcommon%2Fimages%2Fproducts%2Fbox%2Fbox_apple.png&w=640&q=100 1x, https://www.easytomorrow.com/_next/image?url=%2Fcommon%2Fimages%2Fproducts%2Fbox%2Fbox_apple.png&w=1080&q=100 2x" src="https://www.easytomorrow.com/_next/image?url=%2Fcommon%2Fimages%2Fproducts%2Fbox%2Fbox_apple.png&w=640&q=100" >
+                        class="flex justify-center absolute top-[53%] left-[52%] z-10 transform -translate-x-1/2 -translate-y-1/2 w-[35%] h-auto pointer-events-none transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]">
+                        <img class="w-full" alt="box grape" loading="lazy" width="500" height="500" decoding="async" data-nimg="1"
+                            srcset="https://www.easytomorrow.com/_next/image?url=%2Fcommon%2Fimages%2Fproducts%2Fbox%2Fbox_apple.png&w=640&q=100 1x, 
+                                    https://www.easytomorrow.com/_next/image?url=%2Fcommon%2Fimages%2Fproducts%2Fbox%2Fbox_apple.png&w=1080&q=100 2x" 
+                            src="https://www.easytomorrow.com/_next/image?url=%2Fcommon%2Fimages%2Fproducts%2Fbox%2Fbox_apple.png&w=640&q=100">
                     </div>
 
-                    <div class="absolute top-1/2 right-0 transform -translate-y-1/2 origin-center w-1/2 h-full bg-pink-500 opacity-0 page_blueBox__yrRef"></div>
+
+
+
                       
                 </div>
             </div>
         </section>
-        <!-- //section1 -->
-
+        <!-- //section1 --> 
+        
         <main id="horizontal">
             <section id="section2" class="parallax__item">
                 <div class="flex items-center flex-wrap bg-custom-blue relative w-full h-screen page_horizontalItem">
@@ -316,7 +361,7 @@
                     </div>
                 </div>
             </section>
-            <!-- //section3 -->
+            <!-- //section2 -->
 
             <section id="section3" class="parallax__item">
                 <div class="flex items-center flex-wrap bg-green-500 relative w-full h-screen page_horizontalItem">
@@ -338,7 +383,7 @@
                     </div>
                 </div>
             </section>
-            <!-- //section4 -->
+            <!-- //section3 -->
 
             <section id="section4" class="parallax__item">
                 <div class="flex items-center flex-wrap bg-pink-600 relative w-full h-screen page_horizontalItem">
@@ -360,7 +405,7 @@
                     </div>
                 </div>
             </section>
-            <!-- //section5 -->
+            <!-- //section4 -->
         </main>
 
         <section id="section5" class="">
@@ -571,7 +616,7 @@
             </div>
             <!-- //PD-->
         </section>
-        <!-- //section8 -->
+        <!-- //section5 -->
     </main>
 
     <script>    
@@ -586,7 +631,7 @@
                             trigger: "#section1", 
                             pin: true, 
                             start: "top top",
-                            end: "+=300%",
+                            end: "+=500%",
                             scrub: 0.5,       
                             id: "values",    
                         }                                
@@ -627,8 +672,92 @@
       
     </script>
 
-     <!-- BOT NAV -->
-     <nav x-data="{ translateY: '100%' }" 
+    <!-- FLOATING -->
+    <div x-data="{ show: false, hover: false }"
+        x-init="window.addEventListener('scroll', () => {
+            show = window.scrollY > 0 ? true : false;
+        })"
+        :class="show ? 'opacity-100 translate-y-0 visible' : 'opacity-0 translate-y-[30px] invisible'"
+        class="fixed bottom-30 right-20 z-10 w-65 h-60 floatingBtnWrap transition-all duration-500 ease-out text-pink-500"
+        @mouseenter="hover = true" @mouseleave="hover = false">
+
+        <div @mouseenter="hover = true" @mouseleave="hover = false" class="align-center floatingBtn relative w-full h-full">
+
+            <!-- 버튼들 -->
+            <div x-show="hover" 
+                class="absolute top-[-16%] left-[16%] break-keep flex-wrap justify-center w-45 gap-1 flex">
+                <button x-show="hover"
+                        x-transition:enter="transition transform duration-300 ease-out"
+                        x-transition:enter-start="scale-80 opacity-0"
+                        x-transition:enter-end="scale-100 opacity-100"
+                        x-transition:leave="transition transform duration-200 ease-in"
+                        x-transition:leave-start="scale-100 opacity-100"
+                        x-transition:leave-end="scale-80 opacity-0"
+                        class="text-base font-bold text-white text-center bg-pink-500 rounded-full w-full px-5 py-3">
+                    온라인 쇼핑몰
+                </button>
+                <button x-show="hover"
+                        x-transition:enter="transition transform duration-300 ease-out delay-100"
+                        x-transition:enter-start="scale-80 opacity-0"
+                        x-transition:enter-end="scale-100 opacity-100"
+                        x-transition:leave="transition transform duration-200 ease-in"
+                        x-transition:leave-start="scale-100 opacity-100"
+                        x-transition:leave-end="scale-80 opacity-0"
+                        class="text-base font-bold text-white text-center bg-pink-500 rounded-full w-full px-5 py-3">
+                    오프라인 쇼핑몰
+                </button>
+            </div>
+
+            <!-- 말풍선 -->
+            <div x-show="!hover"
+                x-transition:leave="transition transform duration-200 ease-in"
+                x-transition:leave-start="scale-100 opacity-100"
+                x-transition:leave-end="scale-80 opacity-0"
+                class="absolute top-0 left-[16%] bg-pink-500 rounded-full px-5 py-3 w-45 break-keep text-balloon">
+                <svg class="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2" xmlns="http://www.w3.org/2000/svg" width="17" height="16" fill="none">
+                    <path fill="currentColor" d="M10.232 15c-.77 1.333-2.694 1.333-3.464 0L.273 3.75c-.77-1.333.192-3 1.732-3h12.99c1.54 0 2.502 1.667 1.732 3z"></path>
+                </svg>
+                <div class="text-base font-bold text-white text-center">상쾌환 쇼핑하러 갈래?</div>
+            </div>
+            
+            <!-- Lottie 애니메이션 -->
+            <div class="absolute w-65 h-65 bottom-[-50px] left-0">
+                <div id="lottie-animation1" :class="hover ? 'hidden' : 'block'" class="absolute bottom-0 left-0 w-full"></div>
+                <div id="lottie-animation2" :class="hover ? 'block' : 'hidden'" class="absolute bottom-0 left-0 w-full"></div>
+            </div>
+        </div>
+
+        <!-- 버튼 -->
+        <button @click="window.scrollTo({ top: 0, behavior: 'smooth' })"
+                class="rounded-full w-12 h-12 inline-flex justify-center items-center bg-blue-700 top-btn absolute bottom-5 right-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+                <path stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.74 12 7m0 0 5 4.74M12 7v10"></path>
+            </svg>
+        </button>
+
+    </div>       
+
+    <script>
+        var animation = lottie.loadAnimation({
+          container: document.getElementById('lottie-animation1'), // 애니메이션을 표시할 요소
+          renderer: 'svg', // 렌더링 방식 (svg, canvas, html 등)
+          loop: true, // 애니메이션 반복 여부
+          autoplay: true, // 자동 실행 여부
+          path: 'images/char.json' // 애니메이션 JSON 파일 URL
+        });
+
+        var animation = lottie.loadAnimation({
+          container: document.getElementById('lottie-animation2'), // 애니메이션을 표시할 요소
+          renderer: 'svg', // 렌더링 방식 (svg, canvas, html 등)
+          loop: true, // 애니메이션 반복 여부
+          autoplay: true, // 자동 실행 여부
+          path: 'images/char_on.json' // 애니메이션 JSON 파일 URL
+        });
+    </script>          
+    <!-- //FLOATING -->
+
+    <!-- BOT NAV -->
+    <nav x-data="{ translateY: '100%' }" 
         x-init="requestAnimationFrame(() => setTimeout(() => translateY = '0', 1200))"
         x-bind:style="'transform: translateY(' + translateY + '); transition: transform 0.5s ease-out'" 
         class="fixed bottom-0 w-screen h-[5.5rem] bg-white border-t border-black/20 flex justify-between items-center px-20 will-change-transform z-20 ">
