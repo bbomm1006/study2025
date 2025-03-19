@@ -150,6 +150,64 @@
                     </div>
                 </div>
 
+                <div 
+                    x-data="{ 
+                        opacity: 0,  // 기본 opacity는 0
+                        height: '100%', // 기본 height
+                        width: '50%', // 기본 width
+                        transform: 'translate(0%, -50%)', // 기본 transform
+                        borderRadius: '0', // 기본 border-radius
+                        scroll_y: 0,
+                        percentage: 0
+                    }"
+                    x-init="
+                        window.addEventListener('scroll', () => {
+                            scroll_y = window.scrollY;
+                            percentage = Math.min(scroll_y / window.innerHeight, 2.1); // Normalize (0 to 1) + 최대값 2.1로 제한
+                            let browserWidth = window.innerWidth; // 현재 브라우저의 너비 가져오기
+
+                            // 스타일 업데이트
+                            if (percentage === 0) { 
+                                opacity = 0; // 스크롤이 0일 때 opacity는 0
+                            } else if (percentage >= 0 && percentage <= 0.5) {                                    
+                                opacity = 1 - (percentage / 0.5); // opacity 점진적으로 0까지 줄어듦
+                                height = '100%'; // 높이는 100% 유지
+                                width = '50%'; // width는 50%로 고정
+                                transform = 'translate(0%, -50%)'; // 기본 transform
+                                borderRadius = '0'; // 기본 border-radius
+                            } else if (percentage > 0.5 && percentage <= 1.1) {
+                                opacity = 1; // opacity는 1로 고정
+                                height = `${browserWidth * 0.5}px`; // 높이를 브라우저 너비의 50%로 설정
+                                width = `${browserWidth * 0.5}px`; // 너비를 브라우저 너비의 50%로 설정
+                                transform = 'translate(0%, -50%)'; // 기본 transform
+                                borderRadius = '0'; // 기본 border-radius
+                            } else if (percentage > 1.1 && percentage <= 2.1) {
+                                let browserWidth = window.innerWidth; // 현재 브라우저의 너비 가져오기
+                                opacity = 1;
+
+                                // 감소 비율 계산 (0.2씩 감소)
+                                let scaleFactor = 1 - (percentage - 1.1) * 0.2;
+
+                                // 높이와 너비를 브라우저 너비를 기준으로 설정
+                                height = `${browserWidth * 0.5 * scaleFactor}px`; // 100% -> 80% 감소
+                                width = `${browserWidth * 0.5 * scaleFactor}px`;  // 50% -> 40% 감소
+
+                                // transform을 사용하여 크기 조정
+                                transform = `translate(0%, -50%) translate3d(0px, 0px, 0px) scale(${scaleFactor})`;
+
+                                // border-radius 증가 (최대 100%)
+                                borderRadius = `${(percentage - 1.1) * 100}%`;
+                            }
+                            else {
+                                
+                            }
+                        })
+                    "
+                    x-bind:style="'opacity: ' + opacity + '; height: ' + height + '; width: ' + width + '; transform: ' + transform + '; border-radius: ' + borderRadius + '; transition: all 0.2s ease'" 
+                    class="page_blueBox"
+                >  
+                </div>
+
 
                 <div 
                     x-data="{ 
@@ -302,55 +360,7 @@
 
 
 
-                <div 
-                    x-data="{ 
-                        opacity: 0,  // 기본 opacity는 0
-                        height: '100%', // 기본 height
-                        width: '50%', // 기본 width
-                        transform: 'translate(0%, -50%)', // 기본 transform
-                        borderRadius: '0', // 기본 border-radius
-                        scroll_y: 0,
-                        percentage: 0
-                    }"
-                    x-init="
-                        window.addEventListener('scroll', () => {
-                            scroll_y = window.scrollY;
-                            percentage = Math.min(scroll_y / window.innerHeight, 2.1); // Normalize (0 to 1) + 최대값 2.1로 제한
-
-                            // 스타일 업데이트
-                            if (percentage === 0) { 
-                                opacity = 0; // 스크롤이 0일 때 opacity는 0
-                            } else if (percentage >= 0 && percentage <= 0.5) {                                    
-                                opacity = 1 - (percentage / 0.5); // opacity 점진적으로 0까지 줄어듦
-                                height = '100%'; // 높이는 100% 유지
-                                width = '50%'; // width는 50%로 고정
-                                transform = 'translate(0%, -50%)'; // 기본 transform
-                                borderRadius = '0'; // 기본 border-radius
-                            } else if (percentage > 0.5 && percentage <= 1.1) {
-                                opacity = 1; // opacity는 1로 고정
-                                height = '100%'; // 높이는 100%로 고정
-                                width = '50%'; // width는 50%로 고정
-                                transform = 'translate(0%, -50%)'; // 기본 transform
-                                borderRadius = '0'; // 기본 border-radius
-                            } else if (percentage > 1.1 && percentage <= 2.1) {
-                                opacity = 1; // opacity는 1로 고정
-                                height = (1 - (percentage - 1.1) * 0.2) * 100 + '%'; // height가 100%에서 80%로 점차 감소
-                                width = (1 - (percentage - 1.1) * 0.2) * 50 + '%'; // width가 50%에서 40%로 점차 감소
-                                transform = 'translate(0%, -50%) translate3d(0px, 0px, 0px) scale(' + (1 - (percentage - 1.1) * 0.2) + ')'; // scale이 점차 줄어듦
-                                borderRadius = (percentage - 1.1) * 100 + '%'; // border-radius가 점차 100%로 증가
-                            } else {
-                                opacity = 1; // opacity는 1로 고정
-                                height = '80%'; // 높이는 80%로 고정
-                                width = '40%'; // width는 40%로 고정
-                                transform = 'translate(0%, -50%) translate3d(0px, 0px, 0px) scale(0.8, 0.8)';
-                                borderRadius = '750px'; // border-radius는 100%로 고정
-                            }
-                        })
-                    "
-                    x-bind:style="'opacity: ' + opacity + '; height: ' + height + '; width: ' + width + '; transform: ' + transform + '; border-radius: ' + borderRadius + '; transition: all 0.2s ease'" 
-                    class="page_blueBox"
-                >  
-                </div>
+                
 
 
                 <div 
@@ -486,53 +496,6 @@
         <!-- 02 -->
         <div id="section2" class="page_horizontalItemWrap">
             <div 
-                x-data="{ 
-                    scroll_y: 0,
-                    percentage: 0,
-                    transformValue: 0,
-                    textTransform1: -100, // hori1 위치
-                    textTransform2: 100 // hori2 위치
-                }"
-                x-init="
-                    window.addEventListener('scroll', () => {
-                        scroll_y = window.scrollY;
-                        percentage = scroll_y / window.innerHeight; // Normalize (0 to 1)
-
-                        if (percentage <= 3) {
-                            transformValue = 0;
-                            textTransform1 = -100;
-                            textTransform2 = 100;
-                        } else if (percentage > 3 && percentage <= 4.6) {
-                            transformValue = 0;
-                            // 텍스트 이동
-                            textTransform1 = -100 + (100 * progress); // -100 → 0
-                            textTransform2 = 100 - (100 * progress); // 100 → 0
-                        } else if (percentage > 4.6 && percentage <= 5.1) {
-                            transformValue = 0;
-                            textTransform1 = 0;
-                            textTransform2 = 0;
-                        } 
-                        else if (percentage > 5.1 && percentage <= 5.6) {
-                            let progress = (percentage - 5.1) / (5.6 - 5.1); // 0 → 1
-                            transformValue = -33.33 * progress; // 슬라이드 이동
-
-                            textTransform1 = 0;
-                            textTransform2 = 0;
-                        } 
-                        else if (percentage > 5.6 && percentage <= 5.9) {
-                            transformValue = -33.33;
-                            textTransform1 = 0;
-                            textTransform2 = 0;
-                        } 
-                        else if (percentage > 5.9 && percentage <= 6.1) {
-                            let progress = (percentage - 5.9) / (6.1 - 5.9);
-                            transformValue = -33.33 - (33.33 * progress); // -33.33 → -66.66
-                        } 
-                        else {
-                            transformValue = -66.66;
-                        }
-                    });
-                " 
                 class="page_horizontalItemInner"
                 :style="'transform: translate(' + transformValue + '%, 0%); transition: transform 0.3s ease;'"
             >
