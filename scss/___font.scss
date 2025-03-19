@@ -9,11 +9,13 @@ html, body{
 	font-size: 0.9vw;
 
 	.grid-m{padding-left:8.33vw;padding-right:8.33vw;}
+	.grid-xl{padding-left:4.33vw;padding-right:4.33vw;}
 	
 	@media (max-width: 1800px){
 		font-size: 1vw;
 	}
 	@media (max-width: 1366px){
+		.grid-xl,
 		.grid-m{padding-left:5vw;padding-right:5vw;}
 	}
 	@media (max-width: 1024px){

@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.5/dist/cdn.min.js" defer></script>
+    <!-- <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script> -->
 
     <script src="https://unpkg.com/lottie-web@5.9.3/build/player/lottie.min.js"></script>
 
@@ -19,12 +20,15 @@
     <link rel="stylesheet" media="all" href="css/index2.min.css">
 
     <script>
-        window.onload = function() {
+    window.onload = function() {
+            // 페이지 로드 후 1초가 지난 뒤에 스크롤을 맨 위로 이동
             setTimeout(function() {
+                // 애니메이션 완료 후 스크롤을 맨 위로 이동
                 window.scrollTo(0, 0);
-            }, 10); // 10ms 후에 스크롤을 맨 위로 이동
-        };
+            }, 1500); // nav 애니메이션이 끝난 후 스크롤이 위로 이동하도록 1.5초 후 실행
+    };
     </script>
+
             
 </head>
     <body>
@@ -550,6 +554,43 @@
                                     Zero
                                 </div>
                             </div>
+
+
+                            <div id="lottie-star1" class="absolute top-[15%] left-[33%]"></div>
+                            
+
+                            <div id="lottie-star2" class="absolute top-[50%] left-[30%]"></div>
+                            
+
+                            <div id="lottie-star3" class="absolute bottom-[10%] right-[25%] w-100"></div>
+
+                            <script>
+                                var animation = lottie.loadAnimation({
+                                    container: document.getElementById('lottie-star1'), // 애니메이션을 표시할 요소
+                                    renderer: 'svg', // 렌더링 방식 (svg, canvas, html 등)
+                                    loop: true, // 애니메이션 반복 여부
+                                    autoplay: true, // 자동 실행 여부
+                                    path: 'images/star2.json' // 애니메이션 JSON 파일 URL
+                                });
+                            </script>
+                            <script>
+                                var animation = lottie.loadAnimation({
+                                    container: document.getElementById('lottie-star2'), // 애니메이션을 표시할 요소
+                                    renderer: 'svg', // 렌더링 방식 (svg, canvas, html 등)
+                                    loop: true, // 애니메이션 반복 여부
+                                    autoplay: true, // 자동 실행 여부
+                                    path: 'images/star2.json' // 애니메이션 JSON 파일 URL
+                                });
+                            </script>
+                            <script>
+                                var animation = lottie.loadAnimation({
+                                    container: document.getElementById('lottie-star3'), // 애니메이션을 표시할 요소
+                                    renderer: 'svg', // 렌더링 방식 (svg, canvas, html 등)
+                                    loop: true, // 애니메이션 반복 여부
+                                    autoplay: true, // 자동 실행 여부
+                                    path: 'images/star3.json' // 애니메이션 JSON 파일 URL
+                                });
+                            </script>
                             
                             <div class="pl-40 mt-[-5%]">
                                 <div class="text-white items-title font-bold">
@@ -571,6 +612,39 @@
                                 <div class="text-white font-bold leading-none page_horizontalItemTitle">Simply</div>
                                 <div class="text-white font-bold text-right leading-none page_horizontalItemTitle">Zero</div>
                             </div>
+
+                            <div id="lottie-star2-1" class="absolute top-[15%] left-[33%]"></div>                            
+
+                            <div id="lottie-star2-2" class="absolute top-[50%] left-[30%]"></div>                            
+
+                            <div id="lottie-star2-3" class="absolute bottom-[10%] right-[25%] w-100"></div>
+                            <script>
+                                var animation = lottie.loadAnimation({
+                                    container: document.getElementById('lottie-star2-1'), // 애니메이션을 표시할 요소
+                                    renderer: 'svg', // 렌더링 방식 (svg, canvas, html 등)
+                                    loop: true, // 애니메이션 반복 여부
+                                    autoplay: true, // 자동 실행 여부
+                                    path: 'images/star2.json' // 애니메이션 JSON 파일 URL
+                                });
+                            </script>
+                            <script>
+                                var animation = lottie.loadAnimation({
+                                    container: document.getElementById('lottie-star2-2'), // 애니메이션을 표시할 요소
+                                    renderer: 'svg', // 렌더링 방식 (svg, canvas, html 등)
+                                    loop: true, // 애니메이션 반복 여부
+                                    autoplay: true, // 자동 실행 여부
+                                    path: 'images/star2.json' // 애니메이션 JSON 파일 URL
+                                });
+                            </script>
+                            <script>
+                                var animation = lottie.loadAnimation({
+                                    container: document.getElementById('lottie-star2-3'), // 애니메이션을 표시할 요소
+                                    renderer: 'svg', // 렌더링 방식 (svg, canvas, html 등)
+                                    loop: true, // 애니메이션 반복 여부
+                                    autoplay: true, // 자동 실행 여부
+                                    path: 'images/star3.json' // 애니메이션 JSON 파일 URL
+                                });
+                            </script>
                             
                             <div class="pl-40 mt-[-5%]">
                                 <div class="text-white items-title font-bold">
@@ -592,6 +666,39 @@
                                 <div class="text-white font-bold leading-none page_horizontalItemTitle">Simply</div>
                                 <div class="text-white font-bold text-right leading-none page_horizontalItemTitle">Zero</div>
                             </div>
+
+                            <div id="lottie-star3-1" class="absolute top-[15%] left-[33%]"></div>                            
+
+                            <div id="lottie-star3-2" class="absolute top-[50%] left-[30%]"></div>                            
+
+                            <div id="lottie-star3-3" class="absolute bottom-[10%] right-[25%] w-100"></div>
+                            <script>
+                                var animation = lottie.loadAnimation({
+                                    container: document.getElementById('lottie-star3-1'), // 애니메이션을 표시할 요소
+                                    renderer: 'svg', // 렌더링 방식 (svg, canvas, html 등)
+                                    loop: true, // 애니메이션 반복 여부
+                                    autoplay: true, // 자동 실행 여부
+                                    path: 'images/star2.json' // 애니메이션 JSON 파일 URL
+                                });
+                            </script>
+                            <script>
+                                var animation = lottie.loadAnimation({
+                                    container: document.getElementById('lottie-star3-2'), // 애니메이션을 표시할 요소
+                                    renderer: 'svg', // 렌더링 방식 (svg, canvas, html 등)
+                                    loop: true, // 애니메이션 반복 여부
+                                    autoplay: true, // 자동 실행 여부
+                                    path: 'images/star2.json' // 애니메이션 JSON 파일 URL
+                                });
+                            </script>
+                            <script>
+                                var animation = lottie.loadAnimation({
+                                    container: document.getElementById('lottie-star3-3'), // 애니메이션을 표시할 요소
+                                    renderer: 'svg', // 렌더링 방식 (svg, canvas, html 등)
+                                    loop: true, // 애니메이션 반복 여부
+                                    autoplay: true, // 자동 실행 여부
+                                    path: 'images/star3.json' // 애니메이션 JSON 파일 URL
+                                });
+                            </script>
                             
                             <div class="pl-40 mt-[-5%]">
                                 <div class="text-white items-title font-bold">
@@ -629,7 +736,7 @@
                             start: "top top", // 스크롤 시작 지점
                             end: "+=190%", // 스크롤 끝 위치
                             scrub: 0.5, // 스크롤에 따라 비례적으로 애니메이션
-                            markers: true, // 디버깅을 위한 마커 (필요 시 제거 가능)
+                            // markers: true, // 디버깅을 위한 마커 (필요 시 제거 가능)
                             onLeave: function() {
                                 // 스크롤이 끝나면 
                                 // gsap.to(".horizontalStick img", { y: '150%', opacity: 0 });
@@ -914,12 +1021,410 @@
         </div>
         <!-- //INFO -->
 
+        <!-- PD -->         
+        <div class="p-40 bg-gray-100 rounded-t-[100px] figureWrap">
+            <p class="text-5xl font-bold text-gray-800">
+                <span class="text-custom-sky">상쾌환 </span>제품 보러가기
+            </p>
+
+            <div class="mt-10">
+                <div class="block overflow-hidden relative">
+                    <div class="swiper-container mySwiper pdListSwiper w-full">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide text-center">
+                                <div class="figure-controller">
+                                    <a class="figure block" href="/kr/product/sangkwaehwan"
+                                        x-data="{ hover: false, bounce: false }"
+                                        @mouseenter="hover = true; bounce = false; setTimeout(() => bounce = true, 150)" 
+                                        @mouseleave="hover = false; bounce = false">
+                                        
+                                        <div class="relative overflow-hidden rounded-4xl figure-img-card transition-colors duration-500"
+                                            :class="hover ? 'bg-custom-sky' : 'bg-white'">
+                                            
+                                            <!-- 배경 애니메이션 -->
+                                            <div class="absolute inset-0 bg-gray-800 transition-transform duration-500 ease-out figure-bg"
+                                                :class="hover 
+                                                    ? (bounce ? 'translate-y-[30%]' : '-translate-y-[10%]') 
+                                                    : 'translate-y-full'">
+                                            </div>
+
+                                            <!-- 이미지 -->
+                                            <div class="relative">
+                                                <img 
+                                                    alt="more products" 
+                                                    loading="lazy" 
+                                                    width="854" 
+                                                    height="848" 
+                                                    decoding="async" 
+                                                    data-nimg="1" 
+                                                    class="figure-img"
+                                                    srcset="https://www.easytomorrow.com/_next/image?url=%2Fcommon%2Fimages%2Fproducts%2Fmore_products_1.png&amp;w=1080&amp;q=75 1x, https://www.easytomorrow.com/_next/image?url=%2Fcommon%2Fimages%2Fproducts%2Fmore_products_1.png&amp;w=1920&amp;q=75 2x" 
+                                                    src="https://www.easytomorrow.com/_next/image?url=%2Fcommon%2Fimages%2Fproducts%2Fmore_products_1.png&amp;w=1920&amp;q=75" 
+                                                    style="color: transparent;"
+                                                   
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div class="text-xl font-bold text-gray-800 figure-caption mt-5">상쾌환</div>
+                                    </a>                                    
+                                    
+                                </div>                                  
+                            </div>
+                            <div class="swiper-slide text-center">
+                                <div class="figure-controller">
+                                    <a class="figure block" href="/kr/product/sangkwaehwan"
+                                        x-data="{ hover: false, bounce: false }"
+                                        @mouseenter="hover = true; bounce = false; setTimeout(() => bounce = true, 150)" 
+                                        @mouseleave="hover = false; bounce = false">
+                                        
+                                        <div class="relative overflow-hidden rounded-4xl figure-img-card transition-colors duration-500 new"
+                                            :class="hover ? 'bg-custom-sky' : 'bg-white'">
+                                            
+                                            <!-- 배경 애니메이션 -->
+                                            <div class="absolute inset-0 bg-gray-800 transition-transform duration-500 ease-out figure-bg"
+                                                :class="hover 
+                                                    ? (bounce ? 'translate-y-[30%]' : '-translate-y-[10%]') 
+                                                    : 'translate-y-full'">
+                                            </div>
+
+                                            <!-- 이미지 -->
+                                            <div class="relative">
+                                                <img 
+                                                    alt="more products" 
+                                                    loading="lazy" 
+                                                    width="854" 
+                                                    height="848" 
+                                                    decoding="async" 
+                                                    data-nimg="1" 
+                                                    class="figure-img"
+                                                    srcset="https://www.easytomorrow.com/_next/image?url=%2Fcommon%2Fimages%2Fproducts%2Fmore_products_2.png&w=1080&q=75" 
+                                                    style="color: transparent;"
+                                                   
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div class="text-xl font-bold text-gray-800 figure-caption mt-5">상쾌환</div>
+                                    </a>                                    
+                                    
+                                </div>                                  
+                            </div>
+
+                            <div class="swiper-slide text-center">
+                                <div class="figure-controller">
+                                    <a class="figure block" href="/kr/product/sangkwaehwan"
+                                        x-data="{ hover: false, bounce: false }"
+                                        @mouseenter="hover = true; bounce = false; setTimeout(() => bounce = true, 150)" 
+                                        @mouseleave="hover = false; bounce = false">
+                                        
+                                        <div class="relative overflow-hidden rounded-4xl border border-solid border-gray-300 figure-img-card transition-colors duration-500"
+                                            :class="hover ? 'bg-custom-sky' : 'bg-white'">
+                                            
+                                            <!-- 배경 애니메이션 -->
+                                            <div class="absolute inset-0 bg-gray-800 transition-transform duration-500 ease-out figure-bg"
+                                                :class="hover 
+                                                    ? (bounce ? 'translate-y-[30%]' : '-translate-y-[10%]') 
+                                                    : 'translate-y-full'">
+                                            </div>
+
+                                            <!-- 이미지 -->
+                                            <div class="relative">
+                                                <img 
+                                                    alt="more products" 
+                                                    loading="lazy" 
+                                                    width="854" 
+                                                    height="848" 
+                                                    decoding="async" 
+                                                    data-nimg="1" 
+                                                    class="figure-img"
+                                                    srcset="https://www.easytomorrow.com/_next/image?url=%2Fcommon%2Fimages%2Fproducts%2Fmore_products_3.png&w=1080&q=75" 
+                                                    style="color: transparent;"
+                                                   
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div class="text-xl font-bold text-gray-800 figure-caption mt-5">상쾌환</div>
+                                    </a>
+
+
+
+                                    
+                                    
+                                </div>                                  
+                            </div>
+
+                        </div>
+                        <!-- <div class="swiper-pagination"></div> -->
+                    </div>
+                </div>
+                <script>
+                var swiper = new Swiper(".pdListSwiper", {
+                    pagination: {
+                        el: ".pdListSwiper .swiper-pagination",
+                        clickable: true,  // 페이징 클릭 가능하게 설정
+                    },
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                    autoplay: {
+                        delay: 3000,  // 자동 롤링 간격 (3000ms = 3초)
+                        disableOnInteraction: false,  // 사용자가 슬라이드를 클릭해도 자동 롤링 유지
+                    },
+                    loop: true,
+                });
+                </script>
+            </div>
+        </div>
+        <script>
+            // 각 이미지가 해당 a 태그 내에서만 움직이도록 하기 위해 이벤트를 설정
+            const figures = document.querySelectorAll('.figure');
+            figures.forEach(figure => {
+              const image = figure.querySelector('.figure-img');
+              
+              // 마우스 움직임에 따라 해당 이미지만 이동하도록 설정
+              figure.addEventListener('mousemove', (event) => {
+                  const rect = image.getBoundingClientRect();
+                  const centerX = rect.left + rect.width / 2;
+                  const centerY = rect.top + rect.height / 2;
+          
+                  const deltaX = (event.clientX - centerX) / 15;
+                  const deltaY = (event.clientY - centerY) / 15;
+          
+                  image.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+              });
+          
+              // 마우스를 떼면 이미지가 원래 위치로 돌아가도록 설정
+              figure.addEventListener('mouseleave', () => {
+                  image.style.transition = 'transform 0.3s ease-out';
+                  image.style.transform = 'translate(0, 0)';
+              });
+          
+              // 마우스가 다시 들어오면 transition 속성을 초기화
+              figure.addEventListener('mouseenter', () => {
+                  image.style.transition = 'none';
+              });
+            });
+        </script>
+        <!-- //PD-->
+
+        <!-- FOOTER -->
+        <div id="footer" class="grid-xl">
+            <ul class="link-items">
+                <li class="link-item">
+                <a href="#">개인정보처리방침</a>
+                </li>
+                <li class="link-item">
+                <a href="#">이용약관</a>
+                </li>
+                <li class="link-item">
+                <a href="#">이메일무단수집거부</a>
+                </li>
+                <li class="link-item">
+                <a href="/kr/sitemap">사이트맵</a>
+                </li>
+            </ul>  
+            <div class="footer-divider"></div>  
+            
+            <div class="footer-info-container">
+                <div class="footer-info">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 177 55" class="footer-logo"><g clip-path="url(#logo_svg__a)"><path fill="#666464" d="M2.625 0c1.542.343 3.278.436 4.59 1.584.591.508 1.124 1.177 1.373 2.024-.156.036-.427-.15-.636-.134-2.058-.147-3.196-.755-3.95-2.044C3.594.853 3.46.692 3.337.555 3.08.273 2.628 0 2.628 0M13.12 10.225a2.067 2.067 0 0 0 2.074-2.066 2.07 2.07 0 0 0-2.075-2.067 2.066 2.066 0 1 0 0 4.132M5.447 19.578a2.577 2.577 0 0 0 2.37-2.763 2.573 2.573 0 0 0-2.77-2.363 2.58 2.58 0 0 0-2.371 2.763 2.58 2.58 0 0 0 2.773 2.364"></path><path fill="#666464" d="M17.459 13.08a8.6 8.6 0 0 0-1.068-4.172 3.36 3.36 0 0 1-6.63-.749c0-1.453.925-2.686 2.222-3.151a8.7 8.7 0 0 0-3.248-.625c-1.545 0-2.994.4-4.256 1.099h3.354v6.35H6.512V9.255H2.621V8.172h3.891V6.558H2.956A8.66 8.66 0 0 0 0 13.081c0 1.745.514 3.367 1.397 4.726a6 6 0 0 1-.067-.491c-.171-2.156 1.447-4.039 3.615-4.21a3.93 3.93 0 0 1 4.22 3.607A3.9 3.9 0 0 1 7.97 19.84l1.645.673-.643 1.033-2.112-.963c-.4.186-.842.3-1.314.334a3.3 3.3 0 0 1-.618-.004 8.7 8.7 0 0 0 3.804.867 8.73 8.73 0 0 0 4.454-1.215v-5.607l-1.794 1.143v-1.326l2.064-1.337h1.227v6.003a8.66 8.66 0 0 0 2.774-6.363M31.741 12.79h-2.254c.387-.513.711-1.262.975-2.257q.392-1.494.44-2.682a.8.8 0 0 0-.087-.423q-.099-.179-.395-.194h-7.237l-.616-.004h-1.345c0 .044.018.083.035.117l.53.595c.102.092.18.156.243.177q.087.037.32.037h6.432q0 .391-.02.806-.026.405-.051.828a3.4 3.4 0 0 1-1.186.247q-.616.025-1.962.024h-3.13c-.117 0-.227 0-.32-.006h-1.13q.01.073.068.162l.542.636q.074.077.153.107.077.044.237.05h3.916c.702 0 1.255-.038 1.675-.118a3.8 3.8 0 0 0 1.067-.356q-.081.752-.185 1.364-.092.61-.167.887h-8.463c.008.04.03.085.053.131l.366.52a.7.7 0 0 0 .219.205c.067.045.19.072.342.072h2.274v5.48c0 .128.029.213.082.273q.09.076.271.076h.326c.28 0 .521-.123.706-.364.183-.24.285-.508.285-.81v-4.657h2.497v5.48c0 .129.024.213.082.273q.087.075.274.076h.292c.28 0 .513-.122.71-.363q.278-.358.277-.81v-4.657h2.86q.64.052.64-.435c0-.324-.213-.493-.64-.493M34.892 11.052c.591.423 1.324.635 2.18.635q1.284-.001 2.179-.643c.599-.426.893-.982.893-1.653 0-.672-.294-1.24-.893-1.662-.597-.423-1.327-.633-2.179-.633s-1.589.207-2.18.616c-.599.422-.896.976-.896 1.679 0 .702.297 1.239.896 1.661m1.25-2.692c.281-.268.59-.398.93-.398s.65.131.938.398c.285.262.428.608.428 1.029s-.143.767-.428 1.028c-.29.26-.597.385-.938.385s-.649-.13-.93-.399q-.428-.392-.426-1.014c0-.415.141-.768.425-1.029M35.984 15.003c0 .133.013.22.043.273q.054.075.235.074h.72c.282 0 .49-.079.634-.249q.212-.248.213-.704v-1.221h.467c.931 0 1.66-.07 2.194-.2q.797-.204 1.26-.493c.165-.107.226-.218.202-.342-.031-.12-.14-.155-.351-.104a6.7 6.7 0 0 1-1.212.189c-.432.027-1.186.04-2.252.04h-3.681q-.189 0-.337-.003h-1.37a.4.4 0 0 0 .045.12l.427.534c.085.085.163.147.243.192.09.045.237.067.456.067h2.06v1.829z"></path><path fill="#666464" d="M40.162 14.049h-1.091v.02a.46.46 0 0 0 .102.227l.41.508c.056.065.101.108.147.125a.5.5 0 0 0 .16.024h2.475v1.091a.6.6 0 0 0 .044.271c.035.054.109.077.231.077h.624c.281 0 .491-.107.64-.323.143-.219.209-.476.209-.775v-8.01c0-.03-.01-.078-.028-.154q-.029-.106-.254-.135h-1.188c-.149.02-.232.062-.253.135a.7.7 0 0 0-.024.153v6.772h-2.09c-.038 0-.08 0-.112-.005M43.803 18.744h-5.137c-.367 0-.602-.067-.694-.2-.097-.137-.145-.364-.155-.677V16.22q-.001-.23-.268-.332h-1.31c-.178.07-.263.177-.263.327l-.007 1.987q.001.805.505 1.066.511.257.889.258h6.439c.354 0 .533-.125.533-.386q-.002-.392-.533-.393"></path><path fill="#003C8A" d="M105.786 28.382h5.696V6.464H91.517v5.083h14.269v5.204h-14.27v4.728h14.27zM124.519 22.129h-2.85V5.797h-5.495v37.138h5.495V27.287h2.85v15.648h5.304V5.797h-5.304z"></path><path fill="#003C8A" d="M102.225 26.611h-5.89v8.568h-8.196v4.985h25.877v-4.985h-11.791zM160.972 35.043h-10.725v-3.208c4.383-1.159 7.315-4.61 7.315-8.639 0-2.422-1.063-4.714-2.995-6.45-1.916-1.725-4.43-2.675-7.079-2.675-5.607 0-10.17 4.094-10.17 9.125 0 3.929 2.819 7.378 7.034 8.633v3.213h-10.138V40.2h26.755v-5.157zm-13.483-15.81c2.31 0 4.189 1.779 4.189 3.963s-1.879 3.88-4.189 3.88-4.283-1.704-4.283-3.88c0-2.175 1.921-3.962 4.283-3.962M159.291 7.462h-8.672V1.876h-6.452v5.586h-8.33v5.245h23.454zM169.826 22.136V6.313h-5.886v36.711h5.886v-15.73h6.852v-5.158zM150.919 43.01h-5.884v10.916h24.602v-5.158h-18.718zM82.344 6.372h-5.9v27.789h5.9V21.963h5.568v-5.155h-5.568zM70.148 29.524l4.577-3.59L60.228 5.93 45.696 25.919l4.578 3.599 9.938-13.257zM70.65 35.186c-6.07 0-11.01 4.439-11.01 9.895S64.578 55 70.65 55c6.07 0 11.009-4.45 11.009-9.92 0-5.471-4.938-9.896-11.01-9.896m0 14.74c-2.979 0-5.312-2.128-5.312-4.847s2.333-4.826 5.311-4.826c2.979 0 5.226 2.076 5.226 4.826s-2.247 4.847-5.226 4.847"></path></g><defs><clipPath id="logo_svg__a"><path fill="#fff" d="M0 0h176.678v55H0z"></path></clipPath></defs></svg>
+                    <ul class="footer-address">
+                        <li class="address-item">
+                        (주) 삼양사: 경기도 성남시 분당구 판교로 295
+                        <span class="address-divider"></span>
+                        <span>사업자 등록번호: 781-85-00412</span>
+                        <span class="address-divider"></span>
+                        <span>고객문의 전화번호 : 080-023-3399</span>
+                        <span class="address-divider"></span>
+                        상쾌환 유통전문판매원:㈜삼양사, 제조원:㈜네추럴웨이, 이앤에스㈜
+                        <span class="address-divider"></span>
+                        상쾌환 스틱 샤인머스캣맛, 망고맛 / 상쾌환 스틱 ZERO 청사과맛, 납작복숭아맛 
+                        유통전문판매원 ㈜삼양사, 제조원 ㈜네추럴웨이 포천제2공장
+                        <span class="address-divider"></span>
+                        상쾌환 BOOSTER / 상쾌환 BOOSTER ZERO 유통전문판매원:㈜삼양사, 제조원:㈜네추럴웨이 포천제2공장
+                        </li>
+                        <li>
+                        <div>* 본 제품은 건강기능식품이 아닙니다.</div>
+                        <div>* 과도한 음주는 건강을 해칩니다.</div>
+                        </li>
+                        <li class="footer-copyright">COPYRIGHT (C) 2024 SAMYANG CORPORATION. ALL RIGHTS RESERVED.</li>
+                    </ul>
+                </div>
+
+                <div class="footer-socials-wrapper">
+                    <div class="footer-socials">
+                        <button class="icon-button footer-social footer-facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path fill="#000" d="M14.4 3h2.8v3.733h-1.867c-1.03 0-1.866.836-1.866 1.867v1.867H17.2l-.974 3.733h-2.922v7.467H9.41V14.2H6v-3.696h3.733V7.667A4.667 4.667 0 0 1 14.4 3"></path></svg>
+                        </button>
+                        <button class="icon-button footer-social footer-youtube">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path fill="#000" fill-rule="evenodd" d="M21.019 5.73c.312.321.534.72.643 1.155.29 1.612.431 3.248.421 4.886a26.6 26.6 0 0 1-.421 4.812 2.55 2.55 0 0 1-1.779 1.834c-1.576.421-7.883.421-7.883.421s-6.307 0-7.883-.421a2.55 2.55 0 0 1-1.779-1.76 26.6 26.6 0 0 1-.421-4.886c-.008-1.626.133-3.25.421-4.85a2.55 2.55 0 0 1 1.779-1.833C5.693 4.667 12 4.667 12 4.667s6.307 0 7.883.385c.432.122.823.356 1.136.677m-5.81 6.04-5.272 2.998V8.773z" clip-rule="evenodd"></path></svg>
+                        </button>
+                        <button class="icon-button footer-social footer-instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path fill="#000" fill-rule="evenodd" d="M7.2 5A2.2 2.2 0 0 0 5 7.2v9.6A2.2 2.2 0 0 0 7.2 19h9.6a2.2 2.2 0 0 0 2.2-2.2V7.2A2.2 2.2 0 0 0 16.8 5zM3 7.2A4.2 4.2 0 0 1 7.2 3h9.6A4.2 4.2 0 0 1 21 7.2v9.6a4.2 4.2 0 0 1-4.2 4.2H7.2A4.2 4.2 0 0 1 3 16.8z" clip-rule="evenodd"></path><path fill="#000" fill-rule="evenodd" d="M12 9.444a2.556 2.556 0 1 0 0 5.111 2.556 2.556 0 0 0 0-5.111m-4.555 2.555a4.556 4.556 0 1 1 9.111 0 4.556 4.556 0 0 1-9.11 0M16.8 6.2a1 1 0 0 1 1 1v.017a1 1 0 1 1-2 0V7.2a1 1 0 0 1 1-1" clip-rule="evenodd"></path></svg>
+                        </button>
+                    </div>
+                    <div class="dropdown footer-dropdown" x-data="{ open: false }">
+                        <div class="dropdown-header flex items-center justify-between cursor-pointer" @click="open = !open">
+                            <span>Family site</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                :class="open ? 'rotate-180' : 'rotate-0'"
+                                class="transition-transform duration-300">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m17 10-5 5-5-5"></path>
+                            </svg>
+                        </div>
+                        <div class="dropdown-list transition-all duration-300 origin-top"
+                            :class="open ? 'scale-100 opacity-100' : 'scale-80 opacity-0'">
+                            <a target="_blank"><div class="dropdown-item">삼양사</div></a>
+                            <a target="_blank"><div class="dropdown-item">삼양홀딩스</div></a>
+                            <a target="_blank"><div class="dropdown-item">큐원</div></a>
+                            <a target="_blank"><div class="dropdown-item">서브큐</div></a>
+                            <a target="_blank"><div class="dropdown-item">어바웃미</div></a>
+                            <a target="_blank"><div class="dropdown-item">큐원 스마트 스토어</div></a>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+
+            </div>
+        </div>
+        <!-- //FOOTER -->
+
+        <!-- FLOATING -->
+        <div x-data="{ 
+                show: false,  // 처음에는 버튼이 보이지 않도록 설정
+                hover: false,
+                footerVisible: false // footer의 가시성을 추적하는 변수
+            }"
+            x-init="
+                // 스크롤 이벤트로 show 값을 설정
+                window.addEventListener('scroll', () => {
+                    if (!footerVisible) { // footer가 보이지 않을 때만 스크롤 이벤트 실행
+                        show = window.scrollY > 0 ? true : false;
+                    }
+                });
+        
+                // footer가 보이면 show 값을 false로 설정하여 버튼 숨기기
+                let observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            footerVisible = true; // footer가 화면에 보이면 footerVisible을 true로 설정
+                            show = false; // footer가 보이면 버튼 숨기기
+                        } else {
+                            footerVisible = false; // footer가 화면 밖으로 벗어나면 footerVisible을 false로 설정
+                            show = window.scrollY > 0; // footer가 안 보이면 스크롤 상태에 따라 버튼 보이기
+                        }
+                    });
+                }, { threshold: 0.5 }); // footer가 50% 이상 보일 때 동작하도록 설정
+                observer.observe(document.getElementById('footer'));
+            "
+            :class="show ? 'opacity-100 translate-y-0 visible' : 'opacity-0 translate-y-[30px] invisible'"
+            class="fixed bottom-30 right-20 z-10 w-65 h-60 floatingBtnWrap transition-all duration-500 ease-out text-pink-500"
+            @mouseenter="hover = true" @mouseleave="hover = false">
+
+            <div @mouseenter="hover = true" @mouseleave="hover = false" class="align-center floatingBtn relative w-full h-full">
+
+                <!-- 버튼들 -->
+                <div x-show="hover" 
+                    class="absolute top-[-16%] left-[16%] break-keep flex-wrap justify-center w-45 gap-1 flex">
+                    <button x-show="hover"
+                            x-transition:enter="transition transform duration-300 ease-out"
+                            x-transition:enter-start="scale-80 opacity-0"
+                            x-transition:enter-end="scale-100 opacity-100"
+                            x-transition:leave="transition transform duration-200 ease-in"
+                            x-transition:leave-start="scale-100 opacity-100"
+                            x-transition:leave-end="scale-80 opacity-0"
+                            class="text-base font-bold text-white text-center bg-pink-500 rounded-full w-full px-5 py-3">
+                        온라인 쇼핑몰
+                    </button>
+                    <button x-show="hover"
+                            x-transition:enter="transition transform duration-300 ease-out delay-100"
+                            x-transition:enter-start="scale-80 opacity-0"
+                            x-transition:enter-end="scale-100 opacity-100"
+                            x-transition:leave="transition transform duration-200 ease-in"
+                            x-transition:leave-start="scale-100 opacity-100"
+                            x-transition:leave-end="scale-80 opacity-0"
+                            class="text-base font-bold text-white text-center bg-pink-500 rounded-full w-full px-5 py-3">
+                        오프라인 쇼핑몰
+                    </button>
+                </div>
+
+                <!-- 말풍선 -->
+                <div x-show="!hover"
+                    x-transition:leave="transition transform duration-200 ease-in"
+                    x-transition:leave-start="scale-100 opacity-100"
+                    x-transition:leave-end="scale-80 opacity-0"
+                    class="absolute top-0 left-[16%] bg-pink-500 rounded-full px-5 py-3 w-45 break-keep text-balloon">
+                    <svg class="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2" xmlns="http://www.w3.org/2000/svg" width="17" height="16" fill="none">
+                        <path fill="currentColor" d="M10.232 15c-.77 1.333-2.694 1.333-3.464 0L.273 3.75c-.77-1.333.192-3 1.732-3h12.99c1.54 0 2.502 1.667 1.732 3z"></path>
+                    </svg>
+                    <div class="text-base font-bold text-white text-center">상쾌환 쇼핑하러 갈래?</div>
+                </div>
+                
+                <!-- Lottie 애니메이션 -->
+                <div class="absolute w-65 h-65 bottom-[-50px] left-0">
+                    <div id="lottie-animation1" :class="hover ? 'hidden' : 'block'" class="absolute bottom-0 left-0 w-full"></div>
+                    <div id="lottie-animation2" :class="hover ? 'block' : 'hidden'" class="absolute bottom-0 left-0 w-full"></div>
+                </div>
+            </div>
+
+            <!-- 버튼 -->
+            <button @click="window.scrollTo({ top: 0, behavior: 'smooth' })"
+                    class="rounded-full w-12 h-12 inline-flex justify-center items-center bg-blue-700 top-btn absolute bottom-5 right-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+                    <path stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.74 12 7m0 0 5 4.74M12 7v10"></path>
+                </svg>
+            </button>
+
+        </div>       
+
+        <script>
+            var animation = lottie.loadAnimation({
+            container: document.getElementById('lottie-animation1'), // 애니메이션을 표시할 요소
+            renderer: 'svg', // 렌더링 방식 (svg, canvas, html 등)
+            loop: true, // 애니메이션 반복 여부
+            autoplay: true, // 자동 실행 여부
+            path: 'images/char.json' // 애니메이션 JSON 파일 URL
+            });
+
+            var animation = lottie.loadAnimation({
+            container: document.getElementById('lottie-animation2'), // 애니메이션을 표시할 요소
+            renderer: 'svg', // 렌더링 방식 (svg, canvas, html 등)
+            loop: true, // 애니메이션 반복 여부
+            autoplay: true, // 자동 실행 여부
+            path: 'images/char_on.json' // 애니메이션 JSON 파일 URL
+            });
+        </script>          
+        <!-- //FLOATING -->
 
         <!-- BOT NAV -->
-        <nav x-data="{ translateY: '100%' }" 
-            x-init="requestAnimationFrame(() => setTimeout(() => translateY = '0', 1200))"
+        <nav 
+            x-data="{ 
+                translateY: '100%' // 초기 상태는 100%로 설정
+            }" 
+            x-init="
+                // 페이지 로드 후 1.5초 뒤에 모든 동작을 실행
+                setTimeout(() => {
+                // 1.5초 후에 translateY를 0으로 변경
+                translateY = '0'; 
+
+                // footer가 화면에 보일 때 translateY를 '100%'로 변경하는 observer 설정
+                let observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        translateY = '100%'; // footer가 보이면 nav를 아래로 내리기
+                    } else {
+                        translateY = '0'; // footer가 사라지면 nav를 위로 올리기
+                    }
+                    });
+                }, { threshold: 0.5 }); // footer가 50% 이상 보일 때 동작하도록 설정
+                observer.observe(document.getElementById('footer'));
+                }, 1500); // 페이지 로드 후 1.5초 후 실행
+            "
             x-bind:style="'transform: translateY(' + translateY + '); transition: transform 0.5s ease-out'" 
-            class="fixed bottom-0 w-screen h-[5.5rem] bg-white border-t border-black/20 flex justify-between items-center px-20 will-change-transform z-20 ">
+            class="fixed bottom-0 w-screen h-[5.5rem] bg-white border-t border-black/20 flex justify-between items-center px-20 will-change-transform z-20"
+            >
 
             <div 
                 x-data="{ width: 0 }" 
@@ -953,11 +1458,11 @@
 
 
             <ul class="flex gap-6 text-base font-bold text-gray-400 absolute left-1/2 transform -translate-x-1/2 page_productNavMenu">
-            <li class="cursor-pointer text-gray-900">상쾌환 스틱</li>
-            <li class="cursor-pointer">제품소개</li>
-            <li class="cursor-pointer">포인트</li>
-            <li class="cursor-pointer">원료정보</li>
-            <li class="cursor-pointer">제품기본정보</li>
+                <li class="cursor-pointer text-gray-900">상쾌환 스틱</li>
+                <li class="cursor-pointer">제품소개</li>
+                <li class="cursor-pointer">포인트</li>
+                <li class="cursor-pointer">원료정보</li>
+                <li class="cursor-pointer">제품기본정보</li>
             </ul>
 
             <a class="flex justify-center items-center gap-1 bg-yellow-300 rounded-full px-4 py-3 text-base font-bold text-[#371d1e] page_productNavButton" target="_blank" href="https://gift.kakao.com/product/10314180">
