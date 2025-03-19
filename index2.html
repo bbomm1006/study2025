@@ -176,28 +176,38 @@
                                 transform = 'translate(0%, -50%)'; // 기본 transform
                                 borderRadius = '0'; // 기본 border-radius
                             } else if (percentage > 0.5 && percentage <= 1.1) {
-                                opacity = 1; // opacity는 1로 고정
-                                height = `${browserWidth * 0.5}px`; // 높이를 브라우저 너비의 50%로 설정
-                                width = `${browserWidth * 0.5}px`; // 너비를 브라우저 너비의 50%로 설정
-                                transform = 'translate(0%, -50%)'; // 기본 transform
-                                borderRadius = '0'; // 기본 border-radius
-                            } else if (percentage > 1.1 && percentage <= 2.1) {
                                 let browserWidth = window.innerWidth; // 현재 브라우저의 너비 가져오기
                                 opacity = 1;
-
-                                // 감소 비율 계산 (0.2씩 감소)
-                                let scaleFactor = 1 - (percentage - 1.1) * 0.2;
-
+                            
+                                // 감소 비율 계산 (0.5~1.1 구간에서는 높이와 너비 줄어들기)
+                                let scaleFactor = 1 - ((percentage - 0.5) / 0.6) * 0.2; // 1 → 0.8로 감소
+                            
                                 // 높이와 너비를 브라우저 너비를 기준으로 설정
-                                height = `${browserWidth * 0.5 * scaleFactor}px`; // 100% -> 80% 감소
-                                width = `${browserWidth * 0.5 * scaleFactor}px`;  // 50% -> 40% 감소
+                                height = `${browserWidth * 0.5 * scaleFactor}px`; // 100% -> 감소
+                                width = `${browserWidth * 0.5 * scaleFactor}px`;  // 50% -> 감소
 
-                                // transform을 사용하여 크기 조정
+                                // right 값을 0 → 5%로 점진적 증가
+                                right = `${(percentage - 1.1) * 10}%`;
+                            } 
+                            
+                            else if (percentage > 1.1 && percentage <= 2.1) {
+                                let browserWidth = window.innerWidth; // 현재 브라우저의 너비 가져오기
+                                opacity = 1;
+                            
+                                // 감소 비율 계산 (1.1~2.1 구간에서는 scale, right, border-radius 조정)
+                                let scaleFactor = 1 - ((percentage - 1.1) / 1) * 0.3; // 1 → 0.7로 감소         
+                            
+                                // transform을 사용하여 크기 조정 (scale 값이 줄어들도록 변경)
                                 transform = `translate(0%, -50%) translate3d(0px, 0px, 0px) scale(${scaleFactor})`;
-
+                            
                                 // border-radius 증가 (최대 100%)
                                 borderRadius = `${(percentage - 1.1) * 100}%`;
+
+                                // right 값을 0 → 5%로 점진적 증가
+                                right = `5%`;
                             }
+                            
+                            
                             else {
                                 
                             }
