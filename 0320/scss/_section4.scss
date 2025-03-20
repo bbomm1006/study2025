@@ -1,0 +1,100 @@
+@charset "utf-8";
+
+
+.infoWrap{
+    >div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5rem;
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+
+    .slideWrap{
+        width: 440px;
+    }
+    .slideDesc{
+        >div{
+            width: min-content;
+            white-space: nowrap;
+        }
+    }
+    
+    .pdSlider{
+        position: relative;
+
+        .swiper-slide {background: pink; font-size: 100px; text-align: center; line-height:100vh; font-weight:900;}
+        
+
+        
+        .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+            margin :0;
+            margin-right: 20px;
+        }
+
+        .swiper-pagination-bullet {
+            position: relative;
+            width: 8px;
+            height: 8px;
+            text-align: left;
+            border-radius: 0;
+            opacity: 1;
+            margin-right: 20px;
+            background-color: transparent;
+            border-radius: 8px;
+            i {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                z-index: 1;
+                width: 100%;
+                height: 8px;
+                background-color: #d4d6db;
+                border-radius: 8px;
+            //progress bar 배경
+            }
+            b {
+                position: absolute;
+                bottom: 0;
+                left:  0;
+                z-index: 2;
+                width: 0%;
+                height: 8px;
+                background-color: hsla(0,0%,7%,.5);
+                border-radius: 8px;
+            //progress bar 채워지는 부분
+            }
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: transparent;
+            width: 50px;
+            b {  
+                animation-name: countingBar;
+                animation-duration: 3s;//autopaly 시간과 맞춰주기
+                animation-timing-function: ease-in;
+                animation-iteration-count: 1;
+                animation-direction: alternate ;
+                animation-fill-mode:forwards;
+            }
+        }    
+        
+        @keyframes countingBar {
+            0% {width: 0;}
+            100% {width:100%;}
+        }
+        
+        
+    }
+
+
+    @media (max-width: 1024px){
+        >div{
+            display: block;
+        }
+        .slideWrap{
+            width: 100%;
+        }
+    }
+}

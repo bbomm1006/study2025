@@ -19,21 +19,26 @@ html, body{
 		.grid-m{padding-left:5vw;padding-right:5vw;}
 	}
 	@media (max-width: 1024px){
-		font-size: 1.3vw;
+		// font-size: 1.3vw;
 	}
 	@media (max-width: 900px){
-		font-size: 2.3vw;
+		font-size: 1.4vw;
 	}
 	@media (max-width: 767px){
-		font-size: 3.6vw;
+		font-size: 1.7vw;
 	}
 	
+	@media (max-width: 588px){
+		font-size: 2.4vw;
+	}
 }
  
 
 $font-main-title: (150 / 16) * 1rem; //
 
 $font-horizontal-title: (250 / 16) * 1rem; //
+$font-horizontal-title-t: (200 / 16) * 1rem; //
+$font-horizontal-title-m: (150 / 16) * 1rem; //
 
 $font-sub-title: (55 / 16) * 1rem; //
 $font-sub-stitle: (34 / 16) * 1rem; //
@@ -42,6 +47,8 @@ $font-sub-stitle: (34 / 16) * 1rem; //
 $font-title: (60 / 16) * 1rem; //
 $font-title1: (48 / 16) * 1rem; //
 $font-title2: (38 / 16) * 1rem; //
+$font-title3: (30 / 16) * 1rem; //
+$font-title4: (26 / 16) * 1rem; //
 
 $font-text0: (22 / 16) * 1rem; 
 $font-text1: (20 / 16) * 1rem; 
@@ -68,6 +75,8 @@ $font-desc4: (12 / 16) * 1rem;
   --font-title: #{$font-title}; 
   --font-title1: #{$font-title1}; 
   --font-title2: #{$font-title2}; 
+  --font-title3: #{$font-title3}; 
+  --font-title4: #{$font-title4}; 
 
   --font-text0: #{$font-text0}; 
   --font-text1: #{$font-text1}; 
@@ -84,8 +93,13 @@ $font-desc4: (12 / 16) * 1rem;
 
 }
 
-@media (max-width: 767px){
+@media (max-width: 1024px){
 	:root{
-
+		--font-horizontal-title: #{$font-horizontal-title-t}; 
+	}
+}
+@media (max-width: 588px){
+	:root{
+		--font-horizontal-title: #{$font-horizontal-title-m}; 
 	}
 }
