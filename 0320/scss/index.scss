@@ -1,0 +1,133 @@
+/* 폰트 */
+@import "__font";
+@import "common";
+
+
+#section1{
+    background: #fff;
+    width: 100%;
+    height: 100vh;
+    position: relative;    
+    overflow: hidden;
+    z-index: 10;
+
+    .page_clipPathContainerWrap,
+    .page_keyVisualContainer,
+    .page_clipPathContainer,
+    .stickWrap,
+    .page_introductions,
+    .page_stickBox,
+    .page_aboutBenefits,
+    .stickWrap2{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .page_blueBox{
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        transform: translateY(-50%);
+    }
+
+    .stickWrap{
+        .stickInner{
+            
+            img{
+                &.stick_01{      
+                    // transform: rotate(-20deg);                    
+                    transform: rotate(0);
+                }
+                &.stick_03{   
+                    transform: rotate(0);
+                }
+            }
+        }
+    }
+
+    .page_stickBox{
+        img{
+            height: 70%;
+            max-width: auto;
+        }
+    
+    }
+
+    .stickWrap2{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        >div{
+            transform: translate(25%,10%);
+            margin-left: 20%;
+        }
+  
+        
+        .cover{
+            // transform: rotate(-20deg)
+            // top: 60px;
+            top: 0;
+            transform: rotate(0)
+        }
+        img{ 
+            &.stick_top{
+                opacity: 0;
+            }
+            &.stick_in{
+                height: 80%;
+            }
+        }
+    }
+    
+ 
+}
+
+#horizontal{
+    position: relative;
+    z-index: 1;
+    .page_horizontalInner{
+        display: flex;
+        width: 300vw;
+    }
+    section{
+        width: 100vw;
+    }
+
+    .horizontalStick{        
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 10;
+        >div{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .st_box{
+                display: inline-block;
+                position: relative;
+            }
+        }
+        img{
+            width: 80px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            &.st_01{
+                position: relative;
+                top: auto;
+                left: auto;
+                opacity: 1;
+            }
+        }
+    }
+}
