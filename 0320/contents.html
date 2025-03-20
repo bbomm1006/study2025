@@ -43,12 +43,12 @@
         </nav>
         <!-- //TOP NAV -->
 
-        <!-- 01 -->
-        <div id="section1" class="page_stickyContainer">
+        <!-- 01 --><!-- id="section1" -->
+        <div class="page_stickyContainer">
             <div class="page_stickyItem">
                 <div class="product-h2 page_keyVisualContainer">
                     <div class="page_masking">
-                        <div class="transition-all duration-700 ease-out ">
+                        <div class="transition-all">
                             MY UNIQUE
                             <br>
                             <span class="text-custom-sky">ROUTINE</span>
@@ -56,26 +56,23 @@
 
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <div class="product-h2 page_clipPathContainer transition-all duration-700 ease-out" 
-                    x-data="{ clipPath: 'polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)' }"
-                    x-init="setTimeout(() => clipPath = 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)', 1000)"
-                    x-bind:style="'clip-path: ' + clipPath">
+        <div class="page_stickyContainer" style="display: none;">
+            <div class="page_stickyItem">
+
+                <div class="product-h2 page_clipPathContainer transition-all duration-700 ease-out" >
                     <div>
                         MY UNIQUE<br>
                         <span>ROUTINE</span>
                     </div>
                 </div>
 
-                <div class="page_blueBox"></div>
+                <!-- <div class="page_blueBox"></div> -->
 
                 <div class="stickWrap">        
-                    <div 
-                        x-data="{ show: false }" 
-                        x-init="setTimeout(() => show = true, 2000)" 
-                        :class="show ? 'translate-y-0 opacity-100' : 'translate-y-[100px] opacity-0'"
-                        class="stickInner transition-all duration-700 ease-out"
-                    >
+                    <div class="stickInner transition-all duration-700 ease-out">
                         <img class="stick_01" src="images/stick_01.png" alt="" />
                         <img class="stick_02" src="images/stick_02.png" alt="" />
                         <img class="stick_03" src="images/stick_03.png" alt="" />
@@ -156,8 +153,6 @@
 
                 <br><br>
 
-               
-
                 <div class="grid-m page_aboutBenefits">
                     <div class="">
                         <div class="page_benefitTextTitle"><span class="text-custom-sky">상쾌환 스틱 ZERO</span>의 숙취해소 노하우!</div>
@@ -227,7 +222,7 @@
 
 
         <!-- 02 -->
-        <div id="horizontal" class="page_horizontalItemWrap">
+        <div id="horizontal" class="page_horizontalItemWrap" style="display:none">
             <section>
                 <div class="flex items-center flex-wrap bg-custom-blue relative w-full h-screen page_horizontalItem">
                     <div class="w-full">
@@ -295,7 +290,7 @@
 
 
         <!-- 03 -->
-        <div class="grid-m page_ingredientsCtn">
+        <div class="grid-m page_ingredientsCtn" style="display:none">
             
             <div class="">
                 <div class="page_ingredientDescriptions">
@@ -376,11 +371,8 @@
         </div>
         <!-- //03 -->
 
-
-        
-
         <!-- INFO -->
-        <div class="grid-m infoWrap">
+        <div class="grid-m infoWrap" style="display:none">
             <div class="">
                 <div class="slideWrap relative ">                    
                     <div class="block overflow-hidden rounded-4xl border border-solid border-gray-300 relative">
@@ -499,8 +491,9 @@
         <!-- //INFO -->
 
         <br><br><br><br><br><br><br><br>
+
         <!-- PD -->         
-        <div class="p-40 bg-gray-100 rounded-t-[100px] figureWrap">
+        <div class="p-40 bg-gray-100 rounded-t-[100px] figureWrap"  style="display:none">
             <p class="text-5xl font-bold text-gray-800">
                 <span class="text-custom-sky">상쾌환 </span>제품 보러가기
             </p>
@@ -688,7 +681,7 @@
 
 
         <!-- FOOTER -->
-        <div id="footer" class="grid-xl">
+        <div id="footer" class="grid-xl"  style="display:none">
             <ul class="link-items">
                 <li class="link-item">
                 <a href="#">개인정보처리방침</a>

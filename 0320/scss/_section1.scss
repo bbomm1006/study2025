@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+.product-h2{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    >div{
+        width: 100%;
+        color:var(--custom-gray);
+        font-size: var(--font-main-title);
+        font-weight: 700;
+        line-height: 1em;
+        overflow: hidden;
+        br{
+            display: none;
+        }
+    }  
+    
+    &.page_clipPathContainer{
+        background: var(--custom-sky);
+        >div{
+            color:#fff
+        }
+    }
+}
