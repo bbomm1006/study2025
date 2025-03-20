@@ -56,7 +56,7 @@ a,button{cursor: pointer;}
 
 .product-h2{
     position: relative;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -91,12 +91,12 @@ a,button{cursor: pointer;}
         display: inline-block;
         position: absolute;
         left: 50%;
-        bottom: -60px;
+        bottom: -140px;
         transform: translateX(-50%);       
         
         img{
             display: inline-block;
-            width: 90px;
+            width: 100px;
             position: relative;
             margin: 0 5px;
             &.stick_01{                
@@ -104,16 +104,14 @@ a,button{cursor: pointer;}
                 bottom: -40px;
                 left:calc(50% - 80px);
                 transform-origin: bottom;
-                // opacity: 0;
-                // transform: rotate(-20deg)
+                transform: rotate(-20deg)
             }
             &.stick_03{                
                 position: absolute;
                 bottom: -40px;
                 left:calc(50% - 30px);
                 transform-origin: bottom;
-                // opacity: 0;
-                // transform: rotate(20deg)
+                transform: rotate(20deg)
             }
         }
     }
@@ -239,8 +237,8 @@ a,button{cursor: pointer;}
     height: 100vh;
     background: var(--custom-sky);
 
-    // transform: scale(0.8, 0.8);
-    // border-radius: 100%;
+    transform: scale(0.8, 0.8);
+    border-radius: 100%;
 }
 
 .page_aboutBenefits{
@@ -305,7 +303,6 @@ a,button{cursor: pointer;}
     }
 }
 
-
 .page_ingredientsCtn{
     width: 50vw;
     height: 100vh;
@@ -314,18 +311,6 @@ a,button{cursor: pointer;}
     align-items: center;
     &.grid-m{
         padding-right: 0;
-    }
-    &Wrap{
-        width: 100%;
-        height: 100vh;
-        position: relative;
-        .inStickBox{
-            width: 50vw;
-            position: absolute;
-            top: 50%;
-            right: 3%;
-            transform: translateY(-50%);
-        }
     }
 
     .page_ingredientTextTitle{
@@ -354,159 +339,14 @@ a,button{cursor: pointer;}
 }
 
 
-/****************************/
-
-#section1{
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;    
-
-    >div>div{
-        opacity: 0;
-    }
-   
-    .page_keyVisualContainer{
-        opacity: 1;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-    .page_clipPathContainer{
-        opacity: 1;
-        position: absolute;
-        top: 0;
-        left: 0;
-        // clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
-    }
-    .stickWrap{
-        opacity: 1;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-    .page_introductions{
-        opacity: 1;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-    .page_stickBox{
-        opacity: 1;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-    }
-    .page_blueBox{
-        opacity: 1;
-        position: absolute;       
-        top: 50%;
-        transform: translateY(-50%); 
-        right: 0;
-        // transform: scale(0.8, 0.8);
-        // border-radius: 100%;
-    }
-    .page_aboutBenefits{
-        opacity: 1;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-}
-#horizontal{
-    display: flex;
-    flex-wrap: nowrap;
-    width: 300%;  
-    section{
-        width: 100%;
-    }
-}
-
-#section2{
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    // overflow: hidden;   
-    z-index: 10;
-}
-.page_horizontalItemInner{
-    position: relative;
-    height: 100vh;
-    // overflow: hidden;    
-    display: flex;
-    width: 300vw;  
-    section{
-        width: 100%;
-    }
-}
-
-.horizontalStick{
-    width: 85px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(33deg);
-    
-    z-index: 10;
-    img{
-        width: 100%;
-    }
-}
-
-.horizontalStick2{
-    width: 85px;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, 0) ;
-    z-index: 10;
-    img{
-        width: 100%;
-    }
-}
-
-
-
 .infoWrap{
-
-    padding-top: 6rem;
-
-    .page_tasteButtons{
-        display: flex;
-        justify-content: center;
-        button{
-            display: flex;
-            align-items: center;
-            color: rgba(0, 0, 0, .5);
-            font-size: var(--font-desc3);
-            font-weight: 600;
-            line-height: 22px;
-            border: 1px solid rgba(43, 43, 43, .122);
-            border-radius: 22px;
-            padding: 6px 12px 8px 9px;
-            gap: .2rem;
-            transition: all .3s cubic-bezier(.66,.1,.37,.94);
-            &.page_activeApple{
-                color: #fff;
-                border: 1px solid #02d181;
-                background: #02d181;
-                transition: all .3s cubic-bezier(.66,.1,.37,.94);
-            }
-        }
-        button+button{
-            margin-left: 10px;
-        }
-    }
-
-
-    .page_tastSlider{
+    >div{
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 5rem;
-        padding-bottom: 200px;
-        margin-top: 40px;
+        padding-top: 6rem;
+        padding-bottom: 20rem;
     }
 
     .slideWrap{
@@ -522,13 +362,13 @@ a,button{cursor: pointer;}
     .pdSlider{
         position: relative;
 
-        .swiper-slide {font-size: 0;}
+        .swiper-slide {background: pink; font-size: 100px; text-align: center; line-height:100vh; font-weight:900;}
         
 
         
         .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
             margin :0;
-            // margin-right: 20px;
+            margin-right: 20px;
         }
 
         .swiper-pagination-bullet {
@@ -538,7 +378,7 @@ a,button{cursor: pointer;}
             text-align: left;
             border-radius: 0;
             opacity: 1;
-            // margin-right: 20px;
+            margin-right: 20px;
             background-color: transparent;
             border-radius: 8px;
             i {
@@ -587,8 +427,6 @@ a,button{cursor: pointer;}
     }
 
 }
-
-
 
 
 .figureWrap{

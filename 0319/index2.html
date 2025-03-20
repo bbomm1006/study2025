@@ -504,7 +504,7 @@
         </script>
 
         <!-- 02 -->
-        <div id="section2" class="page_horizontalItemWrap">
+        <div id="horizontal" class="page_horizontalItemWrap">
             <div 
                 class="page_horizontalItemInner"
                 :style="'transform: translate(' + transformValue + '%, 0%); transition: transform 0.3s ease;'"
@@ -696,74 +696,91 @@
 
         <script>
             
-            gsap.registerPlugin(ScrollTrigger);
+            // gsap.registerPlugin(ScrollTrigger);
 
-            ScrollTrigger.matchMedia({
-                // desktop
-                "(min-width: 788px)": function() {
+            // ScrollTrigger.matchMedia({
+            //     // desktop
+            //     "(min-width: 788px)": function() {
 
-                    let bubble = gsap.timeline({
-                        scrollTrigger: {
-                            trigger: "#section2", 
-                            pin: true, 
-                            start: "top top", // 스크롤 시작 지점
-                            end: "+=190%", // 스크롤 끝 위치
-                            scrub: 0.5, // 스크롤에 따라 비례적으로 애니메이션
-                            // markers: true, // 디버깅을 위한 마커 (필요 시 제거 가능)
-                            onLeave: function() {
-                                // 스크롤이 끝나면 
-                                // gsap.to(".horizontalStick img", { y: '150%', opacity: 0 });
-                                gsap.to(".horizontalStick img", { y: '150%' });
-                            },
-                            onEnterBack: function() {
-                                // 스크롤이 다시 돌아오면 
-                                gsap.set(".horizontalStick img", { y: '0' });
-                            },
-                        }
-                    });
+            //         let bubble = gsap.timeline({
+            //             scrollTrigger: {
+            //                 trigger: "#section2", 
+            //                 pin: true, 
+            //                 start: "top top", // 스크롤 시작 지점
+            //                 end: "+=190%", // 스크롤 끝 위치
+            //                 scrub: 0.5, // 스크롤에 따라 비례적으로 애니메이션
+            //                 // markers: true, // 디버깅을 위한 마커 (필요 시 제거 가능)
+            //                 onLeave: function() {
+            //                     // 스크롤이 끝나면 
+            //                     // gsap.to(".horizontalStick img", { y: '150%', opacity: 0 });
+            //                     gsap.to(".horizontalStick img", { y: '150%' });
+            //                 },
+            //                 onEnterBack: function() {
+            //                     // 스크롤이 다시 돌아오면 
+            //                     gsap.set(".horizontalStick img", { y: '0' });
+            //                 },
+            //             }
+            //         });
 
-                    // 회전 애니메이션 (360도)
-                    bubble.to(".horizontalStick", {
-                        rotation: 360, // 360도 회전
-                        origin : "bottom",
-                        ease: "none", // 속도 조절 없이 일정하게 회전
-                    });
+            //         // 회전 애니메이션 (360도)
+            //         bubble.to(".horizontalStick", {
+            //             rotation: 360, // 360도 회전
+            //             origin : "bottom",
+            //             ease: "none", // 속도 조절 없이 일정하게 회전
+            //         });
                   
 
-                },
+            //     },
 
-                // mobile
-                "(max-width: 787px)": function() {
-                    // 모바일에서의 설정을 여기에 추가할 수 있습니다.
-                },
+            //     // mobile
+            //     "(max-width: 787px)": function() {
+            //         // 모바일에서의 설정을 여기에 추가할 수 있습니다.
+            //     },
 
-                // all
-                "all": function() {
-                    // 공통 설정을 여기에 추가할 수 있습니다.
-                }
-            });
+            //     // all
+            //     "all": function() {
+            //         // 공통 설정을 여기에 추가할 수 있습니다.
+            //     }
+            // });
 
 
             
         </script>
         
         <script>
-            // const horizontal = document.querySelector("#horizontal");
-            // const sections = gsap.utils.toArray("#horizontal > section");
+            const horizontal = document.querySelector("#horizontal");
+            const sections = gsap.utils.toArray("#horizontal section");
     
-            // let scrollTween = gsap.to(sections, {
-            //     xPercent: -100 * (sections.length -1),
-            //     ease: "none",
-            //     scrollTrigger: {
-            //         trigger: horizontal,
-            //         start: "top top",
-            //         end: () => "+=" + (horizontal.offsetWidth - innerWidth),
-            //         pin: true,
-            //         ainicipatePin: 1,
-            //         scrub: 1,
-            //         invalidateOnRefresh: true
-            //     }
-            // });    
+            let scrollTween = gsap.to(sections, {
+    xPercent: -100 * (sections.length - 1),
+    ease: "power2.out",
+    scrollTrigger: {
+        trigger: horizontal,
+        start: "top top",
+        end: () => "+=" + (horizontal.offsetWidth - innerWidth),
+        pin: true,
+        anticipatePin: 1,
+        scrub: 1,
+        invalidateOnRefresh: true,
+        snap: {
+            snapTo: [-0, -100, -200], // 첫 번째, 두 번째, 세 번째 섹션 정확히 스냅
+            duration: 0.5,
+            ease: "power2.out"
+        }
+    }
+});
+
+
+
+
+
+
+            // 회전 애니메이션 (360도)
+            // let scrollTween2 = gsap.to(".horizontalStick", {
+            //     rotation: 360, // 360도 회전
+            //     origin : "bottom",
+            //     ease: "none", // 속도 조절 없이 일정하게 회전
+            // });
           
         </script>
 
@@ -1022,7 +1039,7 @@
                                             </div>
 
                                             <!-- 이미지 -->
-                                            <div class="relative">
+                                            <div class="figure-img-wrap">
                                                 <img 
                                                     alt="more products" 
                                                     loading="lazy" 
@@ -1062,7 +1079,7 @@
                                             </div>
 
                                             <!-- 이미지 -->
-                                            <div class="relative">
+                                            <div class="figure-img-wrap">
                                                 <img 
                                                     alt="more products" 
                                                     loading="lazy" 
@@ -1078,7 +1095,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="text-xl font-bold text-gray-800 figure-caption mt-5">상쾌환</div>
+                                        <div class="text-xl font-bold text-gray-800 figure-caption mt-5">상쾌환 스틱</div>
                                     </a>                                    
                                     
                                 </div>                                  
@@ -1091,7 +1108,7 @@
                                         @mouseenter="hover = true; bounce = false; setTimeout(() => bounce = true, 150)" 
                                         @mouseleave="hover = false; bounce = false">
                                         
-                                        <div class="relative overflow-hidden rounded-4xl border border-solid border-gray-300 figure-img-card transition-colors duration-500"
+                                        <div class="relative overflow-hidden rounded-4xl figure-img-card transition-colors duration-500"
                                             :class="hover ? 'bg-custom-sky' : 'bg-white'">
                                             
                                             <!-- 배경 애니메이션 -->
@@ -1102,7 +1119,7 @@
                                             </div>
 
                                             <!-- 이미지 -->
-                                            <div class="relative">
+                                            <div class="figure-img-wrap">
                                                 <img 
                                                     alt="more products" 
                                                     loading="lazy" 
@@ -1118,7 +1135,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="text-xl font-bold text-gray-800 figure-caption mt-5">상쾌환</div>
+                                        <div class="text-xl font-bold text-gray-800 figure-caption mt-5">상쾌환 BOOSTER</div>
                                     </a>
 
 

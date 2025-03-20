@@ -1,0 +1,91 @@
+@charset "utf-8";
+
+/* font */
+@import url('https://cdn.jsdelivr.net/npm/pretendard/dist/web/static/pretendard.css');
+
+html, body{ 
+	font-family: 'Pretendard', sans-serif; letter-spacing: -0.5px;
+
+	font-size: 0.9vw;
+
+	.grid-m{padding-left:8.33vw;padding-right:8.33vw;}
+	.grid-xl{padding-left:4.33vw;padding-right:4.33vw;}
+	
+	@media (max-width: 1800px){
+		font-size: 1vw;
+	}
+	@media (max-width: 1366px){
+		.grid-xl,
+		.grid-m{padding-left:5vw;padding-right:5vw;}
+	}
+	@media (max-width: 1024px){
+		font-size: 1.3vw;
+	}
+	@media (max-width: 900px){
+		font-size: 2.3vw;
+	}
+	@media (max-width: 767px){
+		font-size: 3.6vw;
+	}
+	
+}
+ 
+
+$font-main-title: (155 / 16) * 1rem; //
+
+$font-horizontal-title: (250 / 16) * 1rem; //
+
+$font-sub-title: (55 / 16) * 1rem; //
+$font-sub-stitle: (34 / 16) * 1rem; //
+
+
+$font-title: (60 / 16) * 1rem; //
+$font-title1: (48 / 16) * 1rem; //
+$font-title2: (38 / 16) * 1rem; //
+
+$font-text0: (22 / 16) * 1rem; 
+$font-text1: (20 / 16) * 1rem; 
+$font-text2: (18 / 16) * 1rem; //
+$font-text3: (16 / 16) * 1rem; //
+$font-text4: (15 / 16) * 1rem;
+$font-text5: (14 / 16) * 1rem;
+
+$font-desc1: (15 / 16) * 1rem;
+$font-desc2: (14 / 16) * 1rem; //
+$font-desc3: (13 / 16) * 1rem;
+$font-desc4: (12 / 16) * 1rem;
+
+
+:root {
+
+  --font-main-title: #{$font-main-title}; 
+
+  --font-horizontal-title: #{$font-horizontal-title}; 
+
+  --font-sub-title: #{$font-sub-title}; 
+  --font-sub-stitle: #{$font-sub-stitle}; 
+
+  --font-title: #{$font-title}; 
+  --font-title1: #{$font-title1}; 
+  --font-title2: #{$font-title2}; 
+
+  --font-text0: #{$font-text0}; 
+  --font-text1: #{$font-text1}; 
+  --font-text2: #{$font-text2}; 
+  --font-text3: #{$font-text3}; 
+  --font-text4: #{$font-text4}; 
+  --font-text5: #{$font-text5}; 
+
+  --font-desc1: #{$font-desc1}; 
+  --font-desc2: #{$font-desc2}; 
+  --font-desc3: #{$font-desc3}; 
+  --font-desc4: #{$font-desc4}; 
+
+
+}
+
+@media (max-width: 767px){
+	:root{
+
+	}
+}
