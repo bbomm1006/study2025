@@ -26,7 +26,7 @@ html,body{
     }
 }
 
-body{
+html,body{
     overflow-x: hidden;
 }
 
@@ -38,6 +38,7 @@ body{
 }
 
 /* TailwindCSS 유틸리티 클래스를 사용해 사용자 정의 색상 적용 */
+.bg-sky-400,
 .bg-custom-sky {background-color: var(--custom-sky);}
 .text-custom-sky {color: var(--custom-sky);}
 .border-custom-sky {border-color: var(--custom-sky);}
@@ -47,6 +48,11 @@ body{
 .bg-custom-gray {background-color: var(--custom-gray);}
 .text-custom-gray {color: var(--custom-gray);}
 .border-custom-gray {border-color: var(--custom-gray);}
+
+.bg-green-500 {background-color: #00c951}
+.bg-pink-600{background-color: #e60076}
+
+
 
 /* nav */
 a,button{cursor: pointer;}

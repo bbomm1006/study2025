@@ -177,6 +177,7 @@
         display: flex;
         flex-wrap: wrap;
         gap: .6rem;
+        margin-top: 20px;
         .tag2{
             font-size: var(--font-desc3);
             display: inline-flex;
@@ -208,6 +209,7 @@
         }
 		.page_productNameContainer .page_buttonGroups{
             width: 100%;
+            padding: 0;
             button{
                 padding-left: 0;
                 padding-right: 0;
@@ -219,16 +221,24 @@
             margin-left: 0;
             margin-top: 10px;
             button{
-                font-size: var(--font-title4)
+                font-size: var(--font-text0);
+                svg{
+                    position: relative;
+                    top: -1px;
+                }
             }
         }
         .page_productDescriptions{
             font-size: var(--font-title3);
 
         }
-        .page_hashtags .tag2{
-            border-color: #ddd;
-            font-size: var(--font-text3)
+        .page_hashtags {
+            
+            .tag2{
+                border-color: #ddd;
+                color: #999;
+                font-size: var(--font-text1)
+            }
         }
 	}
 }
@@ -240,11 +250,11 @@
     position: relative;
     z-index: 1;
     width: 100%;
-    height: auto;
+    height: 100%;
     pointer-events: none;
     img{
-        width: 35%;
-        // height: 70%;
+        // width: 35%;
+        height: 70%;
         // max-width: auto;
     }
 }
@@ -293,7 +303,10 @@
         >div{
             width: 100%;
         }
-
+        .page_benefitsWrap{
+            width: 100%;
+            overflow-x: scroll;
+        }
         .page_benefits{
             flex-wrap: nowrap;
             width: 250%;

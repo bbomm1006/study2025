@@ -60,6 +60,7 @@
             border-radius: 54px;
             display: flex;
             justify-content: center;
+            align-items: center;
             svg{
                 width: 50%;
             }
@@ -131,11 +132,27 @@
             display: block;
         }
         .footer-logo{
-            width: 25%;
+            width: 40%;
         }
         .footer-address{
             width: 100%;
             margin-top: 20px;
+        }
+        .link-items {
+            font-size: var(--font-title4);
+        }
+        .footer-socials-wrapper{
+            margin-top: 40px;
+        }
+        .footer-dropdown{
+            height: 4.5rem;
+            .dropdown-header{
+                font-size: var(--font-title4);
+            }
+        }
+        .footer-socials .footer-social{
+            width: 4.5rem;
+            height: 4.5rem;
         }
     }
 

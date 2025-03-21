@@ -16,7 +16,28 @@
     <link rel="stylesheet" media="all" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-    <link rel="stylesheet" media="all" href="css/common.min.css">
+    <link rel="stylesheet" media="all" href="css/index.min.css">
+
+    <script>
+      window.onload = function() {
+  // 페이지 로딩 직후 스크롤을 맨 위로 올립니다.
+  setTimeout(function() {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0; // Chrome, Firefox
+    document.body.scrollTop = 0; // Safari
+  }, 0); // 이 코드를 setTimeout을 통해 호출하여 로딩 후 스크롤을 올립니다.
+  
+  // 2초 동안 스크롤 비활성화
+  document.body.style.overflow = 'hidden';
+  
+  // 2초 후 스크롤 활성화
+  setTimeout(function() {
+    document.body.style.overflowY = 'auto';
+  }, 2000);
+};
+
+
+    </script>
             
 </head>
     <body>
@@ -43,12 +64,12 @@
         </nav>
         <!-- //TOP NAV -->
 
-        <!-- 01 --><!-- id="section1" -->
-        <div class="page_stickyContainer">
+        <!-- 01 -->
+        <div id="section1" class="page_stickyContainer">
             <div class="page_stickyItem">
                 <div class="product-h2 page_keyVisualContainer">
                     <div class="page_masking">
-                        <div class="transition-all">
+                        <div class="transition-all duration-700 ease-out ">
                             MY UNIQUE
                             <br>
                             <span class="text-custom-sky">ROUTINE</span>
@@ -56,22 +77,19 @@
 
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="page_stickyContainer">
-            <div class="page_stickyItem">
-                <div class="product-h2 page_clipPathContainer transition-all duration-700 ease-out" >
-                    <div>
-                        MY UNIQUE<br>
-                        <span>ROUTINE</span>
+                <div class="page_blueBox"></div>
+
+                <div class="page_clipPathContainerWrap">
+                    <div class="product-h2 page_clipPathContainer transition-all duration-700 ease-out">
+                   
+                        <div class="text">
+                            MY UNIQUE<br>
+                            <span>ROUTINE</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="page_stickyContainer">
-            <div class="page_stickyItem">
                 <div class="stickWrap">        
                     <div class="stickInner transition-all duration-700 ease-out">
                         <img class="stick_01" src="images/stick_01.png" alt="" />
@@ -81,12 +99,7 @@
                     </div>
 
                 </div>
-            </div>
-        </div>
 
-        <div class="page_stickyContainer">
-            <div class="page_stickyItem">
-                
                 <div class="grid-m page_introductions">
                     <div class="">
                         <div class="page_productNameContainer">
@@ -133,23 +146,14 @@
                         </div>
                     </div>
                 </div>
-                
-            </div>
-        </div>
 
-        <div class="page_stickyContainer">
-            <div class="page_stickyItem">
                 <div class="page_stickBox">
-                    <img class="w-full" alt="box grape" loading="lazy" decoding="async" data-nimg="1"
+                    <img alt="box grape" loading="lazy" decoding="async" data-nimg="1"
                     srcset="https://www.easytomorrow.com/_next/image?url=%2Fcommon%2Fimages%2Fproducts%2Fbox%2Fbox_apple.png&w=640&q=100 1x, 
                             https://www.easytomorrow.com/_next/image?url=%2Fcommon%2Fimages%2Fproducts%2Fbox%2Fbox_apple.png&w=1080&q=100 2x" 
                     src="https://www.easytomorrow.com/_next/image?url=%2Fcommon%2Fimages%2Fproducts%2Fbox%2Fbox_apple.png&w=640&q=100">
                 </div>
-            </div>
-        </div>
 
-        <div class="page_stickyContainer">
-            <div class="page_stickyItem">
                 <div class="grid-m page_aboutBenefits">
                     <div class="">
                         <div class="page_benefitTextTitle"><span class="text-custom-sky">상쾌환 스틱 ZERO</span>의 숙취해소 노하우!</div>
@@ -212,11 +216,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="page_stickyContainer" style="display: none;">
-            <div class="page_stickyItem">
 
                 <div class="stickWrap2">        
                     <div>
@@ -235,77 +234,593 @@
         </div>
         <!-- //01 -->
 
+        <script>
+
+            gsap.fromTo(".page_keyVisualContainer .page_masking > div", {y: 330},{y: 0, duration: 1});
+
+            gsap.fromTo(".page_clipPathContainer", 
+                { clipPath: "inset(100% 0% 0% 0%)" }, 
+                { clipPath: "inset(0% 0% 0% 0%)", duration: 1, ease: "power2.out", delay: 1 }
+            );
+
+            gsap.fromTo(".page_keyVisualContainer", 
+                { opacity: 1 }, 
+                { opacity: 0, duration: 0.5, delay: 1.5 }
+            );
+
+            gsap.fromTo(".stickWrap", 
+                { y: "100%", opacity: 0 }, 
+                { y: 0, opacity: 1, duration: 0.5, delay: 1.3 }
+            );
+
+            gsap.fromTo(".stickWrap .stick_01", 
+                { transform: "rotate(0)", opacity: 0 }, 
+                { transform: "rotate(-20deg)", opacity: 1, duration: 0.5, ease: "power2.out", delay: 2 }
+            );
+
+            gsap.fromTo(".stickWrap .stick_03", 
+                { transform: "rotate(0)", opacity: 0 }, 
+                { transform: "rotate(20deg)", opacity: 1, duration: 0.5, ease: "power2.out", delay: 2 }
+            );
+
+            gsap.fromTo(".page_blueBox", 
+                { opacity: 0 }, 
+                { opacity: 1, duration: 0.5, delay: 3 }
+            );
+
+
+            gsap.registerPlugin(ScrollTrigger);
+
+            ScrollTrigger.matchMedia({                    
+                // desktop
+                "(min-width: 788px)": function() {
+
+                    let browserWidth = window.innerWidth;
+
+                    //상단
+                    let topani = gsap.timeline({
+                        scrollTrigger: {
+                                trigger: "#section1", // 트리거 요소
+                                start: "top top", // 스크롤 시작 위치
+                                end: "bottom top", // 스크롤 종료 위치
+                                scrub: 3, // 스크롤에 따라 애니메이션 진행
+                                pin: true, // #section1을 고정
+                                // markers: true // 디버그용 마커                                
+                            }                                
+                            
+                        }) 
+
+                        topani.addLabel('a')                            
+                        topani.to(".page_clipPathContainerWrap", {clipPath: "inset(0% 0% 0% 50%)", duration:2, ease: "linear",},'a');
+                        topani.fromTo(".page_clipPathContainer .text", { opacity: 1 }, {opacity:0, duration:1, delay:1, ease: "linear",},'a');
+                        topani.fromTo(".stickWrap", { opacity: 1 }, {opacity:0, duration:1, delay:1, ease: "linear",},'a');   
+                        topani.fromTo(".page_blueBox", { opacity: 0 }, {opacity:1, duration:2, delay:1, ease: "linear",},'a');        
+
+                        topani.fromTo(".page_clipPathContainerWrap", 
+                            { opacity: 1 }, 
+                            { opacity: 0, duration: 0.5}
+                        );
+
+                        topani.addLabel('b')                         
+                        topani.fromTo(".page_introductions", { opacity: 0 }, {opacity:1, duration:1, ease: "linear", delay:-1.5,},'b');
+                        topani.fromTo(".page_stickBox", { opacity: 0 }, {opacity:1, duration:1, ease: "linear", delay:-1.5,},'b');
+                        topani.fromTo(".page_blueBox", 
+                            { width: "50%", height: "100%", borderRadius: 0, right: 0 }, 
+                            { 
+                                width: () => `${window.innerWidth / 2}px`, // 동적으로 너비의 절반을 계산하여 반영
+                                height: () => `${window.innerWidth / 2}px`, // 동적으로 높이도 설정
+                                duration: 2, 
+                                ease: "linear" 
+                            },
+                            'b'
+                        );
+
+                        topani.to(".page_blueBox", 
+                            { transform: "translateY(-50%) scale(0.9)", right: "1vw", duration: 0.5}
+                        );
+
+
+                        topani.addLabel('c')                         
+                        topani.to(".page_introductions", {opacity:0, duration:1, ease: "linear"},'c');
+                        topani.to(".page_stickBox", {opacity:0, duration:1, ease: "linear"},'c');
+                        topani.to(".page_blueBox", 
+                            { 
+                                transform: "translateY(-50%) scale(0.5)",
+                                borderRadius: "100%",
+                                right: "1vw",
+                                duration: 2, 
+                                ease: "linear" 
+                            },
+                            'c'
+                        );
+                        topani.fromTo(".page_aboutBenefits", { opacity: 0 }, {opacity:1, duration:1, ease: "linear", delay:1,},'c');
+                        topani.fromTo(".stickWrap2", { opacity: 0 }, {opacity:1, duration:1, ease: "linear", delay:1,},'c');
+
+                        topani.fromTo(".stickWrap2 .cover", 
+                            { transform: "rotate(0)" }, 
+                            { transform: "rotate(-20deg)", duration: 1}
+                        );
+
+                        topani.fromTo(".stickWrap2 .stick_01", 
+                            { opacity: 1 }, 
+                            { opacity: 0, duration: 1}
+                        );
+
+                        topani.addLabel('d')                         
+                        topani.to(".stickWrap2 .stick_in", {height: "100%", duration:1, ease: "linear"},'d');
+                        topani.to(".stickWrap2 .stick_top", {opacity:1, duration:1, ease: "linear"},'d');  
+
+                        topani.fromTo("#section1", 
+                            { opacity: 1, }, 
+                            { opacity: 0, duration: 1, delay:2}
+                        );
+
+                      
+                    
+                }, 
+            
+                // mobile
+                "(max-width: 787px)": function() {
+                }, 
+            
+                // all 
+                "all": function() {
+                }                
+            });  
+        </script>
 
         <!-- 02 -->
-        <div id="horizontal" class="page_horizontalItemWrap" >
-            <section>
-                <div class="flex items-center flex-wrap bg-custom-blue relative w-full h-screen page_horizontalItem">
-                    <div class="w-full">
-                        <div class="px-20">
-                            <div class="text-white font-bold leading-none page_horizontalItemTitle">Simply</div>
-                            <div class="text-white font-bold text-right leading-none page_horizontalItemTitle">Zero</div>
-                        </div>
-                        
-                        <div class="page_horizontalItemDesc grid-m">
-                            <div class="text-white items-title font-bold">
-                                제로칼로리로<br/>더 가볍게, 새롭게
+        <div id="horizontal" class="page_horizontalItemWrap">
+            <div class="page_horizontalInner">
+                <section id="horizontal_01">
+                    <div class="flex items-center flex-wrap bg-custom-blue relative w-full h-screen page_horizontalItem">
+                        <div class="w-full">
+                            <div class="px-20">
+                                <div class="text-white font-bold leading-none page_horizontalItemTitle page_horizontalItemTitle1">Simply</div>
+                                <div class="text-white font-bold text-right leading-none page_horizontalItemTitle page_horizontalItemTitle2">Zero</div>
                             </div>
-        
-                            <div class="text-white items-tag font-medium mt-3">
-                                #설탕ZERO #칼로리50%DOWN
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
-            <section>
-                <div class="flex items-center flex-wrap bg-green-500 relative w-full h-screen page_horizontalItem">
-                    <div class="w-full">
-                        <div class="px-20">
-                            <div class="text-white font-bold leading-none page_horizontalItemTitle">Simply</div>
-                            <div class="text-white font-bold text-right leading-none page_horizontalItemTitle">Zero</div>
-                        </div>
-                        
-                        <div class="page_horizontalItemDesc grid-m">
-                            <div class="text-white items-title font-bold">
-                                제로칼로리로<br/>더 가볍게, 새롭게
-                            </div>
-        
-                            <div class="text-white items-tag font-medium mt-3">
-                                #설탕ZERO #칼로리50%DOWN
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                            <div id="lottie-star1" class="absolute top-[15%] left-[33%]"></div>
+                            <div id="lottie-star2" class="absolute top-[50%] left-[30%]"></div>
+                            <div id="lottie-star3" class="absolute bottom-[10%] right-[25%] w-100"></div>
 
-            <section>
-                <div class="flex items-center flex-wrap bg-pink-600 relative w-full h-screen page_horizontalItem">
-                    <div class="w-full">
-                        <div class="px-20">
-                            <div class="text-white font-bold leading-none page_horizontalItemTitle">Simply</div>
-                            <div class="text-white font-bold text-right leading-none page_horizontalItemTitle">Zero</div>
-                        </div>
-                        
-                        <div class="page_horizontalItemDesc grid-m">
-                            <div class="text-white items-title font-bold">
-                                제로칼로리로<br/>더 가볍게, 새롭게
-                            </div>
-        
-                            <div class="text-white items-tag font-medium mt-3">
-                                #설탕ZERO #칼로리50%DOWN
+                            <script>
+                                var animation = lottie.loadAnimation({
+                                    container: document.getElementById('lottie-star1'), // 애니메이션을 표시할 요소
+                                    renderer: 'svg', // 렌더링 방식 (svg, canvas, html 등)
+                                    loop: true, // 애니메이션 반복 여부
+                                    autoplay: true, // 자동 실행 여부
+                                    path: 'images/star2.json' // 애니메이션 JSON 파일 URL
+                                });
+                            </script>
+                            <script>
+                                var animation = lottie.loadAnimation({
+                                    container: document.getElementById('lottie-star2'), // 애니메이션을 표시할 요소
+                                    renderer: 'svg', // 렌더링 방식 (svg, canvas, html 등)
+                                    loop: true, // 애니메이션 반복 여부
+                                    autoplay: true, // 자동 실행 여부
+                                    path: 'images/star2.json' // 애니메이션 JSON 파일 URL
+                                });
+                            </script>
+                            <script>
+                                var animation = lottie.loadAnimation({
+                                    container: document.getElementById('lottie-star3'), // 애니메이션을 표시할 요소
+                                    renderer: 'svg', // 렌더링 방식 (svg, canvas, html 등)
+                                    loop: true, // 애니메이션 반복 여부
+                                    autoplay: true, // 자동 실행 여부
+                                    path: 'images/star3.json' // 애니메이션 JSON 파일 URL
+                                });
+                            </script>
+
+                            
+                            <div class="pl-40 mt-[-5%]">
+                                <div class="text-white items-title font-bold">
+                                    제로칼로리로<br/>더 가볍게, 새롭게
+                                </div>
+            
+                                <div class="text-white items-tag font-medium mt-3">
+                                    #설탕ZERO #칼로리50%DOWN
+                                </div>
                             </div>
                         </div>
                     </div>
+                </section>
+    
+                <section id="horizontal_02">
+                    <div class="flex items-center flex-wrap bg-green-500 relative w-full h-screen page_horizontalItem">
+                        <div class="w-full">
+                            <div class="px-20">
+                                <div class="text-white font-bold leading-none page_horizontalItemTitle">Simply</div>
+                                <div class="text-white font-bold text-right leading-none page_horizontalItemTitle">Zero</div>
+                            </div>
+
+                            <div id="lottie-star2-1" class="absolute top-[15%] left-[33%]"></div>
+                            <div id="lottie-star2-2" class="absolute top-[50%] left-[30%]"></div>
+                            <div id="lottie-star2-3" class="absolute bottom-[10%] right-[25%] w-100"></div>
+
+                            <script>
+                                var animation = lottie.loadAnimation({
+                                    container: document.getElementById('lottie-star2-1'), // 애니메이션을 표시할 요소
+                                    renderer: 'svg', // 렌더링 방식 (svg, canvas, html 등)
+                                    loop: true, // 애니메이션 반복 여부
+                                    autoplay: true, // 자동 실행 여부
+                                    path: 'images/star2.json' // 애니메이션 JSON 파일 URL
+                                });
+                            </script>
+                            <script>
+                                var animation = lottie.loadAnimation({
+                                    container: document.getElementById('lottie-star2-2'), // 애니메이션을 표시할 요소
+                                    renderer: 'svg', // 렌더링 방식 (svg, canvas, html 등)
+                                    loop: true, // 애니메이션 반복 여부
+                                    autoplay: true, // 자동 실행 여부
+                                    path: 'images/star2.json' // 애니메이션 JSON 파일 URL
+                                });
+                            </script>
+                            <script>
+                                var animation = lottie.loadAnimation({
+                                    container: document.getElementById('lottie-star2-3'), // 애니메이션을 표시할 요소
+                                    renderer: 'svg', // 렌더링 방식 (svg, canvas, html 등)
+                                    loop: true, // 애니메이션 반복 여부
+                                    autoplay: true, // 자동 실행 여부
+                                    path: 'images/star3.json' // 애니메이션 JSON 파일 URL
+                                });
+                            </script>
+                            
+                            <div class="pl-40 mt-[-5%]">
+                                <div class="text-white items-title font-bold">
+                                    제로칼로리로<br/>더 가볍게, 새롭게
+                                </div>
+            
+                                <div class="text-white items-tag font-medium mt-3">
+                                    #설탕ZERO #칼로리50%DOWN
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+    
+                <section id="horizontal_03">
+                    <div class="flex items-center flex-wrap bg-pink-600 relative w-full h-screen page_horizontalItem">
+                        <div class="w-full">
+                            <div class="px-20">
+                                <div class="text-white font-bold leading-none page_horizontalItemTitle">Simply</div>
+                                <div class="text-white font-bold text-right leading-none page_horizontalItemTitle">Zero</div>
+                            </div>
+
+                            <div id="lottie-star3-1" class="absolute top-[15%] left-[33%]"></div>
+                            <div id="lottie-star3-2" class="absolute top-[50%] left-[30%]"></div>
+                            <div id="lottie-star3-3" class="absolute bottom-[10%] right-[25%] w-100"></div>
+
+                            <script>
+                                var animation = lottie.loadAnimation({
+                                    container: document.getElementById('lottie-star3-1'), // 애니메이션을 표시할 요소
+                                    renderer: 'svg', // 렌더링 방식 (svg, canvas, html 등)
+                                    loop: true, // 애니메이션 반복 여부
+                                    autoplay: true, // 자동 실행 여부
+                                    path: 'images/star2.json' // 애니메이션 JSON 파일 URL
+                                });
+                            </script>
+                            <script>
+                                var animation = lottie.loadAnimation({
+                                    container: document.getElementById('lottie-star3-2'), // 애니메이션을 표시할 요소
+                                    renderer: 'svg', // 렌더링 방식 (svg, canvas, html 등)
+                                    loop: true, // 애니메이션 반복 여부
+                                    autoplay: true, // 자동 실행 여부
+                                    path: 'images/star2.json' // 애니메이션 JSON 파일 URL
+                                });
+                            </script>
+                            <script>
+                                var animation = lottie.loadAnimation({
+                                    container: document.getElementById('lottie-star3-3'), // 애니메이션을 표시할 요소
+                                    renderer: 'svg', // 렌더링 방식 (svg, canvas, html 등)
+                                    loop: true, // 애니메이션 반복 여부
+                                    autoplay: true, // 자동 실행 여부
+                                    path: 'images/star3.json' // 애니메이션 JSON 파일 URL
+                                });
+                            </script>
+                            
+                            <div class="pl-40 mt-[-5%]">
+                                <div class="text-white items-title font-bold">
+                                    제로칼로리로<br/>더 가볍게, 새롭게
+                                </div>
+            
+                                <div class="text-white items-tag font-medium mt-3">
+                                    #설탕ZERO #칼로리50%DOWN
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <div class="horizontalStick">
+                <div>                    
+                    <div class="st_box">
+                        <img class="st_08" src="images/ani/s_08.png" />
+                        <img class="st_07" src="images/ani/s_07.png" />
+                        <img class="st_06" src="images/ani/s_06.png" />
+                        <img class="st_05" src="images/ani/s_05.png" />
+                        <img class="st_04" src="images/ani/s_04.png" />
+                        <img class="st_03" src="images/ani/s_03.png" />
+                        <img class="st_02" src="images/ani/s_02.png" />
+                        <img class="st_01" src="images/ani/s_01.png" />
+                    </div>
                 </div>
-            </section>
+            </div>
         </div>
-        <!-- //02 -->         
+        <!-- //02 -->   
+         
+        <script>
+            // gsap과 ScrollTrigger를 사용하여 #horizontal 요소 고정
+            gsap.registerPlugin(ScrollTrigger);
+
+            ScrollTrigger.matchMedia({                    
+                // desktop
+                "(min-width: 788px)": function() {
+
+                    //가로
+                    let horiani = gsap.timeline({
+                        scrollTrigger: {
+                                trigger: ".page_horizontalInner", // 트리거할 요소
+                                start: "top top", // 스크롤 시작 위치
+                                end: "bottom top", // 끝나는 위치
+                                pin: true, // 요소를 고정
+                                // pinSpacing: false, // 고정 중 추가 공간을 제거
+                                scrub: 2, // 스크롤에 맞게 애니메이션을 조절, 시간이 길어지면 느려짐
+                            }                                
+                            
+                        }) 
+
+                        horiani.addLabel('a')                            
+                        horiani.fromTo(".page_horizontalInner", { x:0 }, {x:"-100vw", duration:3, ease: "power1.in",},'a');
+
+                        horiani.fromTo(".page_horizontalInner", 
+                            { opacity: 1 }, 
+                            { opacity: 1, duration: 3}
+                        );
+                        
+                        horiani.addLabel('b')                            
+                        horiani.to(".page_horizontalInner", {x:"-200vw", duration:3, ease: "power1.in",},'b');
+
+                        horiani.fromTo(".page_horizontalInner", 
+                            { opacity: 1 }, 
+                            { opacity: 1, duration: 3}
+                        );
+
+                    
+                }, 
+            
+                // mobile
+                "(max-width: 787px)": function() {
+                }, 
+            
+                // all 
+                "all": function() {
+                }                
+            });  
+
+            
+            gsap.fromTo(".page_horizontalItemTitle1", 
+                {
+                    x: -330
+                }, 
+                {
+                    x: 0, 
+                    duration: 1,
+                    scrollTrigger: {
+                    trigger: ".page_horizontalItemTitle1", // 이 요소가 화면에 들어오면
+                    start: "top 80%", // 화면의 80% 위치에서 시작
+                    end: "top 0%", // 화면의 0% 위치까지
+                    scrub: true // 스크롤과 동기화
+                    }
+                }
+            );
+
+            gsap.fromTo(".page_horizontalItemTitle2", 
+                {
+                    x: 330
+                }, 
+                {
+                    x: 0, 
+                    duration: 1,
+                    scrollTrigger: {
+                    trigger: ".page_horizontalItemTitle1", // 이 요소가 화면에 들어오면
+                    start: "top 80%", // 화면의 80% 위치에서 시작
+                    end: "top 0%", // 화면의 0% 위치까지
+                    scrub: true // 스크롤과 동기화
+                    }
+                }
+            );
+
+            // gsap.fromTo(".horizontalStick", 
+            //     { position: "absolute" }, 
+            //     { 
+            //         position: "fixed",
+            //         duration: 1, 
+            //         scrollTrigger: {
+            //             trigger: ".page_horizontalInner",
+            //             start: "top top",
+            //             end: "top 0%",
+            //             scrub: true
+            //         }
+            //     }
+            // );
+
+            let stickani = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".page_horizontalItemWrap .pin-spacer",
+                    start: "top top",
+                    end: "top 100%",
+                    scrub: 3, // 애니메이션을 더 부드럽게 조절
+                    onUpdate: (self) => {
+                        if (self.direction === -1) {
+                            // 스크롤을 올릴 때 다시 absolute로 변경
+                            gsap.set(".horizontalStick", { position: "absolute" });
+                        }
+                    }
+                }
+            });
+
+            // 요소가 보이면 absolute → fixed로 변경
+            stickani.fromTo(".horizontalStick", 
+                { position: "absolute" }, 
+                { position: "fixed", duration: 0.5 }
+            );
+
+            // 회전 애니메이션 추가
+            stickani.to(".horizontalStick", {
+                rotate: "+=10", // 스크롤 시 10도 회전
+                ease: "none"
+            });
+
+            // ✅ st_01이 사라지고 st_02가 나타남
+            stickani.addLabel("step1");
+            stickani.to(".horizontalStick .st_01", { 
+                opacity: 0, 
+                duration: 0.8, 
+                ease: "power1.in" 
+            }, "step1");
+
+            stickani.to(".horizontalStick .st_02", { 
+                opacity: 1, 
+                duration: 0.8, 
+                ease: "power1.out" 
+            }, "step1+=0.8"); // st_01이 사라진 후 0.8초 뒤에 나타나도록 설정
+
+            // ✅ st_02가 사라지고 st_03이 나타남
+            stickani.addLabel("step2");
+            stickani.to(".horizontalStick .st_02", { 
+                opacity: 0, 
+                duration: 0.8, 
+                ease: "power1.in" 
+            }, "step2");
+
+            stickani.to(".horizontalStick .st_03", { 
+                opacity: 1, 
+                duration: 0.8, 
+                ease: "power1.out" 
+            }, "step2+=0.8"); // st_02가 사라진 후 0.8초 뒤에 나타나도록 설정
+
+            // ✅ st_03가 사라지고 st_04이 나타남
+            stickani.addLabel("step3");
+            stickani.to(".horizontalStick .st_03", { 
+                opacity: 0, 
+                duration: 0.8, 
+                ease: "power1.in" 
+            }, "step3");
+
+            stickani.to(".horizontalStick .st_04", { 
+                opacity: 1, 
+                duration: 0.8, 
+                ease: "power1.out" 
+            }, "step3+=0.8"); // st_02가 사라진 후 0.8초 뒤에 나타나도록 설정
+
+            // ✅ st_04가 사라지고 st_05이 나타남
+            stickani.addLabel("step4");
+            stickani.to(".horizontalStick .st_04", { 
+                opacity: 0, 
+                duration: 0.8, 
+                ease: "power1.in" 
+            }, "step4");
+
+            stickani.to(".horizontalStick .st_05", { 
+                opacity: 1, 
+                duration: 0.8, 
+                ease: "power1.out" 
+            }, "step4+=0.8"); // st_02가 사라진 후 0.8초 뒤에 나타나도록 설정
+
+            // ✅ st_05가 사라지고 st_06이 나타남
+            stickani.addLabel("step5");
+            stickani.to(".horizontalStick .st_05", { 
+                opacity: 0, 
+                duration: 0.8, 
+                ease: "power1.in" 
+            }, "step5");
+
+            stickani.to(".horizontalStick .st_06", { 
+                opacity: 1, 
+                duration: 0.8, 
+                ease: "power1.out" 
+            }, "step5+=0.8"); // st_02가 사라진 후 0.8초 뒤에 나타나도록 설정
+
+            // ✅ st_06가 사라지고 st_07이 나타남
+            stickani.addLabel("step6");
+            stickani.to(".horizontalStick .st_06", { 
+                opacity: 0, 
+                duration: 0.8, 
+                ease: "power1.in" 
+            }, "step6");
+
+            stickani.to(".horizontalStick .st_07", { 
+                opacity: 1, 
+                duration: 0.8, 
+                ease: "power1.out" 
+            }, "step6+=0.8"); // st_02가 사라진 후 0.8초 뒤에 나타나도록 설정
+
+            // ✅ st_07가 사라지고 st_08이 나타남
+            stickani.addLabel("step7");
+            stickani.to(".horizontalStick .st_07", { 
+                opacity: 0, 
+                duration: 0.8, 
+                ease: "power1.in" 
+            }, "step7");
+
+            stickani.to(".horizontalStick .st_08", { 
+                opacity: 1, 
+                duration: 0.8, 
+                ease: "power1.out" 
+            }, "step7+=0.8"); // st_02가 사라진 후 0.8초 뒤에 나타나도록 설정
+
+            // 회전 애니메이션 추가
+            stickani.to(".horizontalStick", {
+                rotate: 0, // 스크롤 시 10도 회전
+                ease: "none"
+            });
+            
+            // 회전 애니메이션 추가
+            stickani.to(".horizontalStick", {
+                rotate: "-=10", // 스크롤 시 10도 회전
+                ease: "none"
+            });
+
+            // ✅ 
+            stickani.addLabel("stepp1");
+            stickani.to(".horizontalStick .st_08", { opacity: 0,  duration: 0.8, ease: "power1.in" }, "stepp1");
+            stickani.to(".horizontalStick .st_07", { opacity: 1, duration: 0.8,  ease: "power1.out" }, "stepp1+=0.8"); 
+
+            // ✅ 
+            stickani.addLabel("stepp2");
+            stickani.to(".horizontalStick .st_07", { opacity: 0,  duration: 0.8, ease: "power1.in" }, "stepp2");
+            stickani.to(".horizontalStick .st_06", { opacity: 1, duration: 0.8,  ease: "power1.out" }, "stepp2+=0.8"); 
+
+            // ✅ 
+            stickani.addLabel("stepp3");
+            stickani.to(".horizontalStick .st_06", { opacity: 0,  duration: 0.8, ease: "power1.in" }, "stepp3");
+            stickani.to(".horizontalStick .st_05", { opacity: 1, duration: 0.8,  ease: "power1.out" }, "stepp3+=0.8"); 
+
+            // ✅ 
+            stickani.addLabel("stepp4");
+            stickani.to(".horizontalStick .st_04", { opacity: 0,  duration: 0.8, ease: "power1.in" }, "stepp4");
+            stickani.to(".horizontalStick .st_03", { opacity: 1, duration: 0.8,  ease: "power1.out" }, "stepp4+=0.8"); 
+
+            // ✅ 
+            stickani.addLabel("stepp5");
+            stickani.to(".horizontalStick .st_02", { opacity: 0,  duration: 0.8, ease: "power1.in" }, "stepp5");
+            stickani.to(".horizontalStick .st_01", { opacity: 1, duration: 0.8,  ease: "power1.out" }, "stepp5+=0.8"); 
+
+
+
+            
+
+            
+           
+
+        </script>
 
 
         <!-- 03 -->
-        <div class="grid-m page_ingredientsCtn" >
+        <div class="grid-m page_ingredientsCtn">
             
             <div class="">
                 <div class="page_ingredientDescriptions">
@@ -318,7 +833,7 @@
                 </div>  
     
                 <div class="grid-m flex flex-wrap gap-y-10 mt-10 page_ingredients">
-                    <div class="text-center">
+                    <div class="w-1/4 text-center">
                         <div class="page_ingredientInner">
                             <div class="ilnine-block w-30 bg-sky-400 rounded-full relative mx-auto page_ingredientImg">
                                 <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 115 115"><rect width="24.807" height="12.049" x="40.214" y="52.057" stroke="#fff" stroke-width="2.3" rx="6.024" transform="rotate(-50.19 40.214 52.057)"></rect><path stroke="#fff" stroke-linecap="round" stroke-width="2.3" d="m51.013 49.063 4.538-5.445"></path><rect width="24.807" height="12.049" x="57.934" y="57.834" stroke="#fff" stroke-width="2.3" rx="6.024" transform="rotate(-4.98 57.934 57.834)"></rect><path stroke="#fff" stroke-linecap="round" stroke-width="2.3" d="m67.667 63.389 7.06-.615"></path><rect width="24.807" height="12.049" x="36.697" y="59.934" stroke="#fff" stroke-width="2.3" rx="6.024" transform="rotate(28.22 36.697 59.934)"></rect><path stroke="#fff" stroke-linecap="round" stroke-width="2.3" d="m41.8 69.91 6.246 3.352"></path></svg>
@@ -328,7 +843,7 @@
                             효모 추출물 <br/>(글루타치온 성분함유)
                         </div>
                     </div>
-                    <div class="text-center">
+                    <div class="w-1/4 text-center">
                         <div class="page_ingredientInner">
                             <div class="ilnine-block w-30 bg-sky-400 rounded-full relative mx-auto page_ingredientImg">
                                 <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 115 115"><rect width="24.807" height="12.049" x="40.214" y="52.057" stroke="#fff" stroke-width="2.3" rx="6.024" transform="rotate(-50.19 40.214 52.057)"></rect><path stroke="#fff" stroke-linecap="round" stroke-width="2.3" d="m51.013 49.063 4.538-5.445"></path><rect width="24.807" height="12.049" x="57.934" y="57.834" stroke="#fff" stroke-width="2.3" rx="6.024" transform="rotate(-4.98 57.934 57.834)"></rect><path stroke="#fff" stroke-linecap="round" stroke-width="2.3" d="m67.667 63.389 7.06-.615"></path><rect width="24.807" height="12.049" x="36.697" y="59.934" stroke="#fff" stroke-width="2.3" rx="6.024" transform="rotate(28.22 36.697 59.934)"></rect><path stroke="#fff" stroke-linecap="round" stroke-width="2.3" d="m41.8 69.91 6.246 3.352"></path></svg>
@@ -338,7 +853,7 @@
                             효모 추출물 <br/>(글루타치온 성분함유)
                         </div>
                     </div>
-                    <div class="text-center">
+                    <div class="w-1/4 text-center">
                         <div class="page_ingredientInner">
                             <div class="ilnine-block w-30 bg-sky-400 rounded-full relative mx-auto page_ingredientImg">
                                 <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 115 115"><rect width="24.807" height="12.049" x="40.214" y="52.057" stroke="#fff" stroke-width="2.3" rx="6.024" transform="rotate(-50.19 40.214 52.057)"></rect><path stroke="#fff" stroke-linecap="round" stroke-width="2.3" d="m51.013 49.063 4.538-5.445"></path><rect width="24.807" height="12.049" x="57.934" y="57.834" stroke="#fff" stroke-width="2.3" rx="6.024" transform="rotate(-4.98 57.934 57.834)"></rect><path stroke="#fff" stroke-linecap="round" stroke-width="2.3" d="m67.667 63.389 7.06-.615"></path><rect width="24.807" height="12.049" x="36.697" y="59.934" stroke="#fff" stroke-width="2.3" rx="6.024" transform="rotate(28.22 36.697 59.934)"></rect><path stroke="#fff" stroke-linecap="round" stroke-width="2.3" d="m41.8 69.91 6.246 3.352"></path></svg>
@@ -348,7 +863,7 @@
                             효모 추출물 <br/>(글루타치온 성분함유)
                         </div>
                     </div>
-                    <div class="text-center">
+                    <div class="w-1/4 text-center">
                         <div class="page_ingredientInner">
                             <div class="ilnine-block w-30 bg-sky-400 rounded-full relative mx-auto page_ingredientImg">
                                 <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 115 115"><rect width="24.807" height="12.049" x="40.214" y="52.057" stroke="#fff" stroke-width="2.3" rx="6.024" transform="rotate(-50.19 40.214 52.057)"></rect><path stroke="#fff" stroke-linecap="round" stroke-width="2.3" d="m51.013 49.063 4.538-5.445"></path><rect width="24.807" height="12.049" x="57.934" y="57.834" stroke="#fff" stroke-width="2.3" rx="6.024" transform="rotate(-4.98 57.934 57.834)"></rect><path stroke="#fff" stroke-linecap="round" stroke-width="2.3" d="m67.667 63.389 7.06-.615"></path><rect width="24.807" height="12.049" x="36.697" y="59.934" stroke="#fff" stroke-width="2.3" rx="6.024" transform="rotate(28.22 36.697 59.934)"></rect><path stroke="#fff" stroke-linecap="round" stroke-width="2.3" d="m41.8 69.91 6.246 3.352"></path></svg>
@@ -358,7 +873,7 @@
                             효모 추출물 <br/>(글루타치온 성분함유)
                         </div>
                     </div>
-                    <div class="text-center">
+                    <div class="w-1/4 text-center">
                         <div class="page_ingredientInner">
                             <div class="ilnine-block w-30 bg-sky-400 rounded-full relative mx-auto page_ingredientImg">
                                 <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 115 115"><rect width="24.807" height="12.049" x="40.214" y="52.057" stroke="#fff" stroke-width="2.3" rx="6.024" transform="rotate(-50.19 40.214 52.057)"></rect><path stroke="#fff" stroke-linecap="round" stroke-width="2.3" d="m51.013 49.063 4.538-5.445"></path><rect width="24.807" height="12.049" x="57.934" y="57.834" stroke="#fff" stroke-width="2.3" rx="6.024" transform="rotate(-4.98 57.934 57.834)"></rect><path stroke="#fff" stroke-linecap="round" stroke-width="2.3" d="m67.667 63.389 7.06-.615"></path><rect width="24.807" height="12.049" x="36.697" y="59.934" stroke="#fff" stroke-width="2.3" rx="6.024" transform="rotate(28.22 36.697 59.934)"></rect><path stroke="#fff" stroke-linecap="round" stroke-width="2.3" d="m41.8 69.91 6.246 3.352"></path></svg>
@@ -368,7 +883,7 @@
                             효모 추출물 <br/>(글루타치온 성분함유)
                         </div>
                     </div>
-                    <div class="text-center">
+                    <div class="w-1/4 text-center">
                         <div class="page_ingredientInner">
                             <div class="ilnine-block w-30 bg-sky-400 rounded-full relative mx-auto page_ingredientImg">
                                 <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 115 115"><rect width="24.807" height="12.049" x="40.214" y="52.057" stroke="#fff" stroke-width="2.3" rx="6.024" transform="rotate(-50.19 40.214 52.057)"></rect><path stroke="#fff" stroke-linecap="round" stroke-width="2.3" d="m51.013 49.063 4.538-5.445"></path><rect width="24.807" height="12.049" x="57.934" y="57.834" stroke="#fff" stroke-width="2.3" rx="6.024" transform="rotate(-4.98 57.934 57.834)"></rect><path stroke="#fff" stroke-linecap="round" stroke-width="2.3" d="m67.667 63.389 7.06-.615"></path><rect width="24.807" height="12.049" x="36.697" y="59.934" stroke="#fff" stroke-width="2.3" rx="6.024" transform="rotate(28.22 36.697 59.934)"></rect><path stroke="#fff" stroke-linecap="round" stroke-width="2.3" d="m41.8 69.91 6.246 3.352"></path></svg>
@@ -381,13 +896,31 @@
                                    
                 </div>
             </div>
-              
-            
+
         </div>
         <!-- //03 -->
 
+        <script>
+            gsap.registerPlugin(ScrollTrigger);
+
+            gsap.fromTo(".horizontalStick", 
+                { display: "block", }, 
+                { 
+                    display: "none",
+                    duration: 1, 
+                    scrollTrigger: {
+                        trigger: ".page_ingredientsCtn",
+                        start: "top top",
+                        end: "top 0%",
+                        scrub: true
+                    }
+                }
+            );
+        </script>
+
+
         <!-- INFO -->
-        <div class="grid-m infoWrap" >
+        <div class="grid-m infoWrap">
             <div class="">
                 <div class="slideWrap relative ">                    
                     <div class="block overflow-hidden rounded-4xl border border-solid border-gray-300 relative">
@@ -506,7 +1039,6 @@
         <!-- //INFO -->
 
         <br><br><br><br><br><br><br><br>
-
         <!-- PD -->         
         <div class="p-40 bg-gray-100 rounded-t-[100px] figureWrap">
             <p class="text-5xl font-bold text-gray-800">
@@ -696,7 +1228,7 @@
 
 
         <!-- FOOTER -->
-        <div id="footer" class="grid-xl" >
+        <div id="footer" class="grid-xl">
             <ul class="link-items">
                 <li class="link-item">
                 <a href="#">개인정보처리방침</a>
@@ -778,6 +1310,187 @@
 
         </div>
         <!-- //FOOTER -->
+
+        <!-- FLOATING -->
+        <div x-data="{ 
+                show: false,  // 처음에는 버튼이 보이지 않도록 설정
+                hover: false,
+                footerVisible: false // footer의 가시성을 추적하는 변수
+            }"
+            x-init="
+                // 스크롤 이벤트로 show 값을 설정
+                window.addEventListener('scroll', () => {
+                    if (!footerVisible) { // footer가 보이지 않을 때만 스크롤 이벤트 실행
+                        show = window.scrollY > 0 ? true : false;
+                    }
+                });
+        
+                // footer가 보이면 show 값을 false로 설정하여 버튼 숨기기
+                let observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            footerVisible = true; // footer가 화면에 보이면 footerVisible을 true로 설정
+                            show = false; // footer가 보이면 버튼 숨기기
+                        } else {
+                            footerVisible = false; // footer가 화면 밖으로 벗어나면 footerVisible을 false로 설정
+                            show = window.scrollY > 0; // footer가 안 보이면 스크롤 상태에 따라 버튼 보이기
+                        }
+                    });
+                }, { threshold: 0.5 }); // footer가 50% 이상 보일 때 동작하도록 설정
+                observer.observe(document.getElementById('footer'));
+            "
+            :class="show ? 'opacity-100 translate-y-0 visible' : 'opacity-0 translate-y-[30px] invisible'"
+            class="fixed bottom-30 right-20 z-10 w-65 h-60 floatingBtnWrap transition-all duration-500 ease-out text-pink-500"
+            @mouseenter="hover = true" @mouseleave="hover = false">
+
+            <div @mouseenter="hover = true" @mouseleave="hover = false" class="align-center floatingBtn relative w-full h-full">
+
+                <!-- 버튼들 -->
+                <div x-show="hover" 
+                    class="absolute top-[-16%] left-[16%] break-keep flex-wrap justify-center w-45 gap-1 flex">
+                    <button x-show="hover"
+                            x-transition:enter="transition transform duration-300 ease-out"
+                            x-transition:enter-start="scale-80 opacity-0"
+                            x-transition:enter-end="scale-100 opacity-100"
+                            x-transition:leave="transition transform duration-200 ease-in"
+                            x-transition:leave-start="scale-100 opacity-100"
+                            x-transition:leave-end="scale-80 opacity-0"
+                            class="text-base font-bold text-white text-center bg-pink-500 rounded-full w-full px-5 py-3">
+                        온라인 쇼핑몰
+                    </button>
+                    <button x-show="hover"
+                            x-transition:enter="transition transform duration-300 ease-out delay-100"
+                            x-transition:enter-start="scale-80 opacity-0"
+                            x-transition:enter-end="scale-100 opacity-100"
+                            x-transition:leave="transition transform duration-200 ease-in"
+                            x-transition:leave-start="scale-100 opacity-100"
+                            x-transition:leave-end="scale-80 opacity-0"
+                            class="text-base font-bold text-white text-center bg-pink-500 rounded-full w-full px-5 py-3">
+                        오프라인 쇼핑몰
+                    </button>
+                </div>
+
+                <!-- 말풍선 -->
+                <div x-show="!hover"
+                    x-transition:leave="transition transform duration-200 ease-in"
+                    x-transition:leave-start="scale-100 opacity-100"
+                    x-transition:leave-end="scale-80 opacity-0"
+                    class="absolute top-0 left-[16%] bg-pink-500 rounded-full px-5 py-3 w-45 break-keep text-balloon">
+                    <svg class="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2" xmlns="http://www.w3.org/2000/svg" width="17" height="16" fill="none">
+                        <path fill="currentColor" d="M10.232 15c-.77 1.333-2.694 1.333-3.464 0L.273 3.75c-.77-1.333.192-3 1.732-3h12.99c1.54 0 2.502 1.667 1.732 3z"></path>
+                    </svg>
+                    <div class="text-base font-bold text-white text-center">상쾌환 쇼핑하러 갈래?</div>
+                </div>
+                
+                <!-- Lottie 애니메이션 -->
+                <div class="absolute w-65 h-65 bottom-[-50px] left-0">
+                    <div id="lottie-animation1" :class="hover ? 'hidden' : 'block'" class="absolute bottom-0 left-0 w-full"></div>
+                    <div id="lottie-animation2" :class="hover ? 'block' : 'hidden'" class="absolute bottom-0 left-0 w-full"></div>
+                </div>
+            </div>
+
+            <!-- 버튼 -->
+            <button @click="window.scrollTo({ top: 0, behavior: 'smooth' })"
+                    class="rounded-full w-12 h-12 inline-flex justify-center items-center bg-blue-700 top-btn absolute bottom-5 right-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+                    <path stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.74 12 7m0 0 5 4.74M12 7v10"></path>
+                </svg>
+            </button>
+
+        </div>       
+
+        <script>
+            var animation = lottie.loadAnimation({
+            container: document.getElementById('lottie-animation1'), // 애니메이션을 표시할 요소
+            renderer: 'svg', // 렌더링 방식 (svg, canvas, html 등)
+            loop: true, // 애니메이션 반복 여부
+            autoplay: true, // 자동 실행 여부
+            path: 'images/char.json' // 애니메이션 JSON 파일 URL
+            });
+
+            var animation = lottie.loadAnimation({
+            container: document.getElementById('lottie-animation2'), // 애니메이션을 표시할 요소
+            renderer: 'svg', // 렌더링 방식 (svg, canvas, html 등)
+            loop: true, // 애니메이션 반복 여부
+            autoplay: true, // 자동 실행 여부
+            path: 'images/char_on.json' // 애니메이션 JSON 파일 URL
+            });
+        </script>          
+        <!-- //FLOATING -->
+
+        <!-- BOT NAV -->
+        <nav 
+            x-data="{ 
+                translateY: '100%' // 초기 상태는 100%로 설정
+            }" 
+            x-init="
+                // 페이지 로드 후 1.5초 뒤에 모든 동작을 실행
+                setTimeout(() => {
+                // 1.5초 후에 translateY를 0으로 변경
+                translateY = '0'; 
+
+                // footer가 화면에 보일 때 translateY를 '100%'로 변경하는 observer 설정
+                let observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        translateY = '100%'; // footer가 보이면 nav를 아래로 내리기
+                    } else {
+                        translateY = '0'; // footer가 사라지면 nav를 위로 올리기
+                    }
+                    });
+                }, { threshold: 0.5 }); // footer가 50% 이상 보일 때 동작하도록 설정
+                observer.observe(document.getElementById('footer'));
+                }, 1500); // 페이지 로드 후 1.5초 후 실행
+            "
+            x-bind:style="'transform: translateY(' + translateY + '); transition: transform 0.5s ease-out'" 
+            class="fixed bottom-0 w-screen h-[5.5rem] bg-white border-t border-black/20 flex justify-between items-center px-20 will-change-transform z-20"
+            >
+
+            <div 
+                x-data="{ width: 0 }" 
+                x-init="
+                    window.addEventListener('scroll', () => {
+                    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+                    const scrollPosition = window.scrollY;
+                    const scrollPercentage = (scrollPosition / scrollHeight) * 100;
+                    width = scrollPercentage;
+                    })
+                "
+                class="block absolute left-0 top-[-0.2rem] h-[0.2rem] bg-custom-sky"
+                :style="{ width: width + '%' }"></div>
+
+            <div x-data="{ open: false }" class="relative page_productDropdown">
+                <!-- 클릭 시 open 상태가 바뀌면서, SVG 회전과 드롭다운 보이기/숨기기 -->
+                <div @click="open = !open" class="text-2xl text-gray-800 font-bold flex items-center gap-1 cursor-pointer page_productNavHeader">
+                    상쾌환<span class="text-custom-sky">스틱</span>
+                    <svg :class="open ? 'rotate-180' : 'rotate-0'" class="w-6 h-6 ml-1 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <rect width="24" height="24" fill="#EBEBEB" rx="12"></rect>
+                    <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m17 10-5 5-5-5"></path>
+                    </svg>
+                </div>
+                
+                <!-- 드롭다운 리스트, open이 true일 때 표시 -->
+                <div :class="open ? 'scale-100 opacity-100' : 'scale-80 opacity-0'" class="flex flex-wrap bg-gray-200 rounded-2xl py-4 px-5 absolute top-[-10px] -translate-y-full whitespace-pre transform transition-all duration-300 page_dropdownLists">
+                    <a class="w-full text-lg font-bold text-custom-sky page_dropdownList" href="#"><span>상쾌환</span></a>
+                    <a class="w-full text-lg font-bold text-gray-900 page_dropdownList" href="#">상쾌환<span class="text-custom-sky"> BOOSTER</span></a>
+                </div>
+            </div>
+
+
+            <ul class="flex gap-6 text-base font-bold text-gray-400 absolute left-1/2 transform -translate-x-1/2 page_productNavMenu">
+                <li class="cursor-pointer text-gray-900">상쾌환 스틱</li>
+                <li class="cursor-pointer">제품소개</li>
+                <li class="cursor-pointer">포인트</li>
+                <li class="cursor-pointer">원료정보</li>
+                <li class="cursor-pointer">제품기본정보</li>
+            </ul>
+
+            <a class="flex justify-center items-center gap-1 bg-yellow-300 rounded-full px-4 py-3 text-base font-bold text-[#371d1e] page_productNavButton" target="_blank" href="https://gift.kakao.com/product/10314180">
+                <svg class="x-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path fill="#371D1E" d="M11.994 4C7.015 4 3 7.212 3 11.111c0 2.531 1.67 4.748 4.176 6.013l-.848 3.167a.27.27 0 0 0 .064.276c.051.046.118.07.186.071a.27.27 0 0 0 .154-.064l3.65-2.46a12 12 0 0 0 1.624.115c4.973 0 8.994-3.212 8.994-7.118C21 7.206 16.966 4 11.994 4"></path><path fill="#FAE100" d="M6.147 9.987h-.982a.64.64 0 0 1-.347-.09.4.4 0 0 1-.18-.264.6.6 0 0 1 0-.102.4.4 0 0 1 .154-.334.64.64 0 0 1 .385-.122H8.14a.6.6 0 0 1 .347.096.37.37 0 0 1 .18.263.5.5 0 0 1 0 .097.41.41 0 0 1-.155.34.6.6 0 0 1-.379.116h-.95v3.379a.52.52 0 0 1-.319.505.5.5 0 0 1-.202.034.52.52 0 0 1-.334-.109.48.48 0 0 1-.173-.289.5.5 0 0 1 0-.141zM8.95 9.325a.44.44 0 0 1 .186-.257.6.6 0 0 1 .32-.077h.245a.64.64 0 0 1 .34.083c.11.074.188.186.219.315l1.284 3.63q.051.14.084.289.003.06 0 .122a.43.43 0 0 1-.141.334.47.47 0 0 1-.347.141.444.444 0 0 1-.463-.295l-.27-.79H8.719l-.27.79a.44.44 0 0 1-.469.295.443.443 0 0 1-.463-.366.6.6 0 0 1 0-.11.6.6 0 0 1 0-.192c0-.07.046-.148.071-.218zm.642.841-.61 1.928h1.213zM11.775 9.53a.55.55 0 0 1 .141-.391.5.5 0 0 1 .38-.148.55.55 0 0 1 .334.109c.089.075.148.18.166.295a.5.5 0 0 1 0 .135v3.38h1.767a.64.64 0 0 1 .347.096.4.4 0 0 1 .18.263v.097a.4.4 0 0 1-.154.334.64.64 0 0 1-.386.122H12.38a.64.64 0 0 1-.392-.103.5.5 0 0 1-.193-.321 2 2 0 0 1 0-.212zM15.206 9.532a.57.57 0 0 1 .141-.392.566.566 0 0 1 .713-.039c.091.075.153.18.174.296a1 1 0 0 1 0 .135v1.574l1.625-1.876q.094-.096.199-.18a.4.4 0 0 1 .218-.058c.113 0 .222.033.315.097a.4.4 0 0 1 .167.257.1.1 0 0 1 0 .038.1.1 0 0 0 0 .045.4.4 0 0 1-.051.193 1 1 0 0 1-.122.173l-1.067 1.17 1.285 1.99v.065q.101.139.154.302v.032a.46.46 0 0 1-.16.399.6.6 0 0 1-.373.122.5.5 0 0 1-.257-.058.64.64 0 0 1-.206-.225l-1.194-1.927-.572.597v1.073a.57.57 0 0 1-.141.392.52.52 0 0 1-.386.148.5.5 0 0 1-.327-.11.48.48 0 0 1-.174-.289.5.5 0 0 1 0-.141z"></path></svg>
+            카카오톡 선물하기
+            </a>
+        </nav>          
+        <!-- //BOT NAV -->
         
     </body>
 </html>

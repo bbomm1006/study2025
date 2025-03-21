@@ -2,6 +2,7 @@
 
 
 .figureWrap{
+    background: #f0f0f0;
     .figure-bg{
         position: absolute;
         width: 120%;
@@ -61,5 +62,32 @@
             transform: translateY(-50%);
         }
        
+    }
+
+    .figureTitle{
+        font-size: var(--font-title);
+    }
+    .figure-caption{
+        font-size: var(--font-text3);
+    }
+
+    @media (max-width: 1024px){
+        padding: 60px 0;
+        text-align: center;
+        border-radius: 40px;
+
+        .figure-bg{
+            display: none;
+        }
+
+        .figure-caption{
+            font-size: var(--font-title3);
+        }
+        >div{
+            padding: 0;
+            >div{
+                padding:0 5vw;
+            }
+        }
     }
 }

@@ -15,22 +15,48 @@
         width: 440px;
     }
     .slideDesc{
+        width: 600px;
         >div{
-            width: min-content;
+            // width: min-content;
             white-space: nowrap;
         }
+    }
+
+    .page_specName{
+        font-size: var(--font-text3);
+        width: 150px;
+    }
+    .page_specValue{
+        font-size: var(--font-text3);
     }
     
     .pdSlider{
         position: relative;
 
-        .swiper-slide {background: pink; font-size: 100px; text-align: center; line-height:100vh; font-weight:900;}
+        .swiper-slide {
+            text-align: center; 
+            position: relative;
+            overflow: hidden;
+            border-radius: 30px;
+            border:1px solid #ddd;
+            @media (max-width: 1024px){
+                height: 0;
+                padding-top: 80%;
+                img{
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%);
+                }
+            }
+        }
         
 
         
         .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
             margin :0;
             margin-right: 20px;
+            
         }
 
         .swiper-pagination-bullet {
@@ -40,7 +66,7 @@
             text-align: left;
             border-radius: 0;
             opacity: 1;
-            margin-right: 20px;
+            margin-right: 5px;
             background-color: transparent;
             border-radius: 8px;
             i {
@@ -65,6 +91,8 @@
                 border-radius: 8px;
             //progress bar 채워지는 부분
             }
+
+        
         }
 
         .swiper-pagination-bullet-active {
@@ -95,6 +123,23 @@
         }
         .slideWrap{
             width: 100%;
+        }
+        .slideDesc{
+            width: auto;
+            padding: 5vw;
+        }
+        
+        .page_specWrapper{
+            align-items: flex-start;
+        }
+        .page_specName{
+            font-size: var(--font-title4);
+            width: 33%;
+        }
+        .page_specValue{
+            font-size: var(--font-title4);
+            white-space: pre-line; 
+            width: 66%;
         }
     }
 }

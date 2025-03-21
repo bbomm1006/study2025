@@ -35,6 +35,7 @@ html, body{
  
 
 $font-main-title: (150 / 16) * 1rem; //
+$font-main-title-m: (100 / 16) * 1rem; //
 
 $font-horizontal-title: (250 / 16) * 1rem; //
 $font-horizontal-title-t: (200 / 16) * 1rem; //
@@ -101,5 +102,6 @@ $font-desc4: (12 / 16) * 1rem;
 @media (max-width: 588px){
 	:root{
 		--font-horizontal-title: #{$font-horizontal-title-m}; 
+		--font-main-title: #{$font-main-title-m}; 
 	}
 }
