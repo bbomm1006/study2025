@@ -1,16 +1,15 @@
 @charset "utf-8";
 html * {max-height: 999999px} /* font size bug fix */
-html,body{margin:0px;padding:0px;width:100%;-webkit-text-size-adjust:none;-webkit-font-smoothing:antialiased;letter-spacing:-0.5px}
-ul,ol,li,dl,dd,dt,input,h1,h2,h3,h4,h5,h6,p{margin:0px;padding:0px;font-weight:300;/*word-break:keep-all*/}
-input,button,textarea,fieldset,legend,td,th{margin:0px;padding:0px;font-weight:normal;/*word-break:keep-all*/}
+html,body{margin:0px;padding:0px;}
+ul,ol,li,dl,dd,dt,input,h1,h2,h3,h4,h5,h6,p,
+input,button,textarea,fieldset,legend,td,th{margin:0px;padding:0px;}
 li{list-style:none}
 fieldset,img,a{border:0px}
 a{text-decoration:none}
-legend,.blind{position:absolute;top:0;left:-10000px;width:0;height:0;overflow:hidden;font-size:0;line-height:0}
+// legend,.blind{position:absolute;top:0;left:-10000px;width:0;height:0;overflow:hidden;font-size:0;line-height:0}
 caption{display:none}
 button,label{cursor:pointer}
 button{overflow:visible\9}	/* button fix for ie8 */
-input,textarea,button,select,option{font-family:'NanumSquare','맑은 고딕', sans-serif;}
 table{width:100%;border-collapse:collapse;border-spacing:0;text-align:left; table-layout:fixed}
 table th, table td{text-align:left; word-break:break-word;word-wrap:break-word;}
 input::-webkit-input-placeholder{color:#929292}

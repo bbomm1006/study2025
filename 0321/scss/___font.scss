@@ -9,7 +9,6 @@ html,body,button{
 
 html, body{ 
 	font-size: 10px;
-
 	.grid-m{padding-left:8.33vw;padding-right:8.33vw;}
 	.grid-xl{padding-left:4.33vw;padding-right:4.33vw;}
 }
@@ -45,8 +44,9 @@ $pd-title: (24 / 10) * 1rem; //제품 타이틀
 
 }
 
-@media (max-width: 1024px){
+@media (max-width: 1800px){
+  
 	:root{
-		
+    font-size: 0.5vw;	
 	}
 }
