@@ -1,0 +1,175 @@
+@charset "utf-8";
+
+
+.infoWrap{
+
+    .page_specButtons{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin-top: 13.9rem;
+        button{
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 100px;
+            white-space: nowrap;
+            color: rgba(0,0,0,.5);
+            font-size: 1.4rem;
+            font-weight: 600;
+            line-height: 22px;
+            border: none;
+            padding: 1rem 2rem;
+            transition: all .3s cubic-bezier(.66,.1,.37,.94);
+            height: 5.8rem;
+            svg {
+                width: 2.7rem;
+                height: 2.7rem
+            }
+            &:first-child svg {
+                width: 3.4rem;
+                height: 3.8rem
+            }
+
+            &.page_activeApple {
+                color: #fff;
+                background: #02d181;
+                transition: all .3s cubic-bezier(.66,.1,.37,.94)
+            }
+            &.page_activeMango {
+                color: #fff;
+                background: #ffb200;
+                transition: all .3s cubic-bezier(.66,.1,.37,.94)
+            }
+        }
+    }
+
+
+    .page_specs{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 6.9rem;
+        padding-top: 6rem;
+        padding-bottom: 20rem;
+
+        position: relative;
+
+        .swiper-container{
+            width: 44rem;
+            aspect-ratio: 440 / 500;
+            background: #ececec;
+            border: 1px solid hsla(0, 0%, 7%, .078);
+            border-radius: 4rem; 
+            overflow: hidden;
+            position: relative;
+
+            .swiper-slide {
+                // text-align: center; 
+                position: relative;
+                // overflow: hidden;
+                // border-radius: 30px;
+                // border:1px solid #ddd;
+                img{
+                    width: 100%;
+                }
+            
+            }
+
+        }
+
+        .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+            margin :0;
+            margin-right: 20px;
+            
+        }
+
+        .swiper-pagination-bullet {
+            position: relative;
+            width: 8px;
+            height: 8px;
+            text-align: left;
+            border-radius: 0;
+            opacity: 1;
+            margin-right: 5px;
+            background-color: transparent;
+            border-radius: 8px;
+            i {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                z-index: 1;
+                width: 100%;
+                height: 8px;
+                background-color: #d4d6db;
+                border-radius: 8px;
+            //progress bar 배경
+            }
+            b {
+                position: absolute;
+                bottom: 0;
+                left:  0;
+                z-index: 2;
+                width: 0%;
+                height: 8px;
+                background-color: hsla(0,0%,7%,.5);
+                border-radius: 8px;
+            //progress bar 채워지는 부분
+            }
+
+        
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: transparent;
+            width: 50px;
+            b {  
+                animation-name: countingBar;
+                animation-duration: 3s;//autopaly 시간과 맞춰주기
+                animation-timing-function: ease-in;
+                animation-iteration-count: 1;
+                animation-direction: alternate ;
+                animation-fill-mode:forwards;
+            }
+        }    
+        
+        @keyframes countingBar {
+            0% {width: 0;}
+            100% {width:100%;}
+        }
+    }
+    
+
+    .slideDesc{
+        display: flex;
+        flex-direction: column;
+        flex: 0 1 auto;
+        gap: 3rem;
+        justify-content: center;
+        .page_specWrapper{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4rem;
+
+            .page_specName{
+                flex: 0 0;
+                width: 10.8rem;
+                min-width: 10.8rem;
+                color: #111;
+                font-size: var(--comm-subtext);
+                font-weight: 600;
+            }
+            .page_specValue{
+                color: #585858;
+                line-height: 140%;
+                white-space: pre-line;
+                font-size: var(--comm-subtext);
+                font-weight: 500;
+            }
+        }
+    }
+
+
+}

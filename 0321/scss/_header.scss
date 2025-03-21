@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+#header{
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    color: #000;
+    pointer-events: none;
+    .header{
+        &Inner{
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 5rem 8rem;
+            justify-content: space-between;
+        }
+        &Logo{
+            position: relative;
+            width: 17rem;
+            height: 5.3rem;
+            pointer-events: all;
+            svg{
+                width: 100%;
+            }
+        }
+        &Util{
+            display: flex;
+            align-items: baseline;
+            gap: 1.2rem;
+            pointer-events: all;
+            button{
+                color: var(--custom-blue);
+                width: 5.2rem;
+                height: 5.2rem;
+                border-radius: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: #fff;
+                svg{
+                    width: 2.4rem;
+                    height: 2.4rem;
+                }
+                &.offcanvas-open{
+                    background:  var(--custom-blue);
+                    color: #fff;   
+                }
+            }
+        }
+    }
+}

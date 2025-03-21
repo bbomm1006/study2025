@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+/* font */
+@import url('https://cdn.jsdelivr.net/npm/pretendard/dist/web/static/pretendard.css');
+
+html,body,button{
+	font-family: 'Pretendard', sans-serif; letter-spacing: -0.5px;
+}
+
+html, body{ 
+	font-size: 10px;
+
+	.grid-m{padding-left:8.33vw;padding-right:8.33vw;}
+	.grid-xl{padding-left:4.33vw;padding-right:4.33vw;}
+}
+ 
+
+$font-top-title: (180 / 10) * 1rem; //제일 상단 큰 글씨
+
+$intro-subtitle: (50 / 10) * 1rem; //
+$intro-title: (60 / 10) * 1rem; //
+$intro-desc: (20 / 10) * 1rem; //
+
+$comm-subtext: (16 / 10) * 1rem; //공통 중간 글씨
+$comm-desc: (14 / 10) * 1rem; //공통 작은 글씨
+
+$font-hori-title: (270 / 10) * 1rem; //횡 단락 큰 글씨
+
+$pd-title: (24 / 10) * 1rem; //제품 타이틀
+
+:root {
+
+  --font-top-title: #{$font-top-title}; 
+
+  --intro-subtitle: #{$intro-subtitle}; 
+  --intro-title: #{$intro-title}; 
+  --intro-desc: #{$intro-desc}; 
+
+  --comm-subtext: #{$comm-subtext}; 
+  --comm-desc: #{$comm-desc}; 
+
+  --font-hori-title: #{$font-hori-title}; 
+
+  --pd-title: #{$pd-title}; 
+
+}
+
+@media (max-width: 1024px){
+	:root{
+		
+	}
+}
