@@ -16,6 +16,15 @@
             position: relative;
             padding: 5rem 8rem;
             justify-content: space-between;
+            @media (max-width: 1366px){
+                padding: 3.4rem 5.3rem
+            }
+            @media (max-width: 1024px){
+                padding:2.2rem 5rem 2.5rem
+            }
+            @media (max-width: 700px){
+                padding: 1.1rem 2rem 1.6rem;
+            }
         }
         &Logo{
             position: relative;
@@ -24,6 +33,14 @@
             pointer-events: all;
             svg{
                 width: 100%;
+            }
+            @media (max-width: 1366px){
+                width: 12.8rem;
+                height: 4rem;
+            }
+            @media (max-width: 700px){
+                height: 45px;
+                width: 73px;
             }
         }
         &Util{
@@ -47,6 +64,14 @@
                 &.offcanvas-open{
                     background:  var(--custom-blue);
                     color: #fff;   
+                }
+                @media (max-width: 1366px){
+                    width: 4rem;
+                    height: 4rem;
+                    svg{
+                        width: 1.8rem;
+                        height: 1.8rem;
+                    }
                 }
             }
         }

@@ -30,8 +30,7 @@ textarea:focus:-moz-placeholder{color:transparent!important}
 textarea:focus:-ms-input-placeholder{color:transparent!important}
 header, footer, section, article, aside, nav, address { display: block; margin:0; } /* ie8 */
 
-html,body{   
-    
+html,body{       
     /* 스크롤바 자체 */
     ::-webkit-scrollbar {
         width: 10px;  /* 스크롤바 너비 */
@@ -60,8 +59,7 @@ html,body{
     overflow-x: hidden;
     width: 100%;
     padding: 0;
-    margin: 0;
-    
+    margin: 0;    
 }
 
 /* 커스텀 색상 추가 */
@@ -89,3 +87,17 @@ html,body{
 
 /* nav */
 a,button{cursor: pointer;border: 0;background: transparent;}
+
+@mixin ani($duration: 0.2s, $ease: ease-in-out) {
+    -webkit-transition: all $duration $ease;
+    -moz-transition: all $duration $ease;
+    -ms-transition: all $duration $ease;
+    -o-transition: all $duration $ease;
+    transition: all $duration $ease;
+}  
+
+.mobile{display:none}
+@media (max-width: 700px){
+    .pc{display:none!important}
+    .mobile{display:block}
+}

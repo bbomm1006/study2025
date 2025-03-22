@@ -6,15 +6,27 @@
     padding-top: 16rem;
     padding-bottom: 20.4rem;
 
+    @media (max-width: 700px){
+        border-radius: 40px;
+        padding-top: 5rem;
+        padding-bottom: 8.1rem;
+    }
+
     
     .figureTitle{
         font-size: var(--intro-title);
         font-weight: 700;
         color: #222;
+        @media (max-width: 700px){
+            text-align: center;
+        }
     }
 
     .figureCont{
         margin-top: 6rem;
+        @media (max-width: 700px){
+            margin-top: 2.4rem;
+        }
     }
 
     .figure-bg{
@@ -42,6 +54,11 @@
         // background: #fff;
         // aspect-ratio: 1 / 1;
         overflow: hidden;
+
+        @media (max-width: 700px){
+            border-radius: 30px;
+        }
+
         .figure-parallax-container {
             display: flex;
             justify-content: center;
@@ -68,6 +85,13 @@
                 padding: 0 .8125em;
                 border-radius: 2.5rem;
                 height: 2.125em;
+                @media (max-width: 700px){
+                    font-size: 1.2rem;
+                    top: 1.4rem;
+                    left: 1.4rem;
+                    padding: 0 .8rem;
+                    height: 2.2rem;
+                }
             }
 
         }
@@ -92,11 +116,14 @@
     }
 
     .figure-caption{
-        font-size: var(--pd-title);
+        font-size: var(--intro-desc2);
         color: #222;
-        font-weight: 700;
+        font-weight: 600;
         text-align: center;
         margin-top: 2.4rem;
+        @media (max-width: 1366px){
+            font-size: var(--pd-title);
+        }
     }
 
 
