@@ -99,7 +99,7 @@ setTimeout(() => {
                     trigger: "#section1", // 트리거 요소
                     start: "top top", // 스크롤 시작 위치
                     end: "bottom top", // 스크롤 종료 위치
-                    scrub: 3, // 스크롤에 따라 애니메이션 진행
+                    scrub: 4, // 스크롤에 따라 애니메이션 진행
                     pin: true, // #section1을 고정
                     // markers: true // 디버그용 마커                                 
                 }
@@ -372,12 +372,12 @@ console.log("Wrap Width:", wrapWidth);
                     y: 0, 
                 }, 
                 {
-                    y: "50%", 
+                    y: "30%", 
                     duration: 1,
                     scrollTrigger: {
                     trigger: ".page_ingredientsCtn", // 이 요소가 화면에 들어오면
                     start: "top 100%", // 화면의 80% 위치에서 시작
-                    end: "top 0%", // 화면의 0% 위치까지
+                    end: "top 20%", // 화면의 0% 위치까지
                     scrub: true, // 스크롤에 맞춰 애니메이션이 진행되도록
                     }
                 }
@@ -392,8 +392,8 @@ console.log("Wrap Width:", wrapWidth);
                     duration: 1,
                     scrollTrigger: {
                     trigger: ".sitckBoxPackge", // 이 요소가 화면에 들어오면
-                    start: "top 40%", // 화면의 80% 위치에서 시작
-                    end: "top 0%", // 화면의 0% 위치까지
+                    start: "top 80%", // 화면의 80% 위치에서 시작
+                    end: "top 50%", // 화면의 0% 위치까지
                     scrub: true, // 스크롤에 맞춰 애니메이션이 진행되도록
                     }
                 }
