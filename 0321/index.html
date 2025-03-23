@@ -64,30 +64,174 @@
                     </div>
                 </div> 
                 <div class="offcanvas-body ">
-                    <div class="row categories-row row-50">
+                    <div class="categories-row">
                         <div class="col categories">
-                          <div class="category category--mobile false">브랜드</div>
-                          <div class="category category--mobile category--active">제품</div>
+                          <div class="category category1 category--mobile">브랜드</div>
+                          <div class="category category2 category--mobile category--active">제품</div>
                           
-                          <a class="category false" href="/kr/media">미디어</a>
-                          <a class="category false" href="/kr/news">뉴스</a>
+                          <a class="category category3 false" href="/kr/media">미디어</a>
+                          <a class="category category4 false" href="/kr/news">뉴스</a>
                         </div>
                         <div class="col">
-                          <div class="subcategories false">
+                          <div class="subcategories subcategories1 false">
                             <div class="category-en">BRAND</div>
                             <a class="subcategory false" href="/kr/about/brand">브랜드 소개</a>
                             <a class="subcategory false" href="/kr/about/history">히스토리</a>
                           </div>
-                          <div class="subcategories subcategories--active">
+                          <div class="subcategories subcategories2 subcategories--active">
                             <div class="category-en">PRODUCTS</div>
-                            <a class="subcategory" href="/kr/product/sangkwaehwan">상쾌환</a>
-                            <a class="subcategory" href="/kr/product/stick">상쾌환 스틱</a>
-                            <a class="subcategory" href="/kr/product/booster">상쾌환 BOOSTER</a>
+                            <a class="subcategory subcategory_01" href="/kr/product/sangkwaehwan">상쾌환</a>
+                            <a class="subcategory subcategory_02" href="/kr/product/stick">상쾌환 스틱</a>
+                            <a class="subcategory subcategory_03" href="/kr/product/booster">상쾌환 BOOSTER</a>
                           </div>
                         </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 461 650" class="offcanvas-header-svg offcanvas-header-svg--blue"><rect width="379.347" height="856" x="359" y="-69" fill="currentColor" rx="189.673" transform="rotate(30 359 -69)"></rect></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 461 650" class="offcanvas-header-svg offcanvas-header-svg--skyblue"><rect width="379.347" height="856" x="359" y="-69" fill="currentColor" rx="189.673" transform="rotate(30 359 -69)"></rect></svg>
+                        
                         <img alt="packet" loading="lazy" width="804" height="852" decoding="async" data-nimg="1" class="menu-img menu-img--packet menu-img--active" srcset="https://www.easytomorrow.com/_next/image?url=%2Fcommon%2Fimages%2Fheader%2Fpacket.png&amp;w=828&amp;q=75 1x, https://www.easytomorrow.com/_next/image?url=%2Fcommon%2Fimages%2Fheader%2Fpacket.png&amp;w=1920&amp;q=75 2x" src="https://www.easytomorrow.com/_next/image?url=%2Fcommon%2Fimages%2Fheader%2Fpacket.png&amp;w=1920&amp;q=75" style="color: transparent;">
-                    </div>                      
+                        <img alt="stick" loading="lazy" width="804" height="1302" decoding="async" data-nimg="1" class="menu-img menu-img--stick" srcset="https://www.easytomorrow.com/_next/image?url=%2Fcommon%2Fimages%2Fheader%2Fstick.png&amp;w=828&amp;q=75 1x, https://www.easytomorrow.com/_next/image?url=%2Fcommon%2Fimages%2Fheader%2Fstick.png&amp;w=1920&amp;q=75 2x" src="https://www.easytomorrow.com/_next/image?url=%2Fcommon%2Fimages%2Fheader%2Fstick.png&amp;w=1920&amp;q=75" style="color: transparent;">
+                        <img alt="booster" loading="lazy" width="804" height="852" decoding="async" data-nimg="1" class="menu-img menu-img--booster false" srcset="https://www.easytomorrow.com/_next/image?url=%2Fcommon%2Fimages%2Fheader%2Fbooster.png&amp;w=828&amp;q=75 1x, https://www.easytomorrow.com/_next/image?url=%2Fcommon%2Fimages%2Fheader%2Fbooster.png&amp;w=1920&amp;q=75 2x" src="https://www.easytomorrow.com/_next/image?url=%2Fcommon%2Fimages%2Fheader%2Fbooster.png&amp;w=1920&amp;q=75" style="color: transparent;">
+                        <div id="lottie-hd1" class="menu-img menu-img--media"></div>
+                        <div id="lottie-hd2" class="menu-img menu-img--news"></div>
+
+                        <script>
+                            var animation = lottie.loadAnimation({
+                                container: document.getElementById('lottie-hd1'), // 애니메이션을 표시할 요소
+                                renderer: 'svg', // 렌더링 방식 (svg, canvas, html 등)
+                                loop: true, // 애니메이션 반복 여부
+                                autoplay: true, // 자동 실행 여부
+                                path: 'images/video.json' // 애니메이션 JSON 파일 URL
+                            });
+                            var animation = lottie.loadAnimation({
+                                container: document.getElementById('lottie-hd2'), // 애니메이션을 표시할 요소
+                                renderer: 'svg', // 렌더링 방식 (svg, canvas, html 등)
+                                loop: true, // 애니메이션 반복 여부
+                                autoplay: true, // 자동 실행 여부
+                                path: 'images/video2.json' // 애니메이션 JSON 파일 URL
+                            });
+                        </script>
+                    </div>   
+
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                            const svg = document.querySelector(".offcanvas-header-svg");
+                            const categories = document.querySelectorAll('.category');
+                            const subcategories = document.querySelectorAll('.subcategories');
+
+                            categories.forEach(category => {
+                                category.addEventListener('click', function() {
+                                // 기존의 .category--active를 제거합니다.
+                                categories.forEach(cat => cat.classList.remove('category--active'));
+                                
+                                // 클릭한 category에 .category--active 추가
+                                this.classList.add('category--active');
+                                
+                                // .subcategories--active를 모두 제거합니다.
+                                subcategories.forEach(sub => sub.classList.remove('subcategories--active'));
+                                
+                                // 클릭한 category에 따라 해당하는 .subcategories에 .subcategories--active 추가
+                                if (this.classList.contains('category1')) {
+                                    document.querySelector('.subcategories1').classList.add('subcategories--active');
+                                } else if (this.classList.contains('category2')) {
+                                    document.querySelector('.subcategories2').classList.add('subcategories--active');
+                                }
+                                });
+                            });
+                        });
+
+                    </script>
+                    
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function () {
+                        const subcategories = document.querySelectorAll(".subcategory");
+                        const svg = document.querySelector(".offcanvas-header-svg");
+                        const menuImages = document.querySelectorAll(".menu-img");
+
+                        // 모든 subcategory에 mouseenter 이벤트 리스너 추가
+                        subcategories.forEach((subcategory) => {
+                            subcategory.addEventListener("mouseenter", function () {
+                                // 모든 subcategory에서 'subcategory--active' 제거
+                                subcategories.forEach((el) => el.classList.remove("subcategory--active"));
+                                
+                                // 현재 요소에 'subcategory--active' 추가
+                                this.classList.add("subcategory--active");
+                                
+                                // 모든 menu-img에서 'menu-img--active' 제거
+                                menuImages.forEach((img) => img.classList.remove("menu-img--active"));
+                                
+                                // 먼저 기존 색상 클래스 제거
+                                svg.classList.remove("offcanvas-header-svg--skyblue", "offcanvas-header-svg--blue", "offcanvas-header-svg--pink");
+
+                                // 각 subcategory에 맞는 작업 수행
+                                if (this.classList.contains("subcategory_01")) {
+                                    svg.classList.add("offcanvas-header-svg--skyblue");
+                                    const packetImg = document.querySelector(".menu-img--packet");
+                                    if (packetImg) packetImg.classList.add("menu-img--active");
+                                } else if (this.classList.contains("subcategory_02")) {
+                                    svg.classList.add("offcanvas-header-svg--blue");
+                                    const stickImg = document.querySelector(".menu-img--stick");
+                                    if (stickImg) stickImg.classList.add("menu-img--active");
+                                } else if (this.classList.contains("subcategory_03")) {
+                                    svg.classList.add("offcanvas-header-svg--pink");
+                                    const boosterImg = document.querySelector(".menu-img--booster");
+                                    if (boosterImg) boosterImg.classList.add("menu-img--active");
+                                }
+                            });
+                        });
+                    });
+
+                    </script>
+
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function () {
+                        const acategory = document.querySelectorAll("a.category");
+                        const divcategory = document.querySelectorAll("div.category");
+                        const svg = document.querySelector(".offcanvas-header-svg");
+                        const menuImages = document.querySelectorAll(".menu-img");
+
+                        // 모든 subcategory에 mouseenter 이벤트 리스너 추가
+                        acategory.forEach((subcategory) => {
+                            subcategory.addEventListener("mouseenter", function () {
+                                // 모든 category 'category--active' 제거
+                                acategory.forEach((el) => el.classList.remove("category--active"));
+                                divcategory.forEach((el) => el.classList.remove("category--active"));
+                                
+                                // 현재 요소에 'category--active' 추가
+                                this.classList.add("category--active");
+                                
+                                // 모든 menu-img에서 'menu-img--active' 제거
+                                menuImages.forEach((img) => img.classList.remove("menu-img--active"));
+                                
+                                // 먼저 기존 색상 클래스 제거
+                                svg.classList.remove("offcanvas-header-svg--skyblue", "offcanvas-header-svg--blue", "offcanvas-header-svg--pink");
+
+                                // 각 subcategory에 맞는 작업 수행
+                                if (this.classList.contains("category3")) {
+                                    svg.classList.add("offcanvas-header-svg--blue");
+                                    const packetImg = document.querySelector(".menu-img--media");
+                                    if (packetImg) packetImg.classList.add("menu-img--active");
+
+                                    // 모든 .subcategories 요소에서 .subcategories--active 클래스를 제거
+                                    const subcategoriesList = document.querySelectorAll(".subcategories");
+                                    subcategoriesList.forEach(subcategory => {
+                                        subcategory.classList.remove("subcategories--active");
+                                    });
+                                } else if (this.classList.contains("category4")) {
+                                    svg.classList.add("offcanvas-header-svg--pink");
+                                    const stickImg = document.querySelector(".menu-img--news");
+                                    if (stickImg) stickImg.classList.add("menu-img--active");
+
+                                    // 모든 .subcategories 요소에서 .subcategories--active 클래스를 제거
+                                    const subcategoriesList = document.querySelectorAll(".subcategories");
+                                    subcategoriesList.forEach(subcategory => {
+                                        subcategory.classList.remove("subcategories--active");
+                                    });
+                                } 
+                            });
+                        });
+                    });
+
+                    </script>
+
                 </div>        
                 <div class="offcanvas-footer">
                     <div class="offcanvas-footer-links">

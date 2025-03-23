@@ -202,7 +202,6 @@
             }
         }
 
-
         .icon-button {
             width: 5.2rem;
             height: 5.2rem;
@@ -395,12 +394,12 @@
                     width: 100%;
                     transition: all .2s cubic-bezier(.66,.1,.37,.94)
                 } 
-                @media (min-width: 1024px){
-                    &:hover::after {
-                        width: 100%;
-                        transition: all .2s cubic-bezier(.66,.1,.37,.94)
-                    } 
-                }
+                // @media (min-width: 1024px){
+                //     &:hover::after {
+                //         width: 100%;
+                //         transition: all .2s cubic-bezier(.66,.1,.37,.94)
+                //     } 
+                // }
             }       
             
             &--active {
@@ -448,7 +447,6 @@
         }
     }
 
-
     .menu-img {
         position: absolute;
         pointer-events: none;
@@ -463,7 +461,7 @@
 
         @media screen and (max-width: 1024px) {
             width:45%;
-                bottom: 13%
+            bottom: 13%
         }
 
         @media screen and (max-width: 700px) {
@@ -479,6 +477,10 @@
     
         &--packet {
             right: 5%
+        }
+        &--booster,&--stick {
+            right: 5%;
+            bottom: 0
         }
     }
     
