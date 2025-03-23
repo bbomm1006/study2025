@@ -37,7 +37,7 @@ setTimeout(() => {
                     trigger: "#section1", // 트리거 요소
                     start: "top top", // 스크롤 시작 위치
                     end: "bottom top", // 스크롤 종료 위치
-                    scrub: 5, // 스크롤에 따라 애니메이션 진행
+                    scrub: 4, // 스크롤에 따라 애니메이션 진행
                     pin: true, // #section1을 고정
                     // markers: true // 디버그용 마커                                 
                 }

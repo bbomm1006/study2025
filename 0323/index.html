@@ -1229,6 +1229,56 @@
                 <li class="page_scrollToSpecs">제품기본정보</li>
             </ul>
 
+            <script>
+                document.addEventListener("scroll", function () {
+                    const scrollY = window.scrollY;
+
+                    console.log("현재 스크롤 위치:", scrollY); // 스크롤 값 콘솔 출력
+
+                    const navItems = document.querySelectorAll(".page_productNavMenu li");
+
+                    // 모든 요소에서 page_active 제거
+                    navItems.forEach(item => item.classList.remove("page_active"));
+
+                    if (scrollY >= 4980) {
+                        document.querySelector(".page_scrollToSpecs").classList.add("page_active");
+                    } else if (scrollY >= 3818) {
+                        document.querySelector(".page_scrollToCards").classList.add("page_active");
+                    } else if (scrollY >= 1900) {
+                        document.querySelector(".page_scrollToHorizontalScroll").classList.add("page_active");
+                    } else if (scrollY >= 190) {
+                        document.querySelector(".page_scrollToIntroduction").classList.add("page_active");
+                    } else {
+                        document.querySelector(".page_scrollToTop").classList.add("page_active");
+                    }
+                });
+            </script>
+
+            <script>
+                $(document).ready(function () {
+                    $(".page_scrollToTop").click(function () {
+                        $("html, body").animate({ scrollTop: 0 }, 500);
+                    });
+
+                    $(".page_scrollToIntroduction").click(function () {
+                        $("html, body").animate({ scrollTop: 190 }, 500);
+                    });
+
+                    $(".page_scrollToHorizontalScroll").click(function () {
+                        $("html, body").animate({ scrollTop: 1900 }, 500);
+                    });
+
+                    $(".page_scrollToCards").click(function () {
+                        $("html, body").animate({ scrollTop: 3818 }, 500);
+                    });
+
+                    $(".page_scrollToSpecs").click(function () {
+                        $("html, body").animate({ scrollTop: 4980 }, 500);
+                    });
+                });
+
+            </script>
+
             <div class="page_mobileProductNavMenu">
                 <div class="page_mobileNavHeader">
                     상쾌환 스틱 
