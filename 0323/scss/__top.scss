@@ -18,6 +18,11 @@
         br{
             display: none;
         }
+
+        @media (max-width: 700px){
+            position: relative;
+            top: -5%;
+        }
     }  
     
     &.page_clipPathContainer{
@@ -39,34 +44,34 @@
         display: inline-block;
         position: absolute;
         left: 50%;
-        bottom: -140px;
+        bottom: -30px;
         transform: translateX(-50%);       
         
         img{
             display: inline-block;
-            width: 100px;
+            width: 85px;
             position: relative;
             margin: 0 5px;
             &.stick_01{                
                 position: absolute;
-                bottom: -40px;
+                bottom: -20px;
                 left:calc(50% - 80px);
                 transform-origin: bottom;
-                transform: rotate(-20deg)
+                // transform: rotate(-20deg);
             }
             &.stick_03{                
                 position: absolute;
-                bottom: -40px;
+                bottom: -20px;
                 left:calc(50% - 30px);
                 transform-origin: bottom;
-                transform: rotate(20deg)
+                // transform: rotate(20deg)
             }
         }
         
         @media (max-width: 1366px){
-            bottom: -3vw;
+            bottom: -2vw;
             img{
-                width: 5vw;
+                width: 6vw;
                 &.stick_01,
                 &.stick_03{             
                     bottom: -2vw;
@@ -82,11 +87,14 @@
         @media (max-width: 1024px){
             bottom: -8vw;
             img{
-                width: 8vw;
+                width: 12vw;
+                &.stick_01{             
+                    left:calc(50% - 10vw);
+                }
             }
         }
         @media (max-width: 700px){
-            bottom: -15vw;
+            bottom: 0;
             img{
                 width: 14vw;
                 &.stick_01{             
@@ -106,10 +114,11 @@
     align-items: center;
     height: 100%;
     >div{
-        width: 50%;
+        width: 60%;
         @media (max-width: 1024px){
             width:100%;
             height: 68%;
+            margin-top: -10%;
         }
     }
 
@@ -196,6 +205,15 @@
             }
             .page_tasteButtons{
                 margin-bottom: 2.4rem;
+                button{
+                    font-size: 1.2rem;
+                    line-height: 1.92rem;
+                    padding: .62rem .8rem .52rem .6rem;
+                    svg{
+                        width: 2.16rem;
+                        height: 2.16rem;
+                    }
+                }
             }
         }
     }
@@ -224,6 +242,7 @@
         @media (max-width: 700px){
             font-size: calc(var(--intro-desc) + 1.2vw);
             margin-top: 1.2rem;
+           
         }
     }
     .page_hashtags{
@@ -302,7 +321,11 @@
         font-size: var(--intro-subtitle);
         line-height: 120%;
         font-weight: 700;
-        color:#222
+        color:#222;
+        @media (max-width: 700px){
+            font-size: clamp(2.6rem, 7.5487vw, 3.3rem);
+            width: 90%;
+        }
     }
 
     .page_benefits{
@@ -363,16 +386,22 @@
             display: flex;
             flex-wrap: wrap;
             grid-column-gap: 4.8rem;
-            margin-top: 4.8rem;
+            // margin-top: 4.8rem;
+            margin-top: 0;
             width: 100%;
             white-space: pre-line;
             flex-direction: column;
-            flex: 0 0 84%;
-            gap: 2.2rem;
+            // flex: 0 0 84%;
+            flex: 0 0 74%;
+            //gap: 2.2rem;
+            gap: 0;
             align-items: flex-start;
             .page_benefitText{
+                .page_benefitTitle{
+                    line-height: 1.45;
+                }
                 .page_benefitDesc{
-                    font-size: calc(var(--intro-desc) *1.5);
+                    font-size: 1.3rem;
                     br{
                         display: none;
                     }
@@ -388,7 +417,8 @@
     width: 50%;
     height: 100%;
     position: absolute;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
     right: 0;
     background: #00a5e7;
     @media (max-width: 1024px){
@@ -420,6 +450,10 @@
         left: 46%;
         width: 50vw;
     }
+    @media (max-width: 700px){
+        top: 74%;
+        width: clamp(10rem,70vw,30rem);
+    }
 }
 
 .stickWrap2{
@@ -432,34 +466,43 @@
     }
     .cover{
         position: absolute;
-        top: 60px;
+        top: 0;
         right: 0;
         transform-origin: bottom;
-        transform: rotate(-20deg)
+        transform: rotate(-20deg);
+        opacity: 0;
     }
     img{ 
         width: 70px;
         display: inline-block;
         position: relative;
-        &.stick_in,
+        &.stick_in{
+            @include ani(0.2s, ease-out);
+            position: absolute;
+            bottom: 0px;
+            right: 0;
+            height: 80%;
+            opacity: 0;
+        }
         &.stick_cover{
             position: absolute;
-            bottom: 100px;
+            bottom: 0;
             right: 0;
         }
         &.stick_top{
             position: absolute;
-            top: -130px;
-            right: -80px;
-            transform: rotate(45deg)
+            top: -50px;
+            right: -60px;
+            // transform: rotate(45deg);
+            opacity: 0;
         }
-        &.stick_in{
-            height: 80%;
+        &.stick_cover{
+            opacity: 0;
         }
     }
 
     @media (max-width: 1024px){
-        bottom: -13%;
+        bottom: 0;
         right: 40vw;
     }
     @media (max-width: 700px){
@@ -470,6 +513,7 @@
 }
 
 .page_stickyContainer{
+    position: relative;
     display: flex;
     width: 100%;
     height: 700px;
@@ -489,4 +533,37 @@
     @media (max-width: 700px){
         height: 100vh;
     }
+}
+
+
+//ANI
+
+.page_clipPathContainer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip-path: inset(0% 0% 0% 0%);
+}
+
+.page_introductions{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 10vw);
+    opacity: 0;
+}
+
+.stickWrap,
+.stickWrap2,
+.page_blueBox,
+.page_stickBox{
+    opacity: 0;
+}
+
+.page_aboutBenefits{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
 }

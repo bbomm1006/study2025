@@ -21,7 +21,7 @@ html, body{
 $font-top-title: (90 / 10) * 1vw; //제일 상단 큰 글씨
 $font-top-title-t: (170 / 10) * 1vw; //제일 상단 큰 글씨
 
-$intro-subtitle: (26 / 10) * 1vw; 
+$intro-subtitle: (24 / 10) * 1vw; 
 $intro-subtitle-t: (30 / 10) * 1.8vw; 
 $intro-title: (32 / 10) * 1vw; 
 $intro-title-t: (40 / 10) * 1.6vw; 
@@ -36,12 +36,13 @@ $comm-subtext-m: (11 / 10) * 2.4vw; //공통 중간 글씨
 $comm-desc: (10 / 10) * 1vw; //공통 작은 글씨
 $comm-desc-t: (10 / 10) * 1.2vw; //공통 작은 글씨
 
-$font-hori-title: (170 / 10) * 1vw; //횡 단락 큰 글씨
+$font-hori-title: (140 / 10) * 1vw; //횡 단락 큰 글씨
 $font-hori-title-t: (170 / 10) * 1vw; //횡 단락 큰 글씨
 
 $pd-title: (16 / 10) * 1vw; //제품 타이틀
 $pd-title-t: (16 / 10) * 1.1vw; //제품 타이틀
-$pd-title-m: (16 / 10) * 2vw; //제품 타이틀
+//$pd-title-m: (16 / 10) * 2vw; //제품 타이틀
+$pd-title-m: 1.4rem; //제품 타이틀
 
 :root {
 

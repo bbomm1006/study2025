@@ -17,7 +17,8 @@
         justify-content: flex-start;
         // width: 100%;
         height: unset;
-        padding-top: 27.3rem;
+        // padding-top: 27.3rem;
+        padding-top: 17.3rem;
         // padding-bottom: 60.06rem;
         >div{
             width: 100%;
@@ -33,7 +34,7 @@
             font-size: calc(var(--intro-subtitle) - 1.6vw);
         }
         @media (max-width: 700px){
-            font-size: var(--intro-subtitle);
+            font-size: 2.7rem;
         }
     }
     .page_ingredientDescription{
@@ -54,7 +55,7 @@
             }
         }
         @media (max-width: 700px){
-            font-size: calc(var(--intro-desc) + 1.4vw);
+            font-size: 1.5rem;
             br{
                 display: none;
             }
@@ -118,6 +119,7 @@
             }
             .page_ingredientText{
                 width: 6.4rem;
+                font-size: 1.2rem;
             }
         }
     }

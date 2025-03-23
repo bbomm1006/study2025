@@ -28,9 +28,15 @@
         white-space: nowrap;
         line-height: 1;
         a{
-            font-size: var(--comm-desc);
+            font-size: 1.5rem;
             font-weight: 600;
             color: #222;
+            @media (max-width: 1366px){
+                font-size: var(--comm-desc);
+            }
+            @media (max-width: 1024px){
+                font-size: 2rem;
+            }
             @media (max-width: 700px){
                 font-size: 1.4rem;
             }
@@ -206,10 +212,17 @@
                 }
             }
         }
-
+        @media (max-width: 1024px){
+            width: 22.6rem;
+            .dropdown-header {    
+                padding-left: 2.99rem;    
+                font-size: 2rem;
+            }
+        }
         @media (max-width: 700px){
             width: 17.4rem;
-            .dropdown-header {        
+            .dropdown-header {  
+                padding-left: 2rem;
                 font-size: 1.5rem;
             }
         }
@@ -232,19 +245,42 @@
     @media (max-width: 1024px){
         .footer-info-container{
             // display: block;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4.2rem;
         }
         .footer-info{
             display: block;
         }
         .footer-logo{
-            width: 40%;
+            width: 20rem;
+            min-width: 20rem;
         }
         .footer-address{
             width: 100%;
             margin-top: 20px;
+            .address-item{
+                max-width: none;
+            }
         }
         .footer-socials-wrapper{
             margin-top: 40px;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .footer-dropdown{
+            height: 5.7rem;
+        }
+        .footer-socials .footer-social{
+            width: 5.7rem;
+            height: 5.7rem;
+        }
+    }
+
+    @media (max-width: 700px){
+        .footer-logo{
+            width: 14.1rem;
+            min-width: 14.1rem;
         }
         .footer-dropdown{
             height: 4.5rem;
@@ -252,21 +288,6 @@
         .footer-socials .footer-social{
             width: 4.5rem;
             height: 4.5rem;
-        }
-    }
-
-    @media (max-width: 700px){
-        .footer-logo{
-            width: 30%;
-        }
-        .footer-info-container{
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        .footer-socials-wrapper{
-            margin-top: 40px;
-            justify-content: space-between;
-            width: 100%;
         }
     }
 
