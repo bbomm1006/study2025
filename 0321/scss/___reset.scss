@@ -86,7 +86,7 @@ html,body{
 
 
 /* nav */
-a,button{cursor: pointer;border: 0;background: transparent;}
+a,button{cursor: pointer;border: 0;background: transparent;color: inherit;}
 
 @mixin ani($duration: 0.2s, $ease: ease-in-out) {
     -webkit-transition: all $duration $ease;
