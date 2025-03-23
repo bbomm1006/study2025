@@ -49,22 +49,39 @@
         
         img{
             display: inline-block;
-            width: 85px;
+            width: 9vh;
             position: relative;
             margin: 0 5px;
             &.stick_01{                
                 position: absolute;
                 bottom: -20px;
-                left:calc(50% - 80px);
+                left:calc(50% - 9vh);
                 transform-origin: bottom;
                 // transform: rotate(-20deg);
             }
             &.stick_03{                
                 position: absolute;
                 bottom: -20px;
-                left:calc(50% - 30px);
+                left: 50%;
                 transform-origin: bottom;
                 // transform: rotate(20deg)
+            }
+        }
+
+        @media (max-width: 1920px){
+            bottom: -30px;
+            img{
+                width: 85px;
+                &.stick_01,
+                &.stick_03{             
+                    bottom: -20px;
+                }
+                &.stick_01{             
+                    left:calc(50% - 80px);
+                }
+                &.stick_03{             
+                    left:calc(50% - 30px);
+                }
             }
         }
         
@@ -508,6 +525,10 @@
     @media (max-width: 700px){
         img{
             width: 10vw;
+            &.stick_top{
+                top: -20px;
+                right: -40px;
+            }
         }
     }
 }
@@ -571,4 +592,23 @@
 
 #section1{
     z-index: 2;
+}
+
+//가로
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    .stickWrap .stickInner img {
+        width: 12vh;
+        &.stick_01{
+            left: calc(50% - 10vh);
+        }
+    }
+
+    .page_stickBox{
+        display: none;
+    }
+
+    .stickWrap2 img{
+        width: 6vh;
+    }
 }

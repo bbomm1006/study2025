@@ -117,7 +117,10 @@ setTimeout(() => {
             topani.fromTo(".page_clipPathContainer", { opacity: 1, }, { opacity: 0, duration:1, ease: "linear" },'b');
 
             topani.addLabel('b2')
-            topani.fromTo(".page_stickBox", { opacity: 1, }, { opacity: 1, duration:5, ease: "linear" },'b2');
+            topani.fromTo(".page_stickBox", { opacity: 1, }, { opacity: 1, duration:5, ease: "linear", delay:1 },'b2');
+
+            topani.addLabel('b3')
+            topani.fromTo(".stickWrap", { opacity: 0, }, { opacity: 0, duration:5, ease: "linear", delay:1 },'b3');
 
             topani.addLabel('c')  
             topani.fromTo(".page_stickBox", { opacity: 1, }, { opacity: 0, duration:4, ease: "linear", delay:1 },'c');
