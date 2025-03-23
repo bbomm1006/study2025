@@ -1818,12 +1818,12 @@ a, button {
   gap: 0.2rem;
   transition: all 0.3s cubic-bezier(0.66, 0.1, 0.37, 0.94);
 }
-.page_introductions .page_buttonGroups .page_tasteButtons button.page_activeApple {
+.page_introductions .page_buttonGroups .page_tasteButtons button.page_activeApple.on {
   color: #00a650;
   border: 1px solid #00a650;
   transition: all 0.3s cubic-bezier(0.66, 0.1, 0.37, 0.94);
 }
-.page_introductions .page_buttonGroups .page_tasteButtons button.page_activePeach {
+.page_introductions .page_buttonGroups .page_tasteButtons button.page_activePeach.on {
   color: #ff97cb;
   border: 1px solid #ff97cb;
   transition: all 0.3s cubic-bezier(0.66, 0.1, 0.37, 0.94);
@@ -2173,7 +2173,7 @@ a, button {
   position: relative;
   display: flex;
   width: 100%;
-  height: 700px;
+  height: 100vh;
   align-items: center;
   justify-content: center;
   overflow: hidden;
@@ -2182,16 +2182,6 @@ a, button {
   width: 100%;
   height: 100%;
   position: relative;
-}
-@media (min-height: 700px) {
-  .page_stickyContainer {
-    height: 100vh;
-  }
-}
-@media (max-width: 700px) {
-  .page_stickyContainer {
-    height: 100vh;
-  }
 }
 
 .page_clipPathContainer {
@@ -2207,6 +2197,7 @@ a, button {
   left: 0;
   width: calc(100% - 10vw);
   opacity: 0;
+  z-index: 2;
 }
 
 .stickWrap,
@@ -2506,14 +2497,14 @@ a, button {
   width: 3.4rem;
   height: 3.8rem;
 }
-.infoWrap .page_specButtons button.page_activeApple {
+.infoWrap .page_specButtons button.page_activeApple.on {
   color: #fff;
   background: #02d181;
   transition: all 0.3s cubic-bezier(0.66, 0.1, 0.37, 0.94);
 }
-.infoWrap .page_specButtons button.page_activeMango {
+.infoWrap .page_specButtons button.page_activePeach.on {
   color: #fff;
-  background: #ffb200;
+  background: #fc9ec3;
   transition: all 0.3s cubic-bezier(0.66, 0.1, 0.37, 0.94);
 }
 @media (max-width: 700px) {

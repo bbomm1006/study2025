@@ -63,10 +63,11 @@ setTimeout(() => {
             topani.addLabel('c')  
             topani.fromTo(".page_stickBox", { opacity: 1, }, { opacity: 0, duration:4, ease: "linear", delay:0.5 },'c');
             topani.fromTo(".page_introductions", { opacity: 1, }, { opacity: 0, duration:4, ease: "linear", delay:0.5 },'c');
-            topani.fromTo(".page_blueBox", { transform: "translate(0, -50%) scale(1, 1)", width:"50%", height:"100%" }, { transform: "translate(0, -50%) scale(0.7, 0.7)", width:"50vw", height:"50vw", duration:4, ease: "linear", delay:0.5 },'c');
+            topani.fromTo(".page_blueBox", { transform: "translate(0, -50%) scale(1, 1)", width:"50%", height:"100%" }, { transform: "translate(0, -50%) scale(0.9, 0.9)", width:"50vw", height:"50vw", duration:4, ease: "linear", delay:0.5 },'c');
 
             topani.addLabel('c2')  
-            topani.fromTo(".page_blueBox", { transform: "translate(0, -50%) scale(0.7, 0.7)",borderRadius: "0" }, { transform: "translate(0, -50%) scale(0.6, 0.6)", borderRadius: "100%", duration:4, ease: "linear" },'c2');
+            topani.fromTo(".page_blueBox", { transform: "translate(0, -50%) scale(0.9, 0.9)", borderRadius: "0" }, { transform: "translate(0, -50%) scale(0.8, 0.8)", borderRadius: "10%", duration:2, ease: "linear" },'c2');
+            topani.fromTo(".page_blueBox", { transform: "translate(0, -50%) scale(0.8, 0.8)", borderRadius: "10%" }, { transform: "translate(0, -50%) scale(0.6, 0.6)", borderRadius: "100%", duration:4, delay:2, ease: "linear" },'c2');
 
             topani.addLabel('d')  
             topani.fromTo(".page_aboutBenefits", { opacity: 0, }, { opacity: 1, duration:2, ease: "linear", delay:-4 },'d');

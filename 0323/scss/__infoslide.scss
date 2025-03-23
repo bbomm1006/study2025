@@ -33,14 +33,14 @@
                 height: 3.8rem
             }
 
-            &.page_activeApple {
+            &.page_activeApple.on {
                 color: #fff;
                 background: #02d181;
                 transition: all .3s cubic-bezier(.66,.1,.37,.94)
             }
-            &.page_activeMango {
+            &.page_activePeach.on {
                 color: #fff;
-                background: #ffb200;
+                background: #fc9ec3;
                 transition: all .3s cubic-bezier(.66,.1,.37,.94)
             }
         }
