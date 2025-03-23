@@ -214,10 +214,13 @@
     }
     .page_productDescriptions{
         margin-top: 2.4rem;
-        font-size: var(--intro-desc);
+        font-size: max(1.9rem,1.0417vw);
         line-height: 140%;
         font-weight: 500;
         color:#555;
+        @media (max-width: 1366px){
+            font-size: var(--intro-desc);
+        }
         @media (max-width: 700px){
             font-size: calc(var(--intro-desc) + 1.2vw);
             margin-top: 1.2rem;
@@ -229,14 +232,20 @@
         flex-wrap: wrap;
         gap: .6rem;
         .tag2{
-            font-size: var(--comm-desc);
+            font-size: max(1.2rem,.7292vw);
             display: inline-flex;
             color: #222;
-            padding: .38em .63em;
+            padding: .58em .63em;
             border-radius: 100px;
             border: 1px solid #111;
             font-weight: 500;
             line-height: 1em;
+        }
+        @media (max-width: 1366x){
+            .tag2{
+                font-size: var(--comm-desc);
+                padding: .38em .63em;
+            }
         }
         @media (max-width: 1024px){
             margin-top: 3rem;
@@ -312,20 +321,30 @@
         align-items: center;
         gap: 0 20px;
         margin-bottom: 2vw;
-        .page_benefitText{
-            
+        .page_benefitText{            
             .page_benefitTitle{
-                font-size: var(--pd-title);
+                font-size: 2rem;
                 line-height: 120%;
                 font-weight: 600;
                 color:#222
             }
             .page_benefitDesc{
                 margin-top: .4rem;
-                font-size: var(--intro-desc);
+                font-size: 1.6rem;
                 line-height: 150%;
                 font-weight: 500;
                 color:#555
+            }
+        }
+        @media (max-width: 1366px){
+
+            .page_benefitText{
+                .page_benefitTitle{
+                    font-size: var(--pd-title);
+                }
+                .page_benefitDesc{
+                    font-size: var(--intro-desc);
+                }
             }
         }
         @media (max-width: 1024px){

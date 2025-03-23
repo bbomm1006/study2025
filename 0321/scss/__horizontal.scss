@@ -12,6 +12,7 @@
         display: flex;
         align-items: center;
         position: relative;
+        overflow: hidden;
 
         &.hori_01{background: var(--custom-blue);}
         &.hori_02{background: var(--custom-green);}

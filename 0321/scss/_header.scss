@@ -1,12 +1,11 @@
 @charset "utf-8";
 
-#header{
-    
+#header{    
     position: fixed;
     width: 100vw;
     top: 0;
     left: 0;
-    z-index: 4;
+    z-index: 40;
     color: #000;
     pointer-events: none;
     .header{
