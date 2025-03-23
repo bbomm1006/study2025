@@ -542,7 +542,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    clip-path: inset(0% 0% 0% 0%);
+    clip-path: inset(0% 0% 0% 0%);    
 }
 
 .page_introductions{
@@ -567,4 +567,8 @@
     left: 0;
     width: 100%;
     opacity: 0;
+}
+
+#section1{
+    z-index: 2;
 }

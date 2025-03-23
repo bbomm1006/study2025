@@ -87,7 +87,7 @@
 .page_horizontalItemWrap{
     width: 100%;
     height: 100vh;
-    overflow: hidden;
+    //overflow: hidden;
 
     .page_horizontalInner2{
         display: flex;
@@ -96,6 +96,10 @@
             width: 100vw;
         }
     }
+    .page_horizontalItem{
+        padding-bottom: 6.3rem
+    }
+
     @media (max-width: 1024px){
         height: auto;
         .page_horizontalInner2{
@@ -105,6 +109,31 @@
     }
 }
 
-.page_horizontalItemWrap .page_horizontalItem{
-    padding-bottom: 6.3rem
+.videoWrap{
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    img{
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        //width: 100%;
+        height: auto;
+        //transition: opacity 0.5s ease-in-out; /* 부드럽게 나타나도록 설정 */
+        &.img1{
+            opacity: 1;
+        }
+
+        @media (max-width: 1024px){
+            // top: 0;
+            // left: 0;
+            // transform: none;
+            width:10vw;
+        }
+    }
 }

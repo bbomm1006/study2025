@@ -210,7 +210,6 @@ console.log("Wrap Width:", wrapWidth);
                 }
             });
 
-
             horiani.addLabel('a')                            
             horiani.fromTo(".page_horizontalInner", { x:0 }, {x:"-100vw", duration:5, ease: "power1.in",},'a');
 
@@ -225,6 +224,63 @@ console.log("Wrap Width:", wrapWidth);
             horiani.fromTo(".page_horizontalInner", 
                 { opacity: 1 }, 
                 { opacity: 1, duration: 3}
+            );
+
+            let videoani = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".videoWrap", // 트리거 요소
+                    start: "top top", // 스크롤 시작 위치
+                    end: "bottom top", // 스크롤 종료 위치
+                    scrub: 1, // 스크롤에 따라 애니메이션 진행
+                    //pin: true, // #section1을 고정
+                    // markers: true // 디버그용 마커                                 
+                }
+            });
+
+            videoani.addLabel('a')                            
+            videoani.fromTo(".imageWrapper .img1", { opacity:1 }, {opacity:0, duration:0.1, ease: "none",},'a');
+            videoani.fromTo(".imageWrapper .img2", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'a');
+
+            videoani.addLabel('b')                            
+            videoani.fromTo(".imageWrapper .img2", { opacity:1 }, {opacity:0, duration:0.1, ease: "none",},'b');
+            videoani.fromTo(".imageWrapper .img3", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'b');
+
+            videoani.addLabel('c')                            
+            videoani.fromTo(".imageWrapper .img3", { opacity:1 }, {opacity:0, duration:0.1, ease: "none",},'c');
+            videoani.fromTo(".imageWrapper .img4", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'c');
+
+            videoani.addLabel('d')                            
+            videoani.fromTo(".imageWrapper .img4", { opacity:1 }, {opacity:0, duration:0.1, ease: "none",},'d');
+            videoani.fromTo(".imageWrapper .img5", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'d');
+
+            videoani.addLabel('e')                            
+            videoani.fromTo(".imageWrapper .img5", { opacity:1 }, {opacity:0, duration:0.1, ease: "none",},'e');
+            videoani.fromTo(".imageWrapper .img6", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'e');
+
+            videoani.addLabel('f')                            
+            videoani.fromTo(".imageWrapper .img6", { opacity:1 }, {opacity:0, duration:0.1, ease: "none",},'f');
+            videoani.fromTo(".imageWrapper .img7", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'f');
+
+            videoani.addLabel('g')                            
+            videoani.fromTo(".imageWrapper .img7", { opacity:1 }, {opacity:0, duration:0.1, ease: "none",},'g');
+            videoani.fromTo(".imageWrapper .img8", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'g');
+
+
+            gsap.fromTo(".videoWrap", 
+                {
+                    y: 0, x: 0,
+                }, 
+                {
+                    x: "20%",
+                    y: "100%", 
+                    duration: 1,
+                    scrollTrigger: {
+                    trigger: ".page_ingredientsCtn", // 이 요소가 화면에 들어오면
+                    start: "top 100%", // 화면의 80% 위치에서 시작
+                    end: "top 0%", // 화면의 0% 위치까지
+                    scrub: true, // 스크롤에 맞춰 애니메이션이 진행되도록
+                    }
+                }
             );
 
         }, 
@@ -265,6 +321,81 @@ console.log("Wrap Width:", wrapWidth);
                     // markers: true // 디버그용 마커                                 
                 }
             });
+
+            let videoani = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".videoWrap", // 트리거 요소
+                    start: "top top", // 스크롤 시작 위치
+                    end: "bottom top", // 스크롤 종료 위치
+                    scrub: 1, // 스크롤에 따라 애니메이션 진행
+                    //pin: true, // #section1을 고정
+                    // markers: true // 디버그용 마커                                 
+                }
+            });
+
+            videoani.addLabel('a0')                            
+            videoani.fromTo(".videoWrap", { position: "absolute" }, {position: "fixed", duration:0.1, ease: "none",},'a');
+
+            videoani.addLabel('a')                            
+            videoani.fromTo(".imageWrapper .img1", { opacity:1 }, {opacity:0, duration:0.1, ease: "none",},'a');
+            videoani.fromTo(".imageWrapper .img2", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'a');
+
+            videoani.addLabel('b')                            
+            videoani.to(".imageWrapper .img2", {opacity:0, duration:0.1, ease: "none",},'b');
+            videoani.fromTo(".imageWrapper .img3", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'b');
+
+            videoani.addLabel('c')                            
+            videoani.to(".imageWrapper .img3", {opacity:0, duration:0.1, ease: "none",},'c');
+            videoani.fromTo(".imageWrapper .img4", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'c');
+
+            videoani.addLabel('d')                            
+            videoani.to(".imageWrapper .img4", {opacity:0, duration:0.1, ease: "none",},'d');
+            videoani.fromTo(".imageWrapper .img5", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'d');
+
+            videoani.addLabel('e')                            
+            videoani.to(".imageWrapper .img5", {opacity:0, duration:0.1, ease: "none",},'e');
+            videoani.fromTo(".imageWrapper .img6", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'e');
+
+            videoani.addLabel('f')                            
+            videoani.to(".imageWrapper .img6", {opacity:0, duration:0.1, ease: "none",},'f');
+            videoani.fromTo(".imageWrapper .img7", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'f');
+
+            videoani.addLabel('g')                            
+            videoani.to(".imageWrapper .img7", {opacity:0, duration:0.1, ease: "none",},'g');
+            videoani.fromTo(".imageWrapper .img8", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'g');
+            
+            gsap.fromTo(".videoWrap", 
+                {
+                    y: 0, 
+                }, 
+                {
+                    y: "50%", 
+                    duration: 1,
+                    scrollTrigger: {
+                    trigger: ".page_ingredientsCtn", // 이 요소가 화면에 들어오면
+                    start: "top 100%", // 화면의 80% 위치에서 시작
+                    end: "top 0%", // 화면의 0% 위치까지
+                    scrub: true, // 스크롤에 맞춰 애니메이션이 진행되도록
+                    }
+                }
+            );
+
+            gsap.fromTo(".videoWrap", 
+                {
+                    opacity:1,
+                }, 
+                {
+                    opacity:0,
+                    duration: 1,
+                    scrollTrigger: {
+                    trigger: ".sitckBoxPackge", // 이 요소가 화면에 들어오면
+                    start: "top 40%", // 화면의 80% 위치에서 시작
+                    end: "top 0%", // 화면의 0% 위치까지
+                    scrub: true, // 스크롤에 맞춰 애니메이션이 진행되도록
+                    }
+                }
+            );
+
         }, 
 
         // all 

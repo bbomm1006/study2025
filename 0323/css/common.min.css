@@ -2215,6 +2215,10 @@ a, button {
   opacity: 0;
 }
 
+#section1 {
+  z-index: 2;
+}
+
 .page_horizontalItemWrap {
   position: relative;
 }
@@ -2300,7 +2304,6 @@ a, button {
 .page_horizontalItemWrap {
   width: 100%;
   height: 100vh;
-  overflow: hidden;
 }
 .page_horizontalItemWrap .page_horizontalInner2 {
   display: flex;
@@ -2308,6 +2311,9 @@ a, button {
 }
 .page_horizontalItemWrap .page_horizontalInner2 section {
   width: 100vw;
+}
+.page_horizontalItemWrap .page_horizontalItem {
+  padding-bottom: 6.3rem;
 }
 @media (max-width: 1024px) {
   .page_horizontalItemWrap {
@@ -2319,8 +2325,29 @@ a, button {
   }
 }
 
-.page_horizontalItemWrap .page_horizontalItem {
-  padding-bottom: 6.3rem;
+.videoWrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+.videoWrap img {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+}
+.videoWrap img.img1 {
+  opacity: 1;
+}
+@media (max-width: 1024px) {
+  .videoWrap img {
+    width: 10vw;
+  }
 }
 
 .page_ingredientsCtn {
