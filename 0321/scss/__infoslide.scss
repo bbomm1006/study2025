@@ -45,9 +45,28 @@
             }
         }
         @media (max-width: 700px){
-            margin-top: 10rem;
+            margin-top: 0;
+
+            button{
+                font-size: 1.1rem;
+                font-weight: 600;
+                line-height: 1.2;
+                height: 3.4rem;
+                padding: 0 1.2rem;
+                svg{
+                    width: 1.62rem;
+                    height: 1.62rem;
+                }
+                &:first-child svg {
+                    width: 2rem;
+                    height: 2.3rem;
+                }
+            }
         }
+
+        
     }
+
 
 
     .page_specs{
@@ -57,40 +76,44 @@
         gap: 6.9rem;
         padding-top: 6rem;
         padding-bottom: 20rem;
-
         position: relative;
+        overflow: hidden;
 
         .swiper-container{
             width: 44rem;
             aspect-ratio: 440 / 500;
             background: #ececec;
-            border: 1px solid hsla(0, 0%, 7%, .078);
-            border-radius: 4rem; 
-            overflow: hidden;
+            overflow: hidden!important;
             position: relative;
+            border: 1px solid hsla(0, 0%, 7%, .078);
+            border-radius: 20px;
+            overflow: hidden!important;
+            font-size: 0;
+            line-height: 0;
+            will-change: transform; //아이폰 넘침 문제 
 
             .swiper-slide {
                 // text-align: center; 
                 position: relative;
-                // overflow: hidden;
-                // border-radius: 30px;
-                // border:1px solid #ddd;
+                font-size: 0;
+                line-height: 1em;
+                overflow: hidden;
                 img{
                     width: 100%;
                 }
             
             }
-
             
             @media (max-width: 1024px){
                 width:100%;
                 aspect-ratio: 350 / 290;
+                overflow: hidden;
                 .swiper-slide{
                     display: flex;
                     height: 100%;
                     align-items: center;
                     flex-shrink: 0;
-                    
+                    overflow: hidden;
                 }
             }
 
@@ -169,8 +192,10 @@
             gap: 3.2rem;
             padding-top: 4rem;
             padding-left: 5.1282vw;
-            padding-right: 5.1282vw
+            padding-right: 5.1282vw;
         }
+
+        
     }
     
 
@@ -206,9 +231,17 @@
 
         @media (max-width: 700px){
             padding: 0 1.8rem;
-            gap: 2rem;
-            .page_specName{
-                width:8.5rem
+            gap: 1.8rem;
+
+            .page_specWrapper{
+                gap: 1.8rem;                
+                .page_specName{
+                    min-width:8.5rem;
+                    font-size: 1.3rem;
+                }
+                .page_specValue{
+                    font-size: 1.3rem;
+                }
             }
         }
     }

@@ -19,7 +19,9 @@
         color: #222;
         @media (max-width: 700px){
             text-align: center;
+            font-size: 3.2rem;
         }
+        
     }
 
     .figureCont{
@@ -123,6 +125,10 @@
         margin-top: 2.4rem;
         @media (max-width: 1366px){
             font-size: var(--pd-title);
+        }
+        @media (max-width: 700px){
+            margin-top: 1.2rem;
+            font-size: 2rem;
         }
     }
 
