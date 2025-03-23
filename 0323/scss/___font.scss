@@ -1,0 +1,92 @@
+@charset "utf-8";
+
+/* font */
+@import url('https://cdn.jsdelivr.net/npm/pretendard/dist/web/static/pretendard.css');
+
+html,body,button{
+	font-family: 'Pretendard', sans-serif; letter-spacing: -0.5px;
+}
+
+html, body{ 
+	font-size: 10px;
+	.grid-m{
+    padding-left:8.33vw;padding-right:8.33vw;
+    @media (max-width: 1366px){
+      padding-left:5vw;padding-right:5vw;
+    }
+  }
+	.grid-xl{padding-left:4.33vw;padding-right:4.33vw;}
+}
+
+$font-top-title: (90 / 10) * 1vw; //제일 상단 큰 글씨
+$font-top-title-t: (170 / 10) * 1vw; //제일 상단 큰 글씨
+
+$intro-subtitle: (26 / 10) * 1vw; 
+$intro-subtitle-t: (30 / 10) * 1.8vw; 
+$intro-title: (32 / 10) * 1vw; 
+$intro-title-t: (40 / 10) * 1.6vw; 
+$intro-desc: (14 / 10) * 1vw; 
+$intro-desc-t: (14 / 10) * 1.2vw; 
+$intro-desc2: (13 / 10) * 1vw; 
+$intro-desc2-t: (13 / 10) * 1.2vw; 
+
+$comm-subtext: (11 / 10) * 1vw; //공통 중간 글씨
+$comm-subtext-t: (11 / 10) * 1.7vw; //공통 중간 글씨
+$comm-subtext-m: (11 / 10) * 2.4vw; //공통 중간 글씨
+$comm-desc: (10 / 10) * 1vw; //공통 작은 글씨
+$comm-desc-t: (10 / 10) * 1.2vw; //공통 작은 글씨
+
+$font-hori-title: (170 / 10) * 1vw; //횡 단락 큰 글씨
+$font-hori-title-t: (170 / 10) * 1vw; //횡 단락 큰 글씨
+
+$pd-title: (16 / 10) * 1vw; //제품 타이틀
+$pd-title-t: (16 / 10) * 1.1vw; //제품 타이틀
+$pd-title-m: (16 / 10) * 2vw; //제품 타이틀
+
+:root {
+
+  --font-top-title: #{$font-top-title}; 
+
+  --intro-subtitle: #{$intro-subtitle}; 
+  --intro-title: #{$intro-title}; 
+  --intro-desc: #{$intro-desc}; 
+  --intro-desc2: #{$intro-desc2}; 
+
+  --comm-subtext: #{$comm-subtext}; 
+  --comm-desc: #{$comm-desc}; 
+
+  --font-hori-title: #{$font-hori-title}; 
+
+  --pd-title: #{$pd-title}; 
+
+}
+
+
+@media (max-width: 1024px){
+  :root {
+
+    --font-top-title: #{$font-top-title-t};
+
+    --intro-subtitle: #{$intro-subtitle-t}; 
+    --intro-title: #{$intro-title-t}; 
+    --intro-desc: #{$intro-desc-t}; 
+    --intro-desc2: #{$intro-desc2-t}; 
+
+    --comm-subtext: #{$comm-subtext-t}; 
+    --comm-desc: #{$comm-desc-t}; 
+
+    --font-hori-title: #{$font-hori-title-t}; 
+
+    --pd-title: #{$pd-title-t}; 
+  
+  } 
+}
+@media (max-width: 700px){
+  :root {
+
+    --comm-subtext: #{$comm-subtext-m}; 
+
+    --pd-title: #{$pd-title-m}; 
+  
+  } 
+}
