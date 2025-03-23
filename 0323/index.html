@@ -106,11 +106,12 @@
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 461 650" class="offcanvas-header-svg offcanvas-header-svg--skyblue"><rect width="379.347" height="856" x="359" y="-69" fill="currentColor" rx="189.673" transform="rotate(30 359 -69)"></rect></svg>
                         
+                        <div id="lottie-hd1" class="menu-img menu-img--about"></div>
                         <img alt="packet" loading="lazy" width="804" height="852" decoding="async" data-nimg="1" class="menu-img menu-img--packet menu-img--active" srcset="https://www.easytomorrow.com/_next/image?url=%2Fcommon%2Fimages%2Fheader%2Fpacket.png&amp;w=828&amp;q=75 1x, https://www.easytomorrow.com/_next/image?url=%2Fcommon%2Fimages%2Fheader%2Fpacket.png&amp;w=1920&amp;q=75 2x" src="https://www.easytomorrow.com/_next/image?url=%2Fcommon%2Fimages%2Fheader%2Fpacket.png&amp;w=1920&amp;q=75" style="color: transparent;">
                         <img alt="stick" loading="lazy" width="804" height="1302" decoding="async" data-nimg="1" class="menu-img menu-img--stick" srcset="https://www.easytomorrow.com/_next/image?url=%2Fcommon%2Fimages%2Fheader%2Fstick.png&amp;w=828&amp;q=75 1x, https://www.easytomorrow.com/_next/image?url=%2Fcommon%2Fimages%2Fheader%2Fstick.png&amp;w=1920&amp;q=75 2x" src="https://www.easytomorrow.com/_next/image?url=%2Fcommon%2Fimages%2Fheader%2Fstick.png&amp;w=1920&amp;q=75" style="color: transparent;">
                         <img alt="booster" loading="lazy" width="804" height="852" decoding="async" data-nimg="1" class="menu-img menu-img--booster false" srcset="https://www.easytomorrow.com/_next/image?url=%2Fcommon%2Fimages%2Fheader%2Fbooster.png&amp;w=828&amp;q=75 1x, https://www.easytomorrow.com/_next/image?url=%2Fcommon%2Fimages%2Fheader%2Fbooster.png&amp;w=1920&amp;q=75 2x" src="https://www.easytomorrow.com/_next/image?url=%2Fcommon%2Fimages%2Fheader%2Fbooster.png&amp;w=1920&amp;q=75" style="color: transparent;">
-                        <div id="lottie-hd1" class="menu-img menu-img--media"></div>
-                        <div id="lottie-hd2" class="menu-img menu-img--news"></div>
+                        <div id="lottie-hd2" class="menu-img menu-img--media"></div>
+                        <div id="lottie-hd3" class="menu-img menu-img--news"></div>
 
                         <script>
                             var animation = lottie.loadAnimation({
@@ -118,14 +119,21 @@
                                 renderer: 'svg', // 렌더링 방식 (svg, canvas, html 등)
                                 loop: true, // 애니메이션 반복 여부
                                 autoplay: true, // 자동 실행 여부
-                                path: 'images/video.json' // 애니메이션 JSON 파일 URL
+                                path: 'images/about.json' // 애니메이션 JSON 파일 URL
                             });
                             var animation = lottie.loadAnimation({
                                 container: document.getElementById('lottie-hd2'), // 애니메이션을 표시할 요소
                                 renderer: 'svg', // 렌더링 방식 (svg, canvas, html 등)
                                 loop: true, // 애니메이션 반복 여부
                                 autoplay: true, // 자동 실행 여부
-                                path: 'images/video2.json' // 애니메이션 JSON 파일 URL
+                                path: 'images/media.json' // 애니메이션 JSON 파일 URL
+                            });
+                            var animation = lottie.loadAnimation({
+                                container: document.getElementById('lottie-hd3'), // 애니메이션을 표시할 요소
+                                renderer: 'svg', // 렌더링 방식 (svg, canvas, html 등)
+                                loop: true, // 애니메이션 반복 여부
+                                autoplay: true, // 자동 실행 여부
+                                path: 'images/news.json' // 애니메이션 JSON 파일 URL
                             });
                         </script>
                     </div>   
@@ -135,6 +143,8 @@
                             const svg = document.querySelector(".offcanvas-header-svg");
                             const categories = document.querySelectorAll('.category');
                             const subcategories = document.querySelectorAll('.subcategories');
+                            const subcategory = document.querySelectorAll('.subcategory');
+                            const menuimg = document.querySelectorAll('.menu-img');
 
                             categories.forEach(category => {
                                 category.addEventListener('click', function() {
@@ -146,12 +156,28 @@
                                 
                                 // .subcategories--active를 모두 제거합니다.
                                 subcategories.forEach(sub => sub.classList.remove('subcategories--active'));
+
+                                // .menu-img--active를 모두 제거합니다.
+                                menuimg.forEach(sub => sub.classList.remove('menu-img--active'));
+
+                                // .subcategory--active를 모두 제거합니다.
+                                subcategory.forEach(sub => sub.classList.remove('subcategory--active'));
+
+                                // .offcanvas-header-svg의 모든 기존 클래스를 제거하고 .offcanvas-header-svg--skyblue 클래스를 추가           
+                                if (svg) {
+                                    svg.classList.remove('offcanvas-header-svg--blue');  // 기존 클래스를 제거
+                                    svg.classList.remove('offcanvas-header-svg--pink');  // 기존 클래스를 제거
+                                    svg.classList.add('offcanvas-header-svg--skyblue');  // 'offcanvas-header-svg--skyblue' 클래스를 추가
+                                }
                                 
                                 // 클릭한 category에 따라 해당하는 .subcategories에 .subcategories--active 추가
                                 if (this.classList.contains('category1')) {
                                     document.querySelector('.subcategories1').classList.add('subcategories--active');
+                                    document.querySelector('.menu-img--about').classList.add('menu-img--active');
                                 } else if (this.classList.contains('category2')) {
                                     document.querySelector('.subcategories2').classList.add('subcategories--active');
+                                    document.querySelector('.menu-img--packet').classList.add('menu-img--active');
+                                    document.querySelector('.subcategory_01').classList.add('subcategory--active');
                                 }
                                 });
                             });
@@ -161,7 +187,7 @@
                     
                     <script>
                         document.addEventListener("DOMContentLoaded", function () {
-                        const subcategories = document.querySelectorAll(".subcategory");
+                        const subcategories = document.querySelectorAll(".subcategories2 .subcategory");
                         const svg = document.querySelector(".offcanvas-header-svg");
                         const menuImages = document.querySelectorAll(".menu-img");
 

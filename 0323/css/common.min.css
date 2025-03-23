@@ -690,6 +690,12 @@ a, button {
   width: 100%;
   transition: all 0.2s cubic-bezier(0.66, 0.1, 0.37, 0.94);
 }
+@media (min-width: 1024px) {
+  .offcanvas .offcanvas-body .subcategories.subcategories1 .subcategory:hover::after {
+    width: 100%;
+    transition: all 0.2s cubic-bezier(0.66, 0.1, 0.37, 0.94);
+  }
+}
 .offcanvas .offcanvas-body .subcategories--active {
   opacity: 1;
   pointer-events: all;

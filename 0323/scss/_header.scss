@@ -393,13 +393,17 @@
                     width: 100%;
                     transition: all .2s cubic-bezier(.66,.1,.37,.94)
                 } 
-                // @media (min-width: 1024px){
-                //     &:hover::after {
-                //         width: 100%;
-                //         transition: all .2s cubic-bezier(.66,.1,.37,.94)
-                //     } 
-                // }
             }       
+
+            &.subcategories1 .subcategory{
+                @media (min-width: 1024px){
+                    &:hover::after {
+                        width: 100%;
+                        transition: all .2s cubic-bezier(.66,.1,.37,.94)
+                    } 
+                }
+
+            }
             
             &--active {
                 opacity: 1;
