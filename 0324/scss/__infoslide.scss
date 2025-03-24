@@ -2,7 +2,8 @@
 
 
 .infoWrap{
-
+    position: relative;
+    z-index: 10;
     .page_specButtons{
         display: flex;
         flex-wrap: wrap;

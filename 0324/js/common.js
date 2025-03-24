@@ -36,45 +36,46 @@ setTimeout(() => {
                 scrollTrigger: {
                     trigger: "#section1", // 트리거 요소
                     start: "top top", // 스크롤 시작 위치
-                    end: "bottom top", // 스크롤 종료 위치
-                    scrub: 4, // 스크롤에 따라 애니메이션 진행
+                    // end: "bottom top", // 스크롤 종료 위치
+                    end: "+=480%",
+                    scrub: 2, // 스크롤에 따라 애니메이션 진행
                     pin: true, // #section1을 고정
                     // markers: true // 디버그용 마커                                 
                 }
             });
 
             topani.addLabel('a')                            
-            topani.fromTo(".page_clipPathContainer", { clipPath: "inset(0% 0% 0% 0%)", }, { clipPath: "inset(0% 0% 0% 50%)", duration:3, ease: "linear",},'a');
+            topani.fromTo(".page_clipPathContainer", { clipPath: "inset(0% 0% 0% 0%)", }, { clipPath: "inset(0% 0% 0% 50%)", duration:2, ease: "power1.in",},'a');
             topani.fromTo(".page_clipPathContainer .page_masking", { opacity: 1, }, { opacity: 0, duration:2, ease: "linear",},'a');
             topani.fromTo(".stickWrap", { opacity: 1, }, { opacity: 0, duration:2, ease: "linear",},'a');
 
             topani.addLabel('b')                            
-            topani.fromTo(".page_stickBox", { opacity: 0, transform: "translate(-50%, -40%)", }, { opacity: 1, transform: "translate(-50%, -50%)", duration:1, ease: "linear", delay:-0.5 },'b');
-            topani.fromTo(".page_introductions", { opacity: 0, }, { opacity: 1, duration:1, ease: "linear", delay:-0.5 },'b');
+            topani.fromTo(".page_stickBox", { opacity: 0, transform: "translate(-50%, -40%)", }, { opacity: 1, transform: "translate(-50%, -50%)", duration:2, ease: "linear", delay:-1 },'b');
+            topani.fromTo(".page_introductions", { opacity: 0, }, { opacity: 1, duration:2, ease: "linear", delay:-1 },'b');
 
-            topani.fromTo(".page_introductions .page_productNameContainer", { y: 20, }, { y: 0, duration:1, ease: "linear", delay:-0.5 },'b');
-            topani.fromTo(".page_introductions .page_productNameSubtitle", { y: 20, }, { y: 0, duration:1, ease: "linear", delay:-0.4 },'b');
-            topani.fromTo(".page_introductions .page_productNameTitle", { y: 20, }, { y: 0, duration:1, ease: "linear", delay:-0.3 },'b');
-            topani.fromTo(".page_introductions .page_productDescriptions", { y: 20, }, { y: 0, duration:1, ease: "linear", delay:-0.2 },'b');
+            topani.fromTo(".page_introductions .page_productNameContainer", { y: 20, }, { y: 0, duration:1, ease: "linear", delay:-1 },'b');
+            topani.fromTo(".page_introductions .page_productNameSubtitle", { y: 20, }, { y: 0, duration:1, ease: "linear", delay:-0.8 },'b');
+            topani.fromTo(".page_introductions .page_productNameTitle", { y: 20, }, { y: 0, duration:1, ease: "linear", delay:-0.6 },'b');
+            topani.fromTo(".page_introductions .page_productDescriptions", { y: 20, }, { y: 0, duration:1, ease: "linear", delay:-0.4 },'b');
 
             topani.fromTo(".page_blueBox", { opacity: 0, }, { opacity: 1, duration:0.1, ease: "linear", delay:-0.2 },'b');
-            topani.fromTo(".page_clipPathContainer", { opacity: 1, }, { opacity: 0, duration:1, ease: "linear" },'b');
+            topani.fromTo(".page_clipPathContainer", { opacity: 1, }, { opacity: 0, duration:5, ease: "linear" },'b');
 
             topani.addLabel('c')  
-            topani.fromTo(".page_stickBox", { opacity: 1, }, { opacity: 0, duration:4, ease: "linear", delay:0.5 },'c');
-            topani.fromTo(".page_introductions", { opacity: 1, }, { opacity: 0, duration:4, ease: "linear", delay:0.5 },'c');
-            topani.fromTo(".page_blueBox", { transform: "translate(0, -50%) scale(1, 1)", width:"50%", height:"100%" }, { transform: "translate(0, -50%) scale(0.9, 0.9)", width:"50vw", height:"50vw", duration:4, ease: "linear", delay:0.5 },'c');
-
-            topani.addLabel('c2')  
-            topani.fromTo(".page_blueBox", { transform: "translate(0, -50%) scale(0.9, 0.9)", borderRadius: "0" }, { transform: "translate(0, -50%) scale(0.8, 0.8)", borderRadius: "10%", duration:2, ease: "linear" },'c2');
-            topani.fromTo(".page_blueBox", { transform: "translate(0, -50%) scale(0.8, 0.8)", borderRadius: "10%" }, { transform: "translate(0, -50%) scale(0.6, 0.6)", borderRadius: "100%", duration:4, delay:2, ease: "linear" },'c2');
+            topani.fromTo(".page_stickBox", { opacity: 1, }, { opacity: 0, duration:6, ease: "linear" },'c');
+            topani.fromTo(".page_introductions", { opacity: 1, }, { opacity: 0, duration:6, ease: "linear", },'c');
+            // topani.fromTo(".page_blueBox", { transform: "translate(0, -50%) scale(1, 1)", width:"50%", height:"100%" }, { transform: "translate(0, -50%) scale(0.9, 0.9)", width:"50vw", height:"50vw", duration:1, ease: "linear", },'c');
 
             topani.addLabel('d')  
-            topani.fromTo(".page_aboutBenefits", { opacity: 0, }, { opacity: 1, duration:2, ease: "linear", delay:-4 },'d');
-            topani.fromTo(".stickWrap2", { opacity: 0, }, { opacity: 1, duration:2, ease: "linear", delay:-4 },'d');
+            topani.fromTo(".page_blueBox", { transform: "translate(0, -50%) scale(1, 1)", borderRadius: "0" }, { transform: "translate(0, -50%) scale(0.6, 0.6)", borderRadius: "100%", duration:4, ease: "linear",delay:-6  },'d');
+            // topani.fromTo(".page_blueBox", { transform: "translate(0, -50%) scale(0.8, 0.8)", borderRadius: "10%" }, { transform: "translate(0, -50%) scale(0.6, 0.6)", borderRadius: "100%", duration:2, ease: "linear" },'d');
+            topani.fromTo(".page_aboutBenefits", { opacity: 0, }, { opacity: 1, duration:1, ease: "linear", delay:1 },'d');
+            topani.fromTo(".stickWrap2", { opacity: 0, }, { opacity: 1, duration:2, ease: "linear", delay:1 },'d');
+            topani.fromTo(".stickWrap2 .cover", { opacity: 0,rotate: "0", }, {rotate: "0", opacity: 1, duration:2, ease: "linear", delay:1.2 },'d');
+
 
             topani.addLabel('e')  
-            topani.fromTo(".stickWrap2 .cover", { rotate: "0", opacity: 0, }, { rotate: "-20deg", opacity: 1, duration:3, ease: "linear" },'e');
+            topani.to(".stickWrap2 .cover", { rotate: "-20deg", duration:2, ease: "linear" },'e');
 
             topani.addLabel('f')  
             topani.fromTo(".stickWrap2 .stick_01", { opacity: 1, }, { opacity: 0, duration:0.1, ease: "linear" },'f');
@@ -98,10 +99,11 @@ setTimeout(() => {
                 scrollTrigger: {
                     trigger: "#section1", // 트리거 요소
                     start: "top top", // 스크롤 시작 위치
-                    end: "bottom top", // 스크롤 종료 위치
-                    scrub: 4, // 스크롤에 따라 애니메이션 진행
+                    end: "+=460%",
+                    scrub: 2, // 스크롤에 따라 애니메이션 진행
                     pin: true, // #section1을 고정
-                    // markers: true // 디버그용 마커                                 
+                    // markers: true, // 디버그용 마커     
+                    delay: 2,                            
                 }
             });
 
@@ -116,11 +118,6 @@ setTimeout(() => {
             topani.fromTo(".page_blueBox", { opacity: 0, }, { opacity: 1, duration:0.1, ease: "linear", delay:-0.2 },'b');
             topani.fromTo(".page_clipPathContainer", { opacity: 1, }, { opacity: 0, duration:1, ease: "linear" },'b');
 
-            topani.addLabel('b2')
-            topani.fromTo(".page_stickBox", { opacity: 1, }, { opacity: 1, duration:5, ease: "linear", delay:1 },'b2');
-
-            topani.addLabel('b3')
-            topani.fromTo(".stickWrap", { opacity: 0, }, { opacity: 0, duration:5, ease: "linear", delay:1 },'b3');
 
             topani.addLabel('c')  
             topani.fromTo(".page_stickBox", { opacity: 1, }, { opacity: 0, duration:4, ease: "linear", delay:1 },'c');
@@ -156,8 +153,9 @@ console.log("Wrap Width:", wrapWidth);
 
             topani.fromTo("#section1", 
                 { opacity: 1, }, 
-                { opacity: 0, duration: 10, delay: 3 }
+                { opacity: 0, duration: 10, delay: 10 }
             );
+
 
         }, 
 
@@ -240,10 +238,6 @@ console.log("Wrap Width:", wrapWidth);
                 }
             });
 
-            videoani.addLabel('a')                            
-            videoani.fromTo(".imageWrapper .img1", { opacity:1 }, {opacity:0, duration:0.1, ease: "none",},'a');
-            videoani.fromTo(".imageWrapper .img2", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'a');
-
             videoani.addLabel('b')                            
             videoani.fromTo(".imageWrapper .img2", { opacity:1 }, {opacity:0, duration:0.1, ease: "none",},'b');
             videoani.fromTo(".imageWrapper .img3", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'b');
@@ -268,14 +262,19 @@ console.log("Wrap Width:", wrapWidth);
             videoani.fromTo(".imageWrapper .img7", { opacity:1 }, {opacity:0, duration:0.1, ease: "none",},'g');
             videoani.fromTo(".imageWrapper .img8", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'g');
 
+            videoani.addLabel('a')                            
+            videoani.fromTo(".imageWrapper .img8", { opacity:1 }, {opacity:0, duration:0.1, ease: "none",},'a');
+            videoani.fromTo(".imageWrapper .img1", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'a');
+
 
             gsap.fromTo(".videoWrap", 
                 {
-                    y: 0, x: 0,
+                    y: 0, x: 0, transform: "scale(1)",
                 }, 
                 {
-                    x: "20%",
-                    y: "100%", 
+                    x: "10%",
+                    y: "105%", 
+                    transform: "scale(0.8)",
                     duration: 1,
                     scrollTrigger: {
                     trigger: ".page_ingredientsCtn", // 이 요소가 화면에 들어오면
@@ -339,40 +338,40 @@ console.log("Wrap Width:", wrapWidth);
             videoani.addLabel('a0')                            
             videoani.fromTo(".videoWrap", { position: "absolute" }, {position: "fixed", duration:0.1, ease: "none",},'a');
 
-            videoani.addLabel('a')                            
-            videoani.fromTo(".imageWrapper .img1", { opacity:1 }, {opacity:0, duration:0.1, ease: "none",},'a');
-            videoani.fromTo(".imageWrapper .img2", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'a');
-
             videoani.addLabel('b')                            
-            videoani.to(".imageWrapper .img2", {opacity:0, duration:0.1, ease: "none",},'b');
+            videoani.fromTo(".imageWrapper .img2", { opacity:1 }, {opacity:0, duration:0.1, ease: "none",},'b');
             videoani.fromTo(".imageWrapper .img3", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'b');
 
             videoani.addLabel('c')                            
-            videoani.to(".imageWrapper .img3", {opacity:0, duration:0.1, ease: "none",},'c');
+            videoani.fromTo(".imageWrapper .img3", { opacity:1 }, {opacity:0, duration:0.1, ease: "none",},'c');
             videoani.fromTo(".imageWrapper .img4", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'c');
 
             videoani.addLabel('d')                            
-            videoani.to(".imageWrapper .img4", {opacity:0, duration:0.1, ease: "none",},'d');
+            videoani.fromTo(".imageWrapper .img4", { opacity:1 }, {opacity:0, duration:0.1, ease: "none",},'d');
             videoani.fromTo(".imageWrapper .img5", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'d');
 
             videoani.addLabel('e')                            
-            videoani.to(".imageWrapper .img5", {opacity:0, duration:0.1, ease: "none",},'e');
+            videoani.fromTo(".imageWrapper .img5", { opacity:1 }, {opacity:0, duration:0.1, ease: "none",},'e');
             videoani.fromTo(".imageWrapper .img6", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'e');
 
             videoani.addLabel('f')                            
-            videoani.to(".imageWrapper .img6", {opacity:0, duration:0.1, ease: "none",},'f');
+            videoani.fromTo(".imageWrapper .img6", { opacity:1 }, {opacity:0, duration:0.1, ease: "none",},'f');
             videoani.fromTo(".imageWrapper .img7", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'f');
 
             videoani.addLabel('g')                            
-            videoani.to(".imageWrapper .img7", {opacity:0, duration:0.1, ease: "none",},'g');
+            videoani.fromTo(".imageWrapper .img7", { opacity:1 }, {opacity:0, duration:0.1, ease: "none",},'g');
             videoani.fromTo(".imageWrapper .img8", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'g');
+
+            videoani.addLabel('a')                            
+            videoani.fromTo(".imageWrapper .img8", { opacity:1 }, {opacity:0, duration:0.1, ease: "none",},'a');
+            videoani.fromTo(".imageWrapper .img1", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'a');
             
             gsap.fromTo(".videoWrap", 
                 {
-                    y: 0, 
+                    y: 0, x: 0, transform: "scale(1)",
                 }, 
                 {
-                    y: "30%", 
+                    y: "30%", x: "-10%", transform: "scale(0.8)",
                     duration: 1,
                     scrollTrigger: {
                     trigger: ".page_ingredientsCtn", // 이 요소가 화면에 들어오면
@@ -391,7 +390,7 @@ console.log("Wrap Width:", wrapWidth);
                     opacity:0,
                     duration: 1,
                     scrollTrigger: {
-                    trigger: ".sitckBoxPackge", // 이 요소가 화면에 들어오면
+                    trigger: ".coverimg", // 이 요소가 화면에 들어오면
                     start: "top 80%", // 화면의 80% 위치에서 시작
                     end: "top 50%", // 화면의 0% 위치까지
                     scrub: true, // 스크롤에 맞춰 애니메이션이 진행되도록
