@@ -1361,13 +1361,13 @@
                     // 모든 요소에서 page_active 제거
                     navItems.forEach(item => item.classList.remove("page_active"));
 
-                    if (scrollY >= 4980) {
+                    if (scrollY >= 10500) {
                         document.querySelector(".page_scrollToSpecs").classList.add("page_active");
-                    } else if (scrollY >= 3818) {
+                    } else if (scrollY >= 9400) {
                         document.querySelector(".page_scrollToCards").classList.add("page_active");
-                    } else if (scrollY >= 1900) {
+                    } else if (scrollY >= 5600) {
                         document.querySelector(".page_scrollToHorizontalScroll").classList.add("page_active");
-                    } else if (scrollY >= 300) {
+                    } else if (scrollY >= 500) {
                         document.querySelector(".page_scrollToIntroduction").classList.add("page_active");
                     } else {
                         document.querySelector(".page_scrollToTop").classList.add("page_active");
@@ -1382,19 +1382,19 @@
                     });
 
                     $(".page_scrollToIntroduction").click(function () {
-                        $("html, body").animate({ scrollTop: 300 }, 500);
+                        $("html, body").animate({ scrollTop: 500 }, 500);
                     });
 
                     $(".page_scrollToHorizontalScroll").click(function () {
-                        $("html, body").animate({ scrollTop: 1900 }, 500);
+                        $("html, body").animate({ scrollTop: 5600 }, 500);
                     });
 
                     $(".page_scrollToCards").click(function () {
-                        $("html, body").animate({ scrollTop: 3818 }, 500);
+                        $("html, body").animate({ scrollTop: 9400 }, 500);
                     });
 
                     $(".page_scrollToSpecs").click(function () {
-                        $("html, body").animate({ scrollTop: 4980 }, 500);
+                        $("html, body").animate({ scrollTop: 10500 }, 500);
                     });
                 });
 
@@ -1432,7 +1432,7 @@
                         header.textContent = "원료정보";
                     } else if (scrollTop >= pointOffset) {
                         header.textContent = "포인트";
-                    } else if (scrollTop >= 100) {
+                    } else if (scrollTop >= 400) {
                         header.textContent = "제품소개";
                     } else {
                         header.textContent = "상쾌환 스틱";
@@ -1448,7 +1448,7 @@
                     });
 
                     $(".page_scrollToIntroductionM").click(function () {
-                        $("html, body").animate({ scrollTop: 100 }, 500);
+                        $("html, body").animate({ scrollTop: 400 }, 500);
                     });
 
                     $(".page_scrollToHorizontalScrollM").click(function () {

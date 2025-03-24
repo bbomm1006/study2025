@@ -62,16 +62,16 @@ setTimeout(() => {
             topani.fromTo(".page_clipPathContainer", { opacity: 1, }, { opacity: 0, duration:5, ease: "linear" },'b');
 
             topani.addLabel('c')  
-            topani.fromTo(".page_stickBox", { opacity: 1, }, { opacity: 0, duration:6, ease: "linear" },'c');
-            topani.fromTo(".page_introductions", { opacity: 1, }, { opacity: 0, duration:6, ease: "linear", },'c');
+            topani.fromTo(".page_stickBox", { opacity: 1, }, { opacity: 0, duration:8, ease: "linear" },'c');
+            topani.fromTo(".page_introductions", { opacity: 1, }, { opacity: 0, duration:8, ease: "linear", },'c');
             // topani.fromTo(".page_blueBox", { transform: "translate(0, -50%) scale(1, 1)", width:"50%", height:"100%" }, { transform: "translate(0, -50%) scale(0.9, 0.9)", width:"50vw", height:"50vw", duration:1, ease: "linear", },'c');
 
             topani.addLabel('d')  
             topani.fromTo(".page_blueBox", { transform: "translate(0, -50%) scale(1, 1)", borderRadius: "0" }, { transform: "translate(0, -50%) scale(0.6, 0.6)", borderRadius: "100%", duration:4, ease: "linear",delay:-6  },'d');
             // topani.fromTo(".page_blueBox", { transform: "translate(0, -50%) scale(0.8, 0.8)", borderRadius: "10%" }, { transform: "translate(0, -50%) scale(0.6, 0.6)", borderRadius: "100%", duration:2, ease: "linear" },'d');
-            topani.fromTo(".page_aboutBenefits", { opacity: 0, }, { opacity: 1, duration:1, ease: "linear", delay:1 },'d');
-            topani.fromTo(".stickWrap2", { opacity: 0, }, { opacity: 1, duration:2, ease: "linear", delay:1 },'d');
-            topani.fromTo(".stickWrap2 .cover", { opacity: 0,rotate: "0", }, {rotate: "0", opacity: 1, duration:2, ease: "linear", delay:1.2 },'d');
+            topani.fromTo(".page_aboutBenefits", { opacity: 0, }, { opacity: 1, duration:1, ease: "linear",  },'d');
+            topani.fromTo(".stickWrap2", { opacity: 0, }, { opacity: 1, duration:2, ease: "linear",  },'d');
+            topani.fromTo(".stickWrap2 .cover", { opacity: 0,rotate: "0", }, {rotate: "0", opacity: 1, duration:2, ease: "linear", delay:.2 },'d');
 
 
             topani.addLabel('e')  
@@ -116,13 +116,13 @@ setTimeout(() => {
             topani.fromTo(".page_stickBox", { opacity: 0, transform: "translate(-50%, -40%)", }, { opacity: 1, transform: "translate(-50%, -50%)", duration:1, ease: "linear", delay:-0.5 },'b');
             topani.fromTo(".page_introductions", { opacity: 0, }, { opacity: 1, duration:1, ease: "linear", delay:-0.5 },'b');
             topani.fromTo(".page_blueBox", { opacity: 0, }, { opacity: 1, duration:0.1, ease: "linear", delay:-0.2 },'b');
-            topani.fromTo(".page_clipPathContainer", { opacity: 1, }, { opacity: 0, duration:1, ease: "linear" },'b');
+            topani.fromTo(".page_clipPathContainer", { opacity: 1, }, { opacity: 0, duration:10, ease: "linear" },'b');
 
 
             topani.addLabel('c')  
-            topani.fromTo(".page_stickBox", { opacity: 1, }, { opacity: 0, duration:4, ease: "linear", delay:1 },'c');
-            topani.fromTo(".page_introductions", { opacity: 1, }, { opacity: 0, duration:4, ease: "linear", delay:1 },'c');
-            topani.fromTo(".page_blueBox", { transform: "translate(0, 0)", width:"130%", left: "-15%" }, { transform: "translate(0, 0)", width:"130%", left: "-15%", duration:4, ease: "linear", delay:1 },'c');
+            topani.fromTo(".page_stickBox", { opacity: 1, }, { opacity: 0, duration:4, ease: "linear", delay:10 },'c');
+            topani.fromTo(".page_introductions", { opacity: 1, }, { opacity: 0, duration:4, ease: "linear", delay:10 },'c');
+            topani.fromTo(".page_blueBox", { transform: "translate(0, 0)", width:"130%", left: "-15%" }, { transform: "translate(0, 0)", width:"130%", left: "-15%", duration:4, ease: "linear", delay:10 },'c');
 
             topani.addLabel('c2')  
             topani.fromTo(".page_blueBox", { transform: "translate(0, 0) scale(1, 1)", borderRadius: "0" }, { transform: "translate(0, 0) scale(0.9, 0.9)", borderRadius: "70%", duration:4, ease: "linear" },'c2');
@@ -136,9 +136,12 @@ const wrapWidth = document.querySelector(".page_benefitsWrap .benefit").offsetWi
 console.log("Wrap Width:", wrapWidth);
 
             topani.addLabel('e')  
-            // topani.fromTo(".page_benefitsWrap", { x: 0, }, { x: "-70vw", opacity: 1, duration:2, ease: "linear" },'e');
-            topani.fromTo(".page_benefitsWrap", { x: 0 }, { x: `-${wrapWidth}px`, opacity: 1, duration: 5, ease: "linear" }, 'e');
-            topani.fromTo(".stickWrap2 .cover", { rotate: "0", opacity: 0, }, { rotate: "-20deg", opacity: 5, duration:3, ease: "linear" },'e');
+            topani.fromTo(".page_benefitsWrap", { opacity: 0 }, { opacity: 1, duration: 5, ease: "linear", delay: 5  }, 'e');
+            topani.fromTo(".stickWrap2 .cover", { opacity: 0, }, { opacity: 1, duration: 5, ease: "linear", delay: 5 },'e');
+
+            topani.addLabel('e2')  
+            topani.fromTo(".page_benefitsWrap", { x: 0 }, { x: `-${wrapWidth}px`, duration: 5, ease: "linear", delay: 5  }, 'e2');
+            topani.fromTo(".stickWrap2 .cover", { rotate: "0",  }, { rotate: "-20deg", duration:3, ease: "linear" },'e2');
 
             topani.addLabel('f')  
             // topani.fromTo(".page_benefitsWrap", { x: "-70vw", }, { x: "-150vw", opacity: 1, duration:2, ease: "linear", delay:2 },'f');
@@ -204,75 +207,122 @@ console.log("Wrap Width:", wrapWidth);
                 scrollTrigger: {
                     trigger: ".page_horizontalItemWrap", // 트리거 요소
                     start: "top top", // 스크롤 시작 위치
-                    end: "bottom top", // 스크롤 종료 위치
-                    scrub: 3, // 스크롤에 따라 애니메이션 진행
+                    // end: "bottom top", // 스크롤 종료 위치
+                    end: "+=300%",
+                    scrub: 2, // 스크롤에 따라 애니메이션 진행
                     pin: true, // #section1을 고정
-                    // markers: true // 디버그용 마커                                 
+                    // markers: true // 디버그용 마커    
+                                       
                 }
             });
 
             horiani.addLabel('a')                            
-            horiani.fromTo(".page_horizontalInner", { x:0 }, {x:"-100vw", duration:5, ease: "power1.in",},'a');
+            horiani.fromTo(".page_horizontalInner", { x:0 }, {x:"-100vw", duration:1, delay:1, ease: "power1.in",},'a');
+            
+            horiani.fromTo("#lottie-star1-1", { x:0 }, {x:"-100px", duration:1, delay:.5, ease: "power1.in",},'a');
+            horiani.fromTo("#lottie-star1-2", { x:0 }, {x:"-120px", duration:1, delay:.5, ease: "power1.in",},'a');
+            horiani.fromTo("#lottie-star1-3", { x:0 }, {x:"-150px", duration:1, delay:.5, ease: "power1.in",},'a');
 
-            horiani.fromTo(".page_horizontalInner", 
-                { opacity: 1 }, 
-                { opacity: 1, duration: 3}
-            );
+            horiani.fromTo(".imageWrapper .img2", { opacity:1 }, {opacity:0, duration:0.3, delay:0.3, ease: "none",},'a');
+            horiani.fromTo(".imageWrapper .img3", { opacity:0 }, {opacity:1, duration:0.3, delay:0.3, ease: "none",},'a');
+            
+            horiani.fromTo(".imageWrapper .img3", { opacity:1 }, {opacity:0, duration:0.3, delay:0.6, ease: "none",},'a');
+            horiani.fromTo(".imageWrapper .img4", { opacity:0 }, {opacity:1, duration:0.3, delay:0.6, ease: "none",},'a');
+            
+            horiani.fromTo(".imageWrapper .img4", { opacity:1 }, {opacity:0, duration:0.3, delay:0.9, ease: "none",},'a');
+            horiani.fromTo(".imageWrapper .img5", { opacity:0 }, {opacity:1, duration:0.3, delay:0.9, ease: "none",},'a');
+
+            horiani.fromTo(".imageWrapper .img5", { opacity:1 }, {opacity:0, duration:0.3, delay:1.2, ease: "none",},'a');
+            horiani.fromTo(".imageWrapper .img6", { opacity:0 }, {opacity:1, duration:0.3, delay:1.2, ease: "none",},'a');
+
+            horiani.fromTo(".imageWrapper .img6", { opacity:1 }, {opacity:0, duration:0.3, delay:1.5, ease: "none",},'a');
+            horiani.fromTo(".imageWrapper .img7", { opacity:0 }, {opacity:1, duration:0.3, delay:1.5, ease: "none",},'a');
+
+            horiani.fromTo(".imageWrapper .img7", { opacity:1 }, {opacity:0, duration:0.3, delay:1.8, ease: "none",},'a');
+            horiani.fromTo(".imageWrapper .img8", { opacity:0 }, {opacity:1, duration:0.3, delay:1.8, ease: "none",},'a');
+            
             
             horiani.addLabel('b')                            
-            horiani.to(".page_horizontalInner", {x:"-200vw", duration:5, ease: "power1.in",},'b');
+            horiani.to(".page_horizontalInner", {x:"-200vw", duration:1, delay:1, ease: "power1.in",},'b');
 
-            horiani.fromTo(".page_horizontalInner", 
-                { opacity: 1 }, 
-                { opacity: 1, duration: 3}
-            );
+            horiani.fromTo("#lottie-star2-1", { x:0 }, {x:"-100px", duration:1, delay:.5, ease: "power1.in",},'b');
+            horiani.fromTo("#lottie-star2-2", { x:0 }, {x:"-120px", duration:1, delay:.5, ease: "power1.in",},'b');
+            horiani.fromTo("#lottie-star2-3", { x:0 }, {x:"-150px", duration:1, delay:.5, ease: "power1.in",},'b');
 
-            let videoani = gsap.timeline({
-                scrollTrigger: {
-                    trigger: ".videoWrap", // 트리거 요소
-                    start: "top top", // 스크롤 시작 위치
-                    end: "bottom top", // 스크롤 종료 위치
-                    scrub: 1, // 스크롤에 따라 애니메이션 진행
-                    //pin: true, // #section1을 고정
-                    // markers: true // 디버그용 마커                                 
-                }
-            });
+            horiani.fromTo(".imageWrapper .img8", { opacity:1 }, {opacity:0, duration:0.2, delay:0.2, ease: "none",},'b');
+            horiani.fromTo(".imageWrapper .img1", { opacity:0 }, {opacity:1, duration:0.2, delay:0.2, ease: "none",},'b');
 
-            videoani.addLabel('b')                            
-            videoani.fromTo(".imageWrapper .img2", { opacity:1 }, {opacity:0, duration:0.1, ease: "none",},'b');
-            videoani.fromTo(".imageWrapper .img3", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'b');
+            horiani.fromTo(".imageWrapper .img1", { opacity:1 }, {opacity:0, duration:0.2, delay:0.4, ease: "none",},'b');
+            horiani.fromTo(".imageWrapper .img2", { opacity:0 }, {opacity:1, duration:0.2, delay:0.4, ease: "none",},'b');
+            
+            horiani.fromTo(".imageWrapper .img2", { opacity:1 }, {opacity:0, duration:0.2, delay:0.8, ease: "none",},'b');
+            horiani.fromTo(".imageWrapper .img3", { opacity:0 }, {opacity:1, duration:0.2, delay:0.8, ease: "none",},'b');
+            
+            horiani.fromTo(".imageWrapper .img3", { opacity:1 }, {opacity:0, duration:0.2, delay:1, ease: "none",},'b');
+            horiani.fromTo(".imageWrapper .img4", { opacity:0 }, {opacity:1, duration:0.2, delay:1, ease: "none",},'b');
+            
+            horiani.fromTo(".imageWrapper .img4", { opacity:1 }, {opacity:0, duration:0.2, delay:1.2, ease: "none",},'b');
+            horiani.fromTo(".imageWrapper .img5", { opacity:0 }, {opacity:1, duration:0.2, delay:1.2, ease: "none",},'b');
 
-            videoani.addLabel('c')                            
-            videoani.fromTo(".imageWrapper .img3", { opacity:1 }, {opacity:0, duration:0.1, ease: "none",},'c');
-            videoani.fromTo(".imageWrapper .img4", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'c');
+            horiani.fromTo(".imageWrapper .img5", { opacity:1 }, {opacity:0, duration:0.2, delay:1.4, ease: "none",},'b');
+            horiani.fromTo(".imageWrapper .img6", { opacity:0 }, {opacity:1, duration:0.2, delay:1.4, ease: "none",},'b');
 
-            videoani.addLabel('d')                            
-            videoani.fromTo(".imageWrapper .img4", { opacity:1 }, {opacity:0, duration:0.1, ease: "none",},'d');
-            videoani.fromTo(".imageWrapper .img5", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'d');
+            horiani.fromTo(".imageWrapper .img6", { opacity:1 }, {opacity:0, duration:0.2, delay:1.6, ease: "none",},'b');
+            horiani.fromTo(".imageWrapper .img7", { opacity:0 }, {opacity:1, duration:0.2, delay:1.6, ease: "none",},'b');
 
-            videoani.addLabel('e')                            
-            videoani.fromTo(".imageWrapper .img5", { opacity:1 }, {opacity:0, duration:0.1, ease: "none",},'e');
-            videoani.fromTo(".imageWrapper .img6", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'e');
+            horiani.fromTo(".imageWrapper .img7", { opacity:1 }, {opacity:0, duration:0.2, delay:1.8, ease: "none",},'b');
+            horiani.fromTo(".imageWrapper .img8", { opacity:0 }, {opacity:1, duration:0.2, delay:1.8, ease: "none",},'b');
+            
 
-            videoani.addLabel('f')                            
-            videoani.fromTo(".imageWrapper .img6", { opacity:1 }, {opacity:0, duration:0.1, ease: "none",},'f');
-            videoani.fromTo(".imageWrapper .img7", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'f');
+            horiani.addLabel('c')                            
+            horiani.to(".hori_01", { opacity: 0, duration:1, ease: "power1.in",},'c');
 
-            videoani.addLabel('g')                            
-            videoani.fromTo(".imageWrapper .img7", { opacity:1 }, {opacity:0, duration:0.1, ease: "none",},'g');
-            videoani.fromTo(".imageWrapper .img8", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'g');
+            horiani.fromTo("#lottie-star3-1", { x:0 }, {x:"-100px", duration:1, delay:.5, ease: "power1.in",},'b');
+            horiani.fromTo("#lottie-star3-2", { x:0 }, {x:"-120px", duration:1, delay:.5, ease: "power1.in",},'b');
+            horiani.fromTo("#lottie-star3-3", { x:0 }, {x:"-150px", duration:1, delay:.5, ease: "power1.in",},'b');
 
-            videoani.addLabel('a')                            
-            videoani.fromTo(".imageWrapper .img8", { opacity:1 }, {opacity:0, duration:0.1, ease: "none",},'a');
-            videoani.fromTo(".imageWrapper .img1", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'a');
+            horiani.fromTo(".imageWrapper .img8", { opacity:1 }, {opacity:0, duration:0.3, delay:0.3, ease: "none",},'c');
+            horiani.fromTo(".imageWrapper .img1", { opacity:0 }, {opacity:1, duration:0.3, delay:0.3, ease: "none",},'c');
+
+            horiani.fromTo(".imageWrapper .img1", { opacity:1 }, {opacity:0, duration:0.3, delay:0.6, ease: "none",},'c');
+            horiani.fromTo(".imageWrapper .img2", { opacity:0 }, {opacity:1, duration:0.3, delay:0.6, ease: "none",},'c');
+            
+            horiani.fromTo(".imageWrapper .img2", { opacity:1 }, {opacity:0, duration:0.3, delay:0.8, ease: "none",},'c');
+            horiani.fromTo(".imageWrapper .img3", { opacity:0 }, {opacity:1, duration:0.3, delay:0.8, ease: "none",},'c');
+            
+            horiani.fromTo(".imageWrapper .img3", { opacity:1 }, {opacity:0, duration:0.3, delay:1, ease: "none",},'c');
+            horiani.fromTo(".imageWrapper .img4", { opacity:0 }, {opacity:1, duration:0.3, delay:1, ease: "none",},'c');
+            
+
+
+            horiani.addLabel('zz')                            
+            horiani.fromTo(".videoWrap", { x: 0, }, { x: "10%", duration:0.5, ease: "none",},'zz');
+
+            horiani.fromTo(".imageWrapper .img4", { opacity:1 }, {opacity:0, duration:0.1, ease: "none",},'zz');
+            horiani.fromTo(".imageWrapper .img5", { opacity:0 }, {opacity:1, duration:0.1, ease: "none",},'zz');
+
+            horiani.fromTo(".imageWrapper .img5", { opacity:1 }, {opacity:0, duration:0.1, delay:0.1, ease: "none",},'zz');
+            horiani.fromTo(".imageWrapper .img6", { opacity:0 }, {opacity:1, duration:0.1, delay:0.1, ease: "none",},'zz');
+
+            horiani.fromTo(".imageWrapper .img6", { opacity:1 }, {opacity:0, duration:0.1, delay:0.2, ease: "none",},'zz');
+            horiani.fromTo(".imageWrapper .img7", { opacity:0 }, {opacity:1, duration:0.1, delay:0.2, ease: "none",},'zz');
+
+            horiani.fromTo(".imageWrapper .img7", { opacity:1 }, {opacity:0, duration:0.1, delay:0.3, ease: "none",},'zz');
+            horiani.fromTo(".imageWrapper .img8", { opacity:0 }, {opacity:1, duration:0.1, delay:0.3, ease: "none",},'zz');
+
+            horiani.fromTo(".imageWrapper .img8", { opacity:1 }, {opacity:0, duration:0.2, delay:0.4, ease: "none",},'zz');
+            horiani.fromTo(".imageWrapper .img1", { opacity:0 }, {opacity:1, duration:0.2, delay:0.4, ease: "none",},'zz');
+
+            
 
 
             gsap.fromTo(".videoWrap", 
                 {
-                    y: 0, x: 0, transform: "scale(1)",
+                    y: 0, transform: "scale(1)",
+                    // x: 0, 
                 }, 
                 {
-                    x: "10%",
+                    // x: "10%",
                     y: "105%", 
                     transform: "scale(0.8)",
                     duration: 1,
@@ -289,6 +339,57 @@ console.log("Wrap Width:", wrapWidth);
 
         // mobile
         "(max-width: 1024px)": function() {
+
+            gsap.fromTo("#lottie-star1-1", 
+                {
+                    y: 500
+                }, 
+                {
+                    y: 0, 
+                    duration: 1,
+                    scrollTrigger: {
+                    trigger: ".hori_01", // 이 요소가 화면에 들어오면
+                    start: "top 70%", // 화면의 00% 위치에서 시작
+                    end: "top 20%", // 화면의 0% 위치까지
+                    scrub: true, // 스크롤에 맞춰 애니메이션이 진행되도록
+                    ease: "power1.in"
+                    }
+                }
+            );
+
+            gsap.fromTo("#lottie-star1-2", 
+                {
+                    y: 300
+                }, 
+                {
+                    y: 0, 
+                    duration: 1,
+                    scrollTrigger: {
+                    trigger: ".hori_01", // 이 요소가 화면에 들어오면
+                    start: "top 100%", // 화면의 00% 위치에서 시작
+                    end: "top 50%", // 화면의 0% 위치까지
+                    scrub: true, // 스크롤에 맞춰 애니메이션이 진행되도록
+                    ease: "power1.in"
+                    }
+                }
+            );
+
+            gsap.fromTo("#lottie-star1-3", 
+                {
+                    y: 200
+                }, 
+                {
+                    y: 0, 
+                    duration: 1,
+                    scrollTrigger: {
+                    trigger: ".hori_01", // 이 요소가 화면에 들어오면
+                    start: "top 90%", // 화면의 00% 위치에서 시작
+                    end: "top 20%", // 화면의 0% 위치까지
+                    scrub: true, // 스크롤에 맞춰 애니메이션이 진행되도록
+                    ease: "power1.in"
+                    }
+                }
+            );
             
 
             let horiani1 = gsap.timeline({
@@ -302,6 +403,62 @@ console.log("Wrap Width:", wrapWidth);
                 }
             });
 
+            horiani1.addLabel('a')                  
+            horiani1.fromTo("#lottie-star1-1", { y:0 }, {y:"-80px", duration:1, delay:1, ease: "power1.in",},'a');
+            horiani1.fromTo("#lottie-star1-2", { y:0 }, {y:"-100px", duration:1, delay:1, ease: "power1.in",},'a');
+            horiani1.fromTo("#lottie-star1-3", { y:0 }, {y:"-120px", duration:1, delay:1, ease: "power1.in",},'a');
+
+            gsap.fromTo("#lottie-star2-1", 
+                {
+                    y: 500
+                }, 
+                {
+                    y: 0, 
+                    duration: 1,
+                    scrollTrigger: {
+                    trigger: ".hori_02", // 이 요소가 화면에 들어오면
+                    start: "top 70%", // 화면의 00% 위치에서 시작
+                    end: "top 20%", // 화면의 0% 위치까지
+                    scrub: true, // 스크롤에 맞춰 애니메이션이 진행되도록
+                    ease: "power1.in"
+                    }
+                }
+            );
+
+            gsap.fromTo("#lottie-star2-2", 
+                {
+                    y: 300
+                }, 
+                {
+                    y: 0, 
+                    duration: 1,
+                    scrollTrigger: {
+                    trigger: ".hori_02", // 이 요소가 화면에 들어오면
+                    start: "top 100%", // 화면의 00% 위치에서 시작
+                    end: "top 50%", // 화면의 0% 위치까지
+                    scrub: true, // 스크롤에 맞춰 애니메이션이 진행되도록
+                    ease: "power1.in"
+                    }
+                }
+            );
+
+            gsap.fromTo("#lottie-star2-3", 
+                {
+                    y: 200
+                }, 
+                {
+                    y: 0, 
+                    duration: 1,
+                    scrollTrigger: {
+                    trigger: ".hori_02", // 이 요소가 화면에 들어오면
+                    start: "top 90%", // 화면의 00% 위치에서 시작
+                    end: "top 20%", // 화면의 0% 위치까지
+                    scrub: true, // 스크롤에 맞춰 애니메이션이 진행되도록
+                    ease: "power1.in"
+                    }
+                }
+            );
+
             let horiani2 = gsap.timeline({
                 scrollTrigger: {
                     trigger: ".hori_02", // 트리거 요소
@@ -312,6 +469,61 @@ console.log("Wrap Width:", wrapWidth);
                     // markers: true // 디버그용 마커                                 
                 }
             });
+
+            horiani2.fromTo("#lottie-star2-1", { y:0 }, {y:"-80px", duration:1, delay:1, ease: "power1.in",},'a');
+            horiani2.fromTo("#lottie-star2-2", { y:0 }, {y:"-100px", duration:1, delay:1, ease: "power1.in",},'a');
+            horiani2.fromTo("#lottie-star2-3", { y:0 }, {y:"-120px", duration:1, delay:1, ease: "power1.in",},'a');
+
+            gsap.fromTo("#lottie-star3-1", 
+                {
+                    y: 500
+                }, 
+                {
+                    y: 0, 
+                    duration: 1,
+                    scrollTrigger: {
+                    trigger: ".hori_03", // 이 요소가 화면에 들어오면
+                    start: "top 70%", // 화면의 00% 위치에서 시작
+                    end: "top 20%", // 화면의 0% 위치까지
+                    scrub: true, // 스크롤에 맞춰 애니메이션이 진행되도록
+                    ease: "power1.in"
+                    }
+                }
+            );
+
+            gsap.fromTo("#lottie-star3-2", 
+                {
+                    y: 300
+                }, 
+                {
+                    y: 0, 
+                    duration: 1,
+                    scrollTrigger: {
+                    trigger: ".hori_03", // 이 요소가 화면에 들어오면
+                    start: "top 100%", // 화면의 00% 위치에서 시작
+                    end: "top 50%", // 화면의 0% 위치까지
+                    scrub: true, // 스크롤에 맞춰 애니메이션이 진행되도록
+                    ease: "power1.in"
+                    }
+                }
+            );
+
+            gsap.fromTo("#lottie-star3-3", 
+                {
+                    y: 200
+                }, 
+                {
+                    y: 0, 
+                    duration: 1,
+                    scrollTrigger: {
+                    trigger: ".hori_03", // 이 요소가 화면에 들어오면
+                    start: "top 90%", // 화면의 00% 위치에서 시작
+                    end: "top 20%", // 화면의 0% 위치까지
+                    scrub: true, // 스크롤에 맞춰 애니메이션이 진행되도록
+                    ease: "power1.in"
+                    }
+                }
+            );
 
             let horiani3 = gsap.timeline({
                 scrollTrigger: {
@@ -324,11 +536,15 @@ console.log("Wrap Width:", wrapWidth);
                 }
             });
 
+            horiani3.fromTo("#lottie-star3-1", { y:0 }, {y:"-80px", duration:1, delay:1, ease: "power1.in",},'a');
+            horiani3.fromTo("#lottie-star3-2", { y:0 }, {y:"-100px", duration:1, delay:1, ease: "power1.in",},'a');
+            horiani3.fromTo("#lottie-star3-3", { y:0 }, {y:"-120px", duration:1, delay:1, ease: "power1.in",},'a');
+
             let videoani = gsap.timeline({
                 scrollTrigger: {
                     trigger: ".videoWrap", // 트리거 요소
                     start: "top top", // 스크롤 시작 위치
-                    end: "bottom top", // 스크롤 종료 위치
+                    end: "+=480%", // 스크롤 종료 위치
                     scrub: 1, // 스크롤에 따라 애니메이션 진행
                     //pin: true, // #section1을 고정
                     // markers: true // 디버그용 마커                                 

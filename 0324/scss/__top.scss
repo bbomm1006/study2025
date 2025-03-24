@@ -471,14 +471,28 @@
         width: 100%;
         height: auto
     }
+
+    @media (max-width: 1500px){
+        top: 63%;
+        left: 58%;
+    }
+    @media (max-width: 1366px){
+        top: 53%;
+        left: 52%;
+    }
     @media (max-width: 1024px){
         top: 73%;
         left: 46%;
         width: 50vw;
     }
     @media (max-width: 700px){
-        top: 74%;
-        width: clamp(10rem,70vw,30rem);
+        top: 80%;
+        width: 74%;
+        left: 50%;
+        text-align: center;
+        img{
+            width: clamp(10rem,70vw,30rem);
+        }
     }
 }
 

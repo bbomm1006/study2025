@@ -115,15 +115,16 @@
         @media (max-width: 700px){
             &.lottie-star1{
                 width: 20vw;
-                top: 25%;
+                top: 20%;
             }
             &.lottie-star2{
                 width: 30vw;
+                top: 35%;
                 left: 15%;
             }
             &.lottie-star3{
                 width: 45vw;
-                bottom: 25%;
+                bottom: 30%;
                 right: 15%;
             }
         }
@@ -152,6 +153,15 @@
             width: 100%;
             display: block;
         }
+    }
+    @media (max-width: 700px){
+        .page_horizontalItem{
+            padding-bottom: 16.3rem
+        }
+        .page_horizontalItemDesc{
+            bottom: 30%;
+        }
+    
     }
 }
 
