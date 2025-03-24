@@ -101,10 +101,19 @@
                 }
             }
         }
-        @media (max-width: 1024px){
+        @media (max-width: 900px){
             bottom: -8vw;
             img{
-                width: 12vw;
+                width: 10vw;
+                &.stick_01{             
+                    left:calc(50% - 10vw);
+                }
+            }
+        }
+        @media (max-width: 800px){
+            bottom: -8vw;
+            img{
+                width: 9vw;
                 &.stick_01{             
                     left:calc(50% - 10vw);
                 }
@@ -455,7 +464,7 @@
     position: absolute;
     top: 53%;
     left: 52%;
-    z-index: 1;
+    z-index: 2;
     transform: translate(-50%, -50%);
     width: 35%;
     img{
@@ -596,9 +605,9 @@
 
 //가로
 
-@media screen and (max-width: 1024px) and (orientation: landscape) {
+@media screen and (max-width: 800px) and (orientation: landscape) {
     .stickWrap .stickInner img {
-        width: 12vh;
+        width: 10vh;
         &.stick_01{
             left: calc(50% - 10vh);
         }

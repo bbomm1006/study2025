@@ -29,7 +29,7 @@ setTimeout(() => {
     //SCROLL 1
     ScrollTrigger.matchMedia({                    
         // desktop
-        "(min-width: 1024px)": function() {
+        "(min-width: 1025px)": function() {
 
             // 상단
             let topani = gsap.timeline({
@@ -169,7 +169,7 @@ console.log("Wrap Width:", wrapWidth);
     //SCROLL 2
     ScrollTrigger.matchMedia({                    
         // desktop
-        "(min-width: 1024px)": function() {
+        "(min-width: 1025px)": function() {
             
             gsap.fromTo(".page_horizontalItemTitle1", 
                 {
@@ -409,7 +409,7 @@ console.log("Wrap Width:", wrapWidth);
     //SCROLL 3
     ScrollTrigger.matchMedia({                    
         // desktop
-        "(min-width: 1024px)": function() {         
+        "(min-width: 1025px)": function() {         
 
         }, 
 
