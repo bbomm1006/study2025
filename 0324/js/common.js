@@ -59,7 +59,7 @@ setTimeout(() => {
             topani.fromTo(".page_introductions .page_productDescriptions", { y: 20, }, { y: 0, duration:1, ease: "linear", delay:-0.4 },'b');
 
             topani.fromTo(".page_blueBox", { opacity: 0, }, { opacity: 1, duration:0.1, ease: "linear", delay:-0.2 },'b');
-            topani.fromTo(".page_clipPathContainer", { opacity: 1, }, { opacity: 0, duration:5, ease: "linear" },'b');
+            topani.fromTo(".page_clipPathContainer", { opacity: 1, }, { opacity: 0, duration:10, ease: "linear" },'b');
 
             topani.addLabel('c')  
             topani.fromTo(".page_stickBox", { opacity: 1, }, { opacity: 0, duration:8, ease: "linear" },'c');
@@ -85,9 +85,25 @@ setTimeout(() => {
             topani.fromTo(".stickWrap2 .stick_in", { opacity: 0, height: "80%" }, { opacity: 1, height: "100%", duration:3, ease: "linear" },'g');
             topani.fromTo(".stickWrap2 .stick_top", { opacity: 0, rotate: 0 }, { opacity: 1, rotate: "45deg", duration:3, ease: "linear" },'g');
 
-            topani.fromTo("#section1", 
-                { opacity: 1, }, 
-                { opacity: 0, duration: 2, delay: 5 }
+            //topani.fromTo("#section1", 
+            //    { opacity: 1, }, 
+            //    { opacity: 0, duration: 2, delay: 5 }
+            //);
+
+            gsap.fromTo("#section1", 
+                {
+                    opacity: 1
+                }, 
+                {
+                    opacity: 0,
+                    duration: 1,
+                    scrollTrigger: {
+                    trigger: ".middleWrap", // 이 요소가 화면에 들어오면
+                    start: "top 70%", // 화면의 80% 위치에서 시작
+                    end: "top 0%", // 화면의 0% 위치까지
+                    scrub: true, // 스크롤에 맞춰 애니메이션이 진행되도록
+                    }
+                }
             );
 
         }, 
@@ -136,16 +152,16 @@ const wrapWidth = document.querySelector(".page_benefitsWrap .benefit").offsetWi
 console.log("Wrap Width:", wrapWidth);
 
             topani.addLabel('e')  
-            topani.fromTo(".page_benefitsWrap", { opacity: 0 }, { opacity: 1, duration: 5, ease: "linear", delay: 5  }, 'e');
-            topani.fromTo(".stickWrap2 .cover", { opacity: 0, }, { opacity: 1, duration: 5, ease: "linear", delay: 5 },'e');
+            topani.fromTo(".page_benefitsWrap", { opacity: 0 }, { opacity: 1, duration: 5, ease: "linear", delay: 9  }, 'e');
+            topani.fromTo(".stickWrap2 .cover", { opacity: 0, }, { opacity: 1, duration: 5, ease: "linear", delay: 9 },'e');
 
             topani.addLabel('e2')  
-            topani.fromTo(".page_benefitsWrap", { x: 0 }, { x: `-${wrapWidth}px`, duration: 5, ease: "linear", delay: 5  }, 'e2');
-            topani.fromTo(".stickWrap2 .cover", { rotate: "0",  }, { rotate: "-20deg", duration:3, ease: "linear" },'e2');
+            topani.fromTo(".page_benefitsWrap", { x: 0 }, { x: `-${wrapWidth}px`, duration: 20, ease: "linear", delay: 5  }, 'e2');
+            topani.fromTo(".stickWrap2 .cover", { rotate: "0",  }, { rotate: "-20deg", duration:10, ease: "linear" },'e2');
 
             topani.addLabel('f')  
             // topani.fromTo(".page_benefitsWrap", { x: "-70vw", }, { x: "-150vw", opacity: 1, duration:2, ease: "linear", delay:2 },'f');
-            topani.fromTo(".page_benefitsWrap", { x: `-${wrapWidth}px` }, { x: `-${wrapWidth * 2 + 30}px`, opacity: 1, duration: 5, ease: "linear", delay: 2 }, 'f');
+            topani.fromTo(".page_benefitsWrap", { x: `-${wrapWidth}px` }, { x: `-${wrapWidth * 2 + 60}px`, opacity: 1, duration: 15, ease: "linear", delay: 10 }, 'f');
             topani.fromTo(".stickWrap2 .stick_01", { opacity: 1, }, { opacity: 0, duration:0.1, ease: "linear" },'f');
             topani.fromTo(".stickWrap2 .stick_cover", { opacity: 0, }, { opacity: 1, duration:0.1, ease: "linear" },'f');
             topani.fromTo(".stickWrap2 .stick_top", { opacity: 0, rotate: 0 }, { opacity: 1, rotate: "45deg", duration:0.1, ease: "linear" },'f');
@@ -154,11 +170,22 @@ console.log("Wrap Width:", wrapWidth);
             topani.fromTo(".stickWrap2 .stick_in", { opacity: 0, height: "80%" }, { opacity: 1, height: "100%", duration:3, ease: "linear" },'g');
             
 
-            topani.fromTo("#section1", 
-                { opacity: 1, }, 
-                { opacity: 0, duration: 10, delay: 10 }
+          
+            gsap.fromTo("#section1", 
+                {
+                    opacity: 1
+                }, 
+                {
+                    opacity: 0,
+                    duration: 1,
+                    scrollTrigger: {
+                    trigger: ".middleWrap", // 이 요소가 화면에 들어오면
+                    start: "top 70%", // 화면의 80% 위치에서 시작
+                    end: "top 0%", // 화면의 0% 위치까지
+                    scrub: true, // 스크롤에 맞춰 애니메이션이 진행되도록
+                    }
+                }
             );
-
 
         }, 
 
@@ -217,37 +244,37 @@ console.log("Wrap Width:", wrapWidth);
             });
 
             horiani.addLabel('a')                            
-            horiani.fromTo(".page_horizontalInner", { x:0 }, {x:"-100vw", duration:1, delay:1, ease: "power1.in",},'a');
+            horiani.fromTo(".page_horizontalInner", { x:0 }, {x:"-100vw", duration:1, delay:2, ease: "power2.inOut",},'a');
             
             horiani.fromTo("#lottie-star1-1", { x:0 }, {x:"-100px", duration:1, delay:.5, ease: "power1.in",},'a');
-            horiani.fromTo("#lottie-star1-2", { x:0 }, {x:"-120px", duration:1, delay:.5, ease: "power1.in",},'a');
+            horiani.fromTo("#lottie-star1-2", { x:0 }, {x:"60px", duration:1, delay:1.5, ease: "power1.in",},'a');
             horiani.fromTo("#lottie-star1-3", { x:0 }, {x:"-150px", duration:1, delay:.5, ease: "power1.in",},'a');
 
-            horiani.fromTo(".imageWrapper .img2", { opacity:1 }, {opacity:0, duration:0.3, delay:0.3, ease: "none",},'a');
-            horiani.fromTo(".imageWrapper .img3", { opacity:0 }, {opacity:1, duration:0.3, delay:0.3, ease: "none",},'a');
+            horiani.fromTo(".imageWrapper .img2", { opacity:1 }, {opacity:0, duration:0.3, delay:0.4, ease: "none",},'a');
+            horiani.fromTo(".imageWrapper .img3", { opacity:0 }, {opacity:1, duration:0.3, delay:0.4, ease: "none",},'a');
             
-            horiani.fromTo(".imageWrapper .img3", { opacity:1 }, {opacity:0, duration:0.3, delay:0.6, ease: "none",},'a');
-            horiani.fromTo(".imageWrapper .img4", { opacity:0 }, {opacity:1, duration:0.3, delay:0.6, ease: "none",},'a');
+            horiani.fromTo(".imageWrapper .img3", { opacity:1 }, {opacity:0, duration:0.3, delay:0.7, ease: "none",},'a');
+            horiani.fromTo(".imageWrapper .img4", { opacity:0 }, {opacity:1, duration:0.3, delay:0.7, ease: "none",},'a');
             
-            horiani.fromTo(".imageWrapper .img4", { opacity:1 }, {opacity:0, duration:0.3, delay:0.9, ease: "none",},'a');
-            horiani.fromTo(".imageWrapper .img5", { opacity:0 }, {opacity:1, duration:0.3, delay:0.9, ease: "none",},'a');
+            horiani.fromTo(".imageWrapper .img4", { opacity:1 }, {opacity:0, duration:0.3, delay:1, ease: "none",},'a');
+            horiani.fromTo(".imageWrapper .img5", { opacity:0 }, {opacity:1, duration:0.3, delay:1, ease: "none",},'a');
 
-            horiani.fromTo(".imageWrapper .img5", { opacity:1 }, {opacity:0, duration:0.3, delay:1.2, ease: "none",},'a');
-            horiani.fromTo(".imageWrapper .img6", { opacity:0 }, {opacity:1, duration:0.3, delay:1.2, ease: "none",},'a');
+            horiani.fromTo(".imageWrapper .img5", { opacity:1 }, {opacity:0, duration:0.3, delay:1.3, ease: "none",},'a');
+            horiani.fromTo(".imageWrapper .img6", { opacity:0 }, {opacity:1, duration:0.3, delay:1.3, ease: "none",},'a');
 
-            horiani.fromTo(".imageWrapper .img6", { opacity:1 }, {opacity:0, duration:0.3, delay:1.5, ease: "none",},'a');
-            horiani.fromTo(".imageWrapper .img7", { opacity:0 }, {opacity:1, duration:0.3, delay:1.5, ease: "none",},'a');
+            horiani.fromTo(".imageWrapper .img6", { opacity:1 }, {opacity:0, duration:0.3, delay:1.6, ease: "none",},'a');
+            horiani.fromTo(".imageWrapper .img7", { opacity:0 }, {opacity:1, duration:0.3, delay:1.6, ease: "none",},'a');
 
-            horiani.fromTo(".imageWrapper .img7", { opacity:1 }, {opacity:0, duration:0.3, delay:1.8, ease: "none",},'a');
-            horiani.fromTo(".imageWrapper .img8", { opacity:0 }, {opacity:1, duration:0.3, delay:1.8, ease: "none",},'a');
-            
+            horiani.fromTo(".imageWrapper .img7", { opacity:1 }, {opacity:0, duration:0.3, delay:1.9, ease: "none",},'a');
+            horiani.fromTo(".imageWrapper .img8", { opacity:0 }, {opacity:1, duration:0.3, delay:1.9, ease: "none",},'a');
+
             
             horiani.addLabel('b')                            
-            horiani.to(".page_horizontalInner", {x:"-200vw", duration:1, delay:1, ease: "power1.in",},'b');
+            horiani.to(".page_horizontalInner", {x:"-200vw", duration:1, delay:2, ease: "power2.inOut",},'b');
 
-            horiani.fromTo("#lottie-star2-1", { x:0 }, {x:"-100px", duration:1, delay:.5, ease: "power1.in",},'b');
-            horiani.fromTo("#lottie-star2-2", { x:0 }, {x:"-120px", duration:1, delay:.5, ease: "power1.in",},'b');
-            horiani.fromTo("#lottie-star2-3", { x:0 }, {x:"-150px", duration:1, delay:.5, ease: "power1.in",},'b');
+            horiani.fromTo("#lottie-star2-1", { x:0 }, {x:"-50px", duration:1, delay:.5, ease: "power1.in",},'b');
+            horiani.fromTo("#lottie-star2-2", { x:0 }, {x:"-120px", duration:1, delay:.2, ease: "power1.in",},'b');
+            horiani.fromTo("#lottie-star2-3", { x:0 }, {x:"-150px", duration:1, delay:1, ease: "power1.in",},'b');
 
             horiani.fromTo(".imageWrapper .img8", { opacity:1 }, {opacity:0, duration:0.2, delay:0.2, ease: "none",},'b');
             horiani.fromTo(".imageWrapper .img1", { opacity:0 }, {opacity:1, duration:0.2, delay:0.2, ease: "none",},'b');
@@ -278,8 +305,8 @@ console.log("Wrap Width:", wrapWidth);
             horiani.to(".hori_01", { opacity: 0, duration:1, ease: "power1.in",},'c');
 
             horiani.fromTo("#lottie-star3-1", { x:0 }, {x:"-100px", duration:1, delay:.5, ease: "power1.in",},'b');
-            horiani.fromTo("#lottie-star3-2", { x:0 }, {x:"-120px", duration:1, delay:.5, ease: "power1.in",},'b');
-            horiani.fromTo("#lottie-star3-3", { x:0 }, {x:"-150px", duration:1, delay:.5, ease: "power1.in",},'b');
+            horiani.fromTo("#lottie-star3-2", { x:0 }, {x:"-120px", duration:1, delay:.1, ease: "power1.in",},'b');
+            horiani.fromTo("#lottie-star3-3", { x:0 }, {x:"50px", duration:1, delay:.5, ease: "power1.in",},'b');
 
             horiani.fromTo(".imageWrapper .img8", { opacity:1 }, {opacity:0, duration:0.3, delay:0.3, ease: "none",},'c');
             horiani.fromTo(".imageWrapper .img1", { opacity:0 }, {opacity:1, duration:0.3, delay:0.3, ease: "none",},'c');
@@ -312,9 +339,6 @@ console.log("Wrap Width:", wrapWidth);
 
             horiani.fromTo(".imageWrapper .img8", { opacity:1 }, {opacity:0, duration:0.2, delay:0.4, ease: "none",},'zz');
             horiani.fromTo(".imageWrapper .img1", { opacity:0 }, {opacity:1, duration:0.2, delay:0.4, ease: "none",},'zz');
-
-            
-
 
             gsap.fromTo(".videoWrap", 
                 {
@@ -396,17 +420,17 @@ console.log("Wrap Width:", wrapWidth);
                 scrollTrigger: {
                     trigger: ".hori_01", // 트리거 요소
                     start: "top top", // 스크롤 시작 위치
-                    end: "bottom top", // 스크롤 종료 위치
-                    scrub: 1, // 스크롤에 따라 애니메이션 진행
+                    end: "+=100%", // 스크롤 종료 위치
+                    scrub: 3, // 스크롤에 따라 애니메이션 진행
                     pin: true, // #section1을 고정
                     // markers: true // 디버그용 마커                                 
                 }
             });
 
             horiani1.addLabel('a')                  
-            horiani1.fromTo("#lottie-star1-1", { y:0 }, {y:"-80px", duration:1, delay:1, ease: "power1.in",},'a');
+            horiani1.fromTo("#lottie-star1-1", { y:0 }, {y:"-80px", duration:1, delay:.2, ease: "power1.in",},'a');
             horiani1.fromTo("#lottie-star1-2", { y:0 }, {y:"-100px", duration:1, delay:1, ease: "power1.in",},'a');
-            horiani1.fromTo("#lottie-star1-3", { y:0 }, {y:"-120px", duration:1, delay:1, ease: "power1.in",},'a');
+            horiani1.fromTo("#lottie-star1-3", { y:0 }, {y:"-120px", duration:1, delay:0.7, ease: "power1.in",},'a');
 
             gsap.fromTo("#lottie-star2-1", 
                 {
@@ -463,15 +487,15 @@ console.log("Wrap Width:", wrapWidth);
                 scrollTrigger: {
                     trigger: ".hori_02", // 트리거 요소
                     start: "top top", // 스크롤 시작 위치
-                    end: "bottom top", // 스크롤 종료 위치
-                    scrub: 1, // 스크롤에 따라 애니메이션 진행
+                    end: "+=300%", // 스크롤 종료 위치
+                    scrub: 3, // 스크롤에 따라 애니메이션 진행
                     pin: true, // #section1을 고정
                     // markers: true // 디버그용 마커                                 
                 }
             });
 
             horiani2.fromTo("#lottie-star2-1", { y:0 }, {y:"-80px", duration:1, delay:1, ease: "power1.in",},'a');
-            horiani2.fromTo("#lottie-star2-2", { y:0 }, {y:"-100px", duration:1, delay:1, ease: "power1.in",},'a');
+            horiani2.fromTo("#lottie-star2-2", { y:0 }, {y:"-100px", duration:1, delay:.5, ease: "power1.in",},'a');
             horiani2.fromTo("#lottie-star2-3", { y:0 }, {y:"-120px", duration:1, delay:1, ease: "power1.in",},'a');
 
             gsap.fromTo("#lottie-star3-1", 
@@ -529,16 +553,34 @@ console.log("Wrap Width:", wrapWidth);
                 scrollTrigger: {
                     trigger: ".hori_03", // 트리거 요소
                     start: "top top", // 스크롤 시작 위치
-                    end: "bottom top", // 스크롤 종료 위치
-                    scrub: 1, // 스크롤에 따라 애니메이션 진행
+                    end: "+=100%", // 스크롤 종료 위치
+                    scrub: 3, // 스크롤에 따라 애니메이션 진행
                     pin: true, // #section1을 고정
                     // markers: true // 디버그용 마커                                 
                 }
             });
 
-            horiani3.fromTo("#lottie-star3-1", { y:0 }, {y:"-80px", duration:1, delay:1, ease: "power1.in",},'a');
+            horiani3.fromTo("#lottie-star3-1", { y:0 }, {y:"-80px", duration:1, delay:.5, ease: "power1.in",},'a');
             horiani3.fromTo("#lottie-star3-2", { y:0 }, {y:"-100px", duration:1, delay:1, ease: "power1.in",},'a');
-            horiani3.fromTo("#lottie-star3-3", { y:0 }, {y:"-120px", duration:1, delay:1, ease: "power1.in",},'a');
+            horiani3.fromTo("#lottie-star3-3", { y:0 }, {y:"-120px", duration:1, delay:1.2, ease: "power1.in",},'a');
+
+            gsap.fromTo(".videoWrap", 
+                {
+                   position: "absolute"
+                }, 
+                {
+                    position: "fixed",
+                    duration: 1,
+                    scrollTrigger: {
+                    trigger: ".middleWrap", // 이 요소가 화면에 들어오면
+                    start: "top 0%", // 화면의 00% 위치에서 시작
+                    end: "top 0%", // 화면의 0% 위치까지
+                    scrub: true, // 스크롤에 맞춰 애니메이션이 진행되도록
+                    ease: "power1.in"
+                    }
+                }
+            );
+
 
             let videoani = gsap.timeline({
                 scrollTrigger: {
@@ -551,8 +593,8 @@ console.log("Wrap Width:", wrapWidth);
                 }
             });
 
-            videoani.addLabel('a0')                            
-            videoani.fromTo(".videoWrap", { position: "absolute" }, {position: "fixed", duration:0.1, ease: "none",},'a');
+            //videoani.addLabel('a0')                            
+            //videoani.fromTo(".videoWrap", { position: "absolute" }, {position: "fixed", duration:0.1, ease: "none",},'a0');
 
             videoani.addLabel('b')                            
             videoani.fromTo(".imageWrapper .img2", { opacity:1 }, {opacity:0, duration:0.1, ease: "none",},'b');

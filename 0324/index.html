@@ -24,21 +24,25 @@
 
     <script>
     window.onload = function() {
-        // 페이지 로딩 직후 스크롤을 맨 위로 올립니다.
+        // 페이지 로딩 직후 스크롤을 맨 위로 고정
         setTimeout(function() {
-        window.scrollTo(0, 0);
-        document.documentElement.scrollTop = 0; // Chrome, Firefox
-        document.body.scrollTop = 0; // Safari
-        }, 0); // 이 코드를 setTimeout을 통해 호출하여 로딩 후 스크롤을 올립니다.
-        
-        // 2초 동안 스크롤 비활성화
+            window.scrollTo(0, 0);
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+        }, 0);
+
+        // 스크롤 비활성화
         document.body.style.overflow = 'hidden';
-        
+        document.body.style.position = 'fixed';
+        document.body.style.width = '100%';
+
         // 2초 후 스크롤 활성화
         setTimeout(function() {
-        document.body.style.overflowY = 'auto';
+            document.body.style.overflow = 'auto';
+            document.body.style.position = ''; // 원래 상태로 복구
         }, 2000);
     };
+
     </script>
 </head>
     <body>

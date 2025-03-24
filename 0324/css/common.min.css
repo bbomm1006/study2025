@@ -2927,6 +2927,7 @@ a, button {
   background: #f0f0f0;
   padding-top: 16rem;
   padding-bottom: 20.4rem;
+  overflow: hidden;
 }
 @media (max-width: 700px) {
   .figureWrap {
