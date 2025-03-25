@@ -129,6 +129,138 @@
             }
         }
     }
+
+    .emog{
+        position: absolute;
+        img{
+            width: 100%;
+        }
+
+        &.zero{
+            width: 6vw;
+            top: 15%;
+            left: 33%;
+        }
+        &.star{
+            width: 5vw;
+            top: 50%;
+            left: 30%;
+        }
+        &.cloud{
+            width: 10vw;
+            bottom: 20%;
+            right: 33%;
+        }
+        &.spring{
+            width: 6vw;
+            top: 38%;
+            right: 25%;
+        }
+
+
+        &.spring2{
+            width: 6vw;
+            top: 18%;
+            left: 40%;
+        }
+        &.star2{
+            width: 5vw;
+            top: 40%;
+            right: 25%;
+        }
+        &.bag{
+            width: 8vw;
+            bottom: 15%;
+            right: 34%;
+        }
+        &.sun{
+            width: 12vw;
+            top: 42%;
+            left: 30%;
+        }        
+
+
+        &.spring3{
+            width: 6vw;
+            top: 15%;
+            left: 33%;
+        }
+        &.mango{
+            width: 9vw;
+            bottom: 45%;
+            left: 35%;
+        }
+        &.smile{
+            width: 9vw;
+            top: 15%;
+            right: 30%;
+        }
+
+        @media (max-width: 1024px){
+            
+        }
+        @media (max-width: 700px){
+            &.zero{
+                width: 12vw;
+                top: 16%;
+                left: 33%;
+            }
+            &.star{
+                width: 10vw;
+                top: 43%;
+                left: 30%;
+            }
+            &.cloud{
+                width: 20vw;
+                bottom: 40%;
+                right:25%;
+            }
+            &.spring{
+                width: 12vw;
+                top: 28%;
+                right: 25%;
+            }
+
+
+            &.spring2{
+                width: 12vw;
+                top: 18%;
+                left: 40%;
+            }
+            &.star2{
+                width: 10vw;
+                top:30%;
+                right: 25%;
+            }
+            &.bag{
+                width: 18vw;
+                bottom: 30%;
+                right: 24%;
+            }
+            &.sun{
+                width: 22vw;
+                top: 42%;
+                left: 30%;
+            }        
+
+
+            &.spring3{
+                width: 12vw;
+                top: 18%;
+                left: 33%;
+            }
+            &.mango{
+                width: 15vw;
+                bottom: 54%;
+                left: 35%;
+            }
+            &.smile{
+                width: 15vw;
+                top: 20%;
+                right: 15%;
+            }
+        }
+    }
 }
 
 .page_horizontalItemWrap{
@@ -136,11 +268,13 @@
     height: 100svh;
     //overflow: hidden;
 
+
+
     .page_horizontalInner2{
         display: flex;
-        width: 300vw;
+        width: 300%;
         section{
-            width: 100vw;
+            width: 100%;
         }
     }
     .page_horizontalItem{
@@ -152,6 +286,11 @@
         .page_horizontalInner2{
             width: 100%;
             display: block;
+        }
+        .page_horizontalInner1{
+            
+            height: 100vh;
+            overflow: hidden;
         }
     }
     @media (max-width: 700px){
@@ -171,7 +310,8 @@
     left: 0;
     text-align: center;
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    z-index: 2;
     
     img{
         opacity: 0;

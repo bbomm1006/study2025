@@ -42,33 +42,11 @@
             top: 0;
             left: 0;
             overflow: hidden;
-            overflow-y: auto;
+            /*overflow-y: auto;*/
         }
     </style>
 
-    <script>
-        window.onload = function() {
-            // 페이지 로딩 직후 스크롤을 맨 위로 고정
-            setTimeout(function() {
-                window.scrollTo(0, 0);
-                document.documentElement.scrollTop = 0;
-                document.body.scrollTop = 0;
-            }, 0);
-
-            // 스크롤 비활성화
-            var viewport = document.getElementById('viewport');
-            viewport.style.overflow = 'hidden';
-            viewport.style.position = 'fixed';
-            viewport.style.width = '100%';
-
-            // 2초 후 스크롤 활성화
-            setTimeout(function() {
-                viewport.style.overflowY = 'auto';
-                viewport.style.position = ''; // 원래 상태로 복구
-            }, 2000);
-        };
-    </script>
-
+    
  
 </head>
 <body>
@@ -532,87 +510,102 @@
             <!-------------------- 02  -------------------->
 
             <div id="horizontal" class="page_horizontalItemWrap" >
-                <div class="page_horizontalInner">
-                    <div class="page_horizontalInner2">
-                        <section class="hori_01">
-                            <div class="page_horizontalItem">
-                                <div class="grid-m">
-                                    <div class="page_horizontalItemTitle page_horizontalItemTitle1">Simply</div>
-                                    <div class="page_horizontalItemTitle page_horizontalItemTitle2">Zero</div>
-                                </div>
-                            </div>
-                                    
-                            <div class="page_horizontalItemDesc grid-m">
-                                <div class="items-title">
-                                    제로칼로리로<br/>더 가볍게, 새롭게
-                                </div>
-            
-                                <div class="items-tag">
-                                    #설탕ZERO #칼로리50%DOWN
-                                </div>
-                            </div>
-
-                            
-
-                        </section>
-                        <section class="hori_02">
-                            <div class="page_horizontalItem">
-                                <div class="grid-m">
-                                    <div class="page_horizontalItemTitle" >Squeeze</div>
-                                    <div class="page_horizontalItemTitle" >& Go</div>
-                                </div>
-                            </div>
-                                    
-                            <div class="page_horizontalItemDesc grid-m">
-                                <div class="items-title">
-                                    물 없이 더 편리한
-                                </div>
-            
-                                <div class="items-tag">
-                                    #간편하게짜먹는 #컴팩트스틱
-                                </div>
-                            </div>
-
-                           
-                        </section>
-                        <section class="hori_03">
-                            <div class="page_horizontalItem">
-                                <div class="grid-m">
-                                    <div class="page_horizontalItemTitle" >Sweet &</div>
-                                    <div class="page_horizontalItemTitle" >Tasty</div>
-                                </div>
-                            </div>
-                                    
-                            <div class="page_horizontalItemDesc grid-m">
-                                <div class="items-title">
-                                    설탕 대신 알룰로스로<br/>더 맛있게, 그리고 건강하게
-                                </div>
-            
-                                <div class="items-tag">
-                                    #청사과 #납작복숭아
-                                </div>
-                            </div>
-
-                            
-                        </section>
+                <div class="page_pinContainer">
+                    <div>
+                        <div class="page_horizontalInner">
+                            <div class="page_horizontalInner1">
+                                <div class="page_horizontalInner2">
+                                    <section class="hori_01">
+                                        <div class="page_horizontalItem">
+                                            <div class="grid-m">
+                                                <div class="page_horizontalItemTitle page_horizontalItemTitle1">Simply</div>
+                                                <div class="page_horizontalItemTitle page_horizontalItemTitle2">Zero</div>
+                                            </div>
+                                        </div>
+                                                
+                                        <div class="page_horizontalItemDesc grid-m">
+                                            <div class="items-title">
+                                                제로칼로리로<br/>더 가볍게, 새롭게
+                                            </div>
                         
-                    </div>
-                </div>
+                                            <div class="items-tag">
+                                                #설탕ZERO #칼로리50%DOWN
+                                            </div>
+                                        </div>
 
-                <div class="videoWrap">
-                    <div class="imageWrapper">
-                        <img src="images/ani/s_01.png" class="img1" />
-                        <img src="images/ani/s_02.png" class="img2" />
-                        <img src="images/ani/s_03.png" class="img3" />
-                        <img src="images/ani/s_04.png" class="img4" />
-                        <img src="images/ani/s_05.png" class="img5" />
-                        <img src="images/ani/s_06.png" class="img6" />
-                        <img src="images/ani/s_07.png" class="img7" />
-                        <img src="images/ani/s_08.png" class="img8" />
-                    </div>
-                </div>
-
+                                        <div class="emog cloud"><img src="images/aniimg/cloud.png" alt="" /></div>
+                                        <div class="emog zero"><img src="images/aniimg/zero.png" alt="" /></div>
+                                        <div class="emog spring"><img src="images/aniimg/spring.png" alt="" /></div>
+                                        <div class="emog star"><img src="images/aniimg/star.png" alt="" /></div>
             
+                                    </section>
+                                    <section class="hori_02">
+                                        <div class="page_horizontalItem">
+                                            <div class="grid-m">
+                                                <div class="page_horizontalItemTitle" >Squeeze</div>
+                                                <div class="page_horizontalItemTitle" >& Go</div>
+                                            </div>
+                                        </div>
+                                                
+                                        <div class="page_horizontalItemDesc grid-m">
+                                            <div class="items-title">
+                                                물 없이 더 편리한
+                                            </div>
+                        
+                                            <div class="items-tag">
+                                                #간편하게짜먹는 #컴팩트스틱
+                                            </div>
+                                        </div>
+
+                                        <div class="emog bag"><img src="images/aniimg/bag.png" alt="" /></div>
+                                        <div class="emog sun"><img src="images/aniimg/sun.png" alt="" /></div>
+                                        <div class="emog spring2"><img src="images/aniimg/spring.png" alt="" /></div>            
+                                        <div class="emog star2"><img src="images/aniimg/star.png" alt="" /></div>
+
+                                    </section>
+                                    <section class="hori_03">
+                                        <div class="page_horizontalItem">
+                                            <div class="grid-m">
+                                                <div class="page_horizontalItemTitle" >Sweet &</div>
+                                                <div class="page_horizontalItemTitle" >Tasty</div>
+                                            </div>
+                                        </div>
+                                                
+                                        <div class="page_horizontalItemDesc grid-m">
+                                            <div class="items-title">
+                                                설탕 대신 알룰로스로<br/>더 맛있게, 그리고 건강하게
+                                            </div>
+                        
+                                            <div class="items-tag">
+                                                #청사과 #납작복숭아
+                                            </div>
+                                        </div>
+
+                                        <div class="emog smile"><img src="images/aniimg/smile.png" alt="" /></div>
+                                        <div class="emog mango"><img src="images/aniimg/mango.png" alt="" /></div>
+                                        <div class="emog spring3"><img src="images/aniimg/spring2.png" alt="" /></div>            
+                                        
+                                    </section>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+
+            <div class="videoWrap">
+                <div class="imageWrapper">
+                    <img src="images/ani/s_01.png" class="img1" />
+                    <img src="images/ani/s_02.png" class="img2" />
+                    <img src="images/ani/s_03.png" class="img3" />
+                    <img src="images/ani/s_04.png" class="img4" />
+                    <img src="images/ani/s_05.png" class="img5" />
+                    <img src="images/ani/s_06.png" class="img6" />
+                    <img src="images/ani/s_07.png" class="img7" />
+                    <img src="images/ani/s_08.png" class="img8" />
+                </div>
             </div>
 
             <!-------------------- 03  -------------------->
@@ -760,7 +753,6 @@
                         var mySwiper = new Swiper('.swiper-container', {
                         
                             loop: true,
-                            autoplayDisableOnInteraction: false,
                             slidesPerView: 1,        
                             autoHeight: true,
                             // autoplay: false,
@@ -1472,6 +1464,67 @@
 
     </div>
 
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+    
+        window.onload = function() {
+            var viewport = document.getElementById('viewport');
+    
+            // Lenis 초기화
+            const lenis = new Lenis({
+                lerp: 5,
+                duration: 2.5,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -8 * t)),
+                smooth: true,
+                wrapper: viewport, // Lenis를 #viewport에 적용
+                content: viewport, // Lenis 내부 콘텐츠 적용
+                smoothWheel: true, // 휠 스크롤 부드럽게
+                smoothTouch: true, // 터치스크롤 부드럽게
+            });
+    
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+    
+            // Lenis와 ScrollTrigger 동기화
+            ScrollTrigger.scrollerProxy(viewport, {
+                scrollTop(value) {
+                    return arguments.length ? lenis.scrollTo(value, { immediate: true }) : lenis.scroll;
+                },
+                getBoundingClientRect() {
+                    return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+                }
+            });
+    
+            lenis.on('scroll', ScrollTrigger.update);
+            ScrollTrigger.refresh();
+    
+            // 페이지 로딩 직후 스크롤을 맨 위로 고정
+            setTimeout(function() {
+                lenis.scrollTo(0, { immediate: true });
+            }, 0);
+    
+            // 스크롤 비활성화 (로딩 후 2초 동안)
+            viewport.style.overflow = 'hidden';
+            viewport.style.position = 'fixed';
+            viewport.style.width = '100%';
+    
+            setTimeout(function() {
+                viewport.style.overflowY = 'auto';
+                viewport.style.position = ''; // 원래 상태로 복구
+            }, 2000);
+    
+            
+        };
+
+        
+    </script>
+    
+  
+    
     <script src="js/common.js"></script>
     <script src="js/taste.js"></script>
 </body>
