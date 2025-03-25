@@ -1,0 +1,103 @@
+@charset "utf-8";
+html * {max-height: 999999px} /* font size bug fix */
+html,body{margin:0px;padding:0px;}
+ul,ol,li,dl,dd,dt,input,h1,h2,h3,h4,h5,h6,p,
+input,button,textarea,fieldset,legend,td,th{margin:0px;padding:0px;}
+li{list-style:none}
+fieldset,img,a{border:0px}
+a{text-decoration:none}
+// legend,.blind{position:absolute;top:0;left:-10000px;width:0;height:0;overflow:hidden;font-size:0;line-height:0}
+caption{display:none}
+button,label{cursor:pointer}
+button{overflow:visible\9}	/* button fix for ie8 */
+table{width:100%;border-collapse:collapse;border-spacing:0;text-align:left; table-layout:fixed}
+table th, table td{text-align:left; word-break:break-word;word-wrap:break-word;}
+input::-webkit-input-placeholder{color:#929292}
+input::-moz-placeholder{color:#929292}
+input:-moz-placeholder{color:#929292}
+input:-ms-input-placeholder{color:#929292}
+textarea::-webkit-input-placeholder{color:#929292}
+textarea::-moz-placeholder{color:#929292}
+textarea:-moz-placeholder{color:#929292}
+textarea:-ms-input-placeholder{color:#929292}
+input:focus::-webkit-input-placeholder{color:transparent!important}
+input:focus::-moz-placeholder{color:transparent!important}
+input:focus:-moz-placeholder{color:transparent!important}
+input:focus:-ms-input-placeholder{color:transparent!important}
+textarea:focus::-webkit-input-placeholder{color:transparent!important}
+textarea:focus::-moz-placeholder{color:transparent!important}
+textarea:focus:-moz-placeholder{color:transparent!important}
+textarea:focus:-ms-input-placeholder{color:transparent!important}
+header, footer, section, article, aside, nav, address { display: block; margin:0; } /* ie8 */
+
+html,body{       
+    /* 스크롤바 자체 */
+    ::-webkit-scrollbar {
+        width: 10px;  /* 스크롤바 너비 */
+        height: 10px; /* 수평 스크롤바 높이 */
+    }
+
+    /* 스크롤바 트랙 (배경) */
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;  /* 트랙 배경 색상 */
+        border-radius: 10px;  /* 트랙 모서리 둥글게 */
+    }
+
+    /* 스크롤바 핸들 */
+    ::-webkit-scrollbar-thumb {
+        background-color: #888;  /* 핸들 배경 색상 */
+        border-radius: 10px;  /* 핸들 모서리 둥글게 */
+    }
+
+    /* 스크롤바 핸들에 호버 시 색상 변화 */
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: #555;  /* 핸들 호버 색상 */
+    }
+}
+
+html,body{
+    overflow-x: hidden;
+    width: 100%;
+    padding: 0;
+    margin: 0;    
+}
+
+/* 커스텀 색상 추가 */
+:root {
+    --custom-sky: #00a5e7;
+    --custom-blue: #0f3bae;
+    --custom-gray: #333;
+    --custom-green: #00c951;
+    --custom-pink: #e60076;
+}
+
+/* TailwindCSS 유틸리티 클래스를 사용해 사용자 정의 색상 적용 */
+.bg-sky-400,
+.bg-custom-sky {background-color: var(--custom-sky);}
+.text-custom-sky {color: var(--custom-sky);}
+.border-custom-sky {border-color: var(--custom-sky);}
+.bg-custom-blue {background-color: var(--custom-blue);}
+.text-custom-blue {color: var(--custom-blue);}
+.border-custom-blue {border-color: var(--custom-blue);}
+.bg-custom-gray {background-color: var(--custom-gray);}
+.text-custom-gray {color: var(--custom-gray);}
+.border-custom-gray {border-color: var(--custom-gray);}
+.bg-white{background: #fff;}
+
+
+/* nav */
+a,button{cursor: pointer;border: 0;background: transparent;color: inherit;}
+
+@mixin ani($duration: 0.2s, $ease: ease-in-out) {
+    -webkit-transition: all $duration $ease;
+    -moz-transition: all $duration $ease;
+    -ms-transition: all $duration $ease;
+    -o-transition: all $duration $ease;
+    transition: all $duration $ease;
+}  
+
+.mobile{display:none}
+@media (max-width: 700px){
+    .pc{display:none!important}
+    .mobile{display:block}
+}
