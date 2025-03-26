@@ -22,6 +22,11 @@ gsap.set(".stickWrap .stick_03", { opacity: 0, rotate: "0" }); // 초기 상태 
 gsap.timeline()
     .to(".stickWrap .stick_03", { opacity: 1, rotate: "20deg", duration: 0.5, ease: "power2.out", delay:1.6, }) // 첫 번째 단계
 
+
+
+
+gsap.registerPlugin(ScrollTrigger);
+setTimeout(() => {
 //SCROLL 1
 ScrollTrigger.matchMedia({                    
     // desktop
@@ -501,3 +506,5 @@ ScrollTrigger.matchMedia({
         
     }                
 });
+
+}, 1100); // 1.1초 후에 실행
