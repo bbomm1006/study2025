@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Test</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+
+    <style>
+        html, body {
+            overflow: hidden;
+            background: #000;
+            width: 100%;
+            height: 100%;
+        }
+        html, body {
+            font-size: 8px;
+        }
+        #mouse-parallax-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            margin-left: -33vw;
+            margin-top: -33vh;
+        }
+        /* 모바일 터치 제스처를 위한 스타일 */
+        .touch-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+            touch-action: none; /* 브라우저 기본 터치 동작 방지 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 모바일 터치 오버레이 레이어 추가 -->
+    <div id="touch-overlay" class="touch-overlay"></div>
+    
+    <div id="mouse-parallax-container">
+        <div class="mouse-parallax-child grid-wrap flex flex-wrap px-8 lg:px-24 lg:py-48 py-24 sm:pt-56" data-depth="0.2">
+            <div class="grid-wrap flex flex-wrap px-8 lg:px-24 lg:py-48 py-24 sm:pt-56 w-full">
+                <div class="grid-item justify-center px-12 lg:px-24 mb-24 lg:mb-48" data-depth="0.3">    
+                    <div class="card cursor-pointer">            
+                        <div class="w-full h-full relative flex overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform transform duration-500 hover:scale-[1.07]" 
+                                src="https://static.ba-ton.kr/web/thumb-2.jpg">
+                        </div>            
+                    </div>    
+                </div><!-- grid item -->
+    
+                <div class="grid-item justify-center px-12 lg:px-24 mb-24 lg:mb-48" data-depth="0.5">    
+                    <div class="card cursor-pointer">            
+                        <div class="w-full h-full relative flex overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform transform duration-500 hover:scale-[1.07]" 
+                                src="https://static.ba-ton.kr/web/thumb-2.jpg">
+                        </div>            
+                    </div>    
+                </div><!-- grid item -->
+    
+                <div class="grid-item justify-center px-12 lg:px-24 mb-24 lg:mb-48" data-depth="0.8">    
+                    <div class="card cursor-pointer">            
+                        <div class="w-full h-full relative flex overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform transform duration-500 hover:scale-[1.07]" 
+                                src="https://static.ba-ton.kr/web/thumb-2.jpg">
+                        </div>            
+                    </div>    
+                </div><!-- grid item -->
+
+                <div class="grid-item justify-center px-12 lg:px-24 mb-24 lg:mb-48" data-depth="0.3">    
+                    <div class="card cursor-pointer">            
+                        <div class="w-full h-full relative flex overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform transform duration-500 hover:scale-[1.07]" 
+                                src="https://static.ba-ton.kr/web/thumb-2.jpg">
+                        </div>            
+                    </div>    
+                </div><!-- grid item -->
+    
+                <div class="grid-item justify-center px-12 lg:px-24 mb-24 lg:mb-48" data-depth="0.5">    
+                    <div class="card cursor-pointer">            
+                        <div class="w-full h-full relative flex overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform transform duration-500 hover:scale-[1.07]" 
+                                src="https://static.ba-ton.kr/web/thumb-2.jpg">
+                        </div>            
+                    </div>    
+                </div><!-- grid item -->
+    
+                <div class="grid-item justify-center px-12 lg:px-24 mb-24 lg:mb-48" data-depth="0.8">    
+                    <div class="card cursor-pointer">            
+                        <div class="w-full h-full relative flex overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform transform duration-500 hover:scale-[1.07]" 
+                                src="https://static.ba-ton.kr/web/thumb-2.jpg">
+                        </div>            
+                    </div>    
+                </div><!-- grid item -->
+
+                <div class="grid-item justify-center px-12 lg:px-24 mb-24 lg:mb-48" data-depth="0.3">    
+                    <div class="card cursor-pointer">            
+                        <div class="w-full h-full relative flex overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform transform duration-500 hover:scale-[1.07]" 
+                                src="https://static.ba-ton.kr/web/thumb-2.jpg">
+                        </div>            
+                    </div>    
+                </div><!-- grid item -->
+    
+                <div class="grid-item justify-center px-12 lg:px-24 mb-24 lg:mb-48" data-depth="0.5">    
+                    <div class="card cursor-pointer">            
+                        <div class="w-full h-full relative flex overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform transform duration-500 hover:scale-[1.07]" 
+                                src="https://static.ba-ton.kr/web/thumb-2.jpg">
+                        </div>            
+                    </div>    
+                </div><!-- grid item -->
+    
+                <div class="grid-item justify-center px-12 lg:px-24 mb-24 lg:mb-48" data-depth="0.8">    
+                    <div class="card cursor-pointer">            
+                        <div class="w-full h-full relative flex overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform transform duration-500 hover:scale-[1.07]" 
+                                src="https://static.ba-ton.kr/web/thumb-2.jpg">
+                        </div>            
+                    </div>    
+                </div><!-- grid item -->
+
+                <div class="grid-item justify-center px-12 lg:px-24 mb-24 lg:mb-48" data-depth="0.3">    
+                    <div class="card cursor-pointer">            
+                        <div class="w-full h-full relative flex overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform transform duration-500 hover:scale-[1.07]" 
+                                src="https://static.ba-ton.kr/web/thumb-2.jpg">
+                        </div>            
+                    </div>    
+                </div><!-- grid item -->
+    
+                <div class="grid-item justify-center px-12 lg:px-24 mb-24 lg:mb-48" data-depth="0.5">    
+                    <div class="card cursor-pointer">            
+                        <div class="w-full h-full relative flex overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform transform duration-500 hover:scale-[1.07]" 
+                                src="https://static.ba-ton.kr/web/thumb-2.jpg">
+                        </div>            
+                    </div>    
+                </div><!-- grid item -->
+    
+                <div class="grid-item justify-center px-12 lg:px-24 mb-24 lg:mb-48" data-depth="0.8">    
+                    <div class="card cursor-pointer">            
+                        <div class="w-full h-full relative flex overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform transform duration-500 hover:scale-[1.07]" 
+                                src="https://static.ba-ton.kr/web/thumb-2.jpg">
+                        </div>            
+                    </div>    
+                </div><!-- grid item -->
+
+                <div class="grid-item justify-center px-12 lg:px-24 mb-24 lg:mb-48" data-depth="0.3">    
+                    <div class="card cursor-pointer">            
+                        <div class="w-full h-full relative flex overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform transform duration-500 hover:scale-[1.07]" 
+                                src="https://static.ba-ton.kr/web/thumb-2.jpg">
+                        </div>            
+                    </div>    
+                </div><!-- grid item -->
+    
+                <div class="grid-item justify-center px-12 lg:px-24 mb-24 lg:mb-48" data-depth="0.5">    
+                    <div class="card cursor-pointer">            
+                        <div class="w-full h-full relative flex overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform transform duration-500 hover:scale-[1.07]" 
+                                src="https://static.ba-ton.kr/web/thumb-2.jpg">
+                        </div>            
+                    </div>    
+                </div><!-- grid item -->
+    
+                <div class="grid-item justify-center px-12 lg:px-24 mb-24 lg:mb-48" data-depth="0.8">    
+                    <div class="card cursor-pointer">            
+                        <div class="w-full h-full relative flex overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform transform duration-500 hover:scale-[1.07]" 
+                                src="https://static.ba-ton.kr/web/thumb-2.jpg">
+                        </div>            
+                    </div>    
+                </div><!-- grid item -->
+
+                <div class="grid-item justify-center px-12 lg:px-24 mb-24 lg:mb-48" data-depth="0.3">    
+                    <div class="card cursor-pointer">            
+                        <div class="w-full h-full relative flex overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform transform duration-500 hover:scale-[1.07]" 
+                                src="https://static.ba-ton.kr/web/thumb-2.jpg">
+                        </div>            
+                    </div>    
+                </div><!-- grid item -->
+    
+                <div class="grid-item justify-center px-12 lg:px-24 mb-24 lg:mb-48" data-depth="0.5">    
+                    <div class="card cursor-pointer">            
+                        <div class="w-full h-full relative flex overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform transform duration-500 hover:scale-[1.07]" 
+                                src="https://static.ba-ton.kr/web/thumb-2.jpg">
+                        </div>            
+                    </div>    
+                </div><!-- grid item -->
+    
+                <div class="grid-item justify-center px-12 lg:px-24 mb-24 lg:mb-48" data-depth="0.8">    
+                    <div class="card cursor-pointer">            
+                        <div class="w-full h-full relative flex overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform transform duration-500 hover:scale-[1.07]" 
+                                src="https://static.ba-ton.kr/web/thumb-2.jpg">
+                        </div>            
+                    </div>    
+                </div><!-- grid item -->
+
+                <div class="grid-item justify-center px-12 lg:px-24 mb-24 lg:mb-48" data-depth="0.3">    
+                    <div class="card cursor-pointer">            
+                        <div class="w-full h-full relative flex overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform transform duration-500 hover:scale-[1.07]" 
+                                src="https://static.ba-ton.kr/web/thumb-2.jpg">
+                        </div>            
+                    </div>    
+                </div><!-- grid item -->
+    
+                <div class="grid-item justify-center px-12 lg:px-24 mb-24 lg:mb-48" data-depth="0.5">    
+                    <div class="card cursor-pointer">            
+                        <div class="w-full h-full relative flex overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform transform duration-500 hover:scale-[1.07]" 
+                                src="https://static.ba-ton.kr/web/thumb-2.jpg">
+                        </div>            
+                    </div>    
+                </div><!-- grid item -->
+    
+                <div class="grid-item justify-center px-12 lg:px-24 mb-24 lg:mb-48" data-depth="0.8">    
+                    <div class="card cursor-pointer">            
+                        <div class="w-full h-full relative flex overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform transform duration-500 hover:scale-[1.07]" 
+                                src="https://static.ba-ton.kr/web/thumb-2.jpg">
+                        </div>            
+                    </div>    
+                </div><!-- grid item -->
+
+                <div class="grid-item justify-center px-12 lg:px-24 mb-24 lg:mb-48" data-depth="0.3">    
+                    <div class="card cursor-pointer">            
+                        <div class="w-full h-full relative flex overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform transform duration-500 hover:scale-[1.07]" 
+                                src="https://static.ba-ton.kr/web/thumb-2.jpg">
+                        </div>            
+                    </div>    
+                </div><!-- grid item -->
+    
+                <div class="grid-item justify-center px-12 lg:px-24 mb-24 lg:mb-48" data-depth="0.5">    
+                    <div class="card cursor-pointer">            
+                        <div class="w-full h-full relative flex overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform transform duration-500 hover:scale-[1.07]" 
+                                src="https://static.ba-ton.kr/web/thumb-2.jpg">
+                        </div>            
+                    </div>    
+                </div><!-- grid item -->
+    
+                <div class="grid-item justify-center px-12 lg:px-24 mb-24 lg:mb-48" data-depth="0.8">    
+                    <div class="card cursor-pointer">            
+                        <div class="w-full h-full relative flex overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform transform duration-500 hover:scale-[1.07]" 
+                                src="https://static.ba-ton.kr/web/thumb-2.jpg">
+                        </div>            
+                    </div>    
+                </div><!-- grid item -->
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function setElementSizes() {
+            const gridItems = document.querySelectorAll('.grid-item');
+            const parallaxContainer = document.querySelector('#mouse-parallax-container');
+    
+            gridItems.forEach(item => {
+                const gridWidth = window.innerWidth * 0.21448 + 61.38491;
+                item.style.width = `${gridWidth}px`;
+            });
+    
+            if (parallaxContainer) {
+                const containerWidth = window.innerWidth * 1.56349 + 428.64280;
+                parallaxContainer.style.width = `${containerWidth}px`;
+            }
+        }
+    
+        // 초기 실행
+        setElementSizes();
+    
+        // 브라우저 리사이즈 시 업데이트
+        window.addEventListener('resize', setElementSizes);
+
+        // 모바일 터치 이벤트 처리
+        function handleMobileTouchEvents() {
+            const overlay = document.getElementById('touch-overlay');
+            const scene = document.getElementById('mouse-parallax-container');
+            let parallaxInstance;
+            
+            // 디바이스 감지
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            
+            // 패럴랙스 인스턴스 초기화
+            document.addEventListener("DOMContentLoaded", function() {
+                parallaxInstance = new Parallax(scene, {
+                    relativeInput: true,
+                    hoverOnly: false,
+                    scalarX: isMobile ? 150 : 90,  // 모바일에서 더 민감하게 설정
+                    scalarY: isMobile ? 150 : 100,
+                    inputElement: isMobile ? overlay : document, // 모바일에서는 오버레이 사용
+                    invertX: false,
+                    invertY: false,
+                    limitX: false,
+                    limitY: false,
+                    clipRelativeInput: false,
+                    frictionX: 0.1,
+                    frictionY: 0.1
+                });
+            });
+            
+            // 모바일 터치 이벤트 처리
+            if (isMobile) {
+                let startX, startY;
+                let currentX = window.innerWidth / 2;
+                let currentY = window.innerHeight / 2;
+                
+                // 터치 시작
+                overlay.addEventListener('touchstart', function(e) {
+                    e.preventDefault();
+                    startX = e.touches[0].clientX;
+                    startY = e.touches[0].clientY;
+                });
+                
+                // 터치 이동
+                overlay.addEventListener('touchmove', function(e) {
+                    e.preventDefault();
+                    const touchX = e.touches[0].clientX;
+                    const touchY = e.touches[0].clientY;
+                    
+                    // 이동 거리 계산 및 현재 위치 업데이트
+                    const deltaX = touchX - startX;
+                    const deltaY = touchY - startY;
+                    
+                    currentX += deltaX * 2; // 배율 조정으로 감도 향상
+                    currentY += deltaY * 2;
+                    
+                    // 범위 내로 제한
+                    currentX = Math.max(0, Math.min(currentX, window.innerWidth));
+                    currentY = Math.max(0, Math.min(currentY, window.innerHeight));
+                    
+                    // parallax.js에 사용자 정의 이벤트 전달
+                    const moveEvent = new MouseEvent('mousemove', {
+                        clientX: currentX,
+                        clientY: currentY,
+                        bubbles: true
+                    });
+                    
+                    document.dispatchEvent(moveEvent);
+                    
+                    // 시작점 업데이트
+                    startX = touchX;
+                    startY = touchY;
+                });
+            }
+        }
+        
+        // 모바일 터치 이벤트 초기화
+        handleMobileTouchEvents();
+    </script>
+
+</body>
+</html>
