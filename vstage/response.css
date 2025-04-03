@@ -1,0 +1,508 @@
+
+/*--------------------------------------------------
+Responsive
+---------------------------------------------------*/
+
+.cookie a {
+	border-radius: 0 !important;
+}
+
+@media only screen and (min-width: 1024px) {
+	.mainWide h1 br, .mainWide p.fs28 br {
+		display: none;
+	}
+	}
+	
+	@media only screen and (max-width: 1466px) and (min-width: 1024px) {
+		.flexnav li a {
+			font-size: 1rem !important;
+		}
+		.portfolio.showcase {
+	    margin: 0 -15px;
+	}
+	}
+	@media only screen and (max-width: 1466px) {
+		.searchItemsWrapper .portfolio-wrap {
+			padding: 0 60px;
+		}
+	}
+	
+	
+	@media only screen and (max-width: 1024px) {
+		.mainWide p.p-medium br,
+		.mainWide h3 br {
+			display: none;
+		}
+		
+		footer .two_fifth, footer .one_fifth {
+			width: 100% !important;
+			margin-bottom: 20px!important;
+		}
+		
+		#backtotop .button-text {
+			display: none;
+		}
+		
+		#team-panels .titlearea_3d {
+			background: transparent;
+		}
+		
+		.content-full-width .footer-container {
+			display: block;
+		}
+		
+		.videoBlock .youtube-video-wrapper video.bgvid {
+			transform: translate(-50%, 0);
+		}
+		
+		.content-full-width footer {
+			padding: 5rem 0 1rem;
+		}
+		
+		footer .address {
+			margin-top: 1rem;
+		}
+		
+		footer .address p {
+			margin: 0.5rem 0 0;
+		}
+		
+		footer .address p:last-child {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+		
+		footer .socials-wrap {
+			width: 100%;
+			float: none;
+			left: 0;
+			right: auto;
+			top: 0;
+			margin: 0;
+			height: auto;
+		}
+		
+		footer .socials-text {
+			font-size: 18px;
+			text-transform: uppercase;
+			font-weight: 600;
+			line-height: 1.5;
+			transform: translateY(0);
+			float: left;
+			display: block;
+		}
+		
+		footer .socials-icon {
+			float: left;
+			width: 30px;
+			height: 40px;
+			font-size: 14px;
+			line-height: 1.5;
+			text-align: left;
+			margin-left: 15px;
+			transform: scale(1) translateY(1px);
+			transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+		}
+		
+		footer .socials-wrap .socials {
+			margin-top: 0;
+			text-align: left;
+			margin-bottom: 1.2rem;
+		}
+		
+		footer .socials li {
+			margin-right: 10px;
+			line-height: 30px;
+			height: auto;
+			width: auto;
+			margin: 0 10px 0 0;
+			display: inline-block;
+			float: none;
+		}
+		
+		footer .socials li a {
+			height: auto;
+			width: auto;
+			line-height: 1.7;
+		}
+		
+		footer .button-text {
+			margin: 18px 0;
+		}
+		
+		footer .connect 	.button-text {
+			display: block;
+		}
+		
+		footer .connect .button-wrap.right .icon-wrap {
+			top: -5px;
+		}
+		
+		footer .copyright {
+			left: 0;
+			top: 0;
+			font-size: 12px;
+		}
+		
+		footer #backtotop {
+			position: absolute;
+			top: -77px;
+		}
+		
+		.portfolio {
+			margin: -10px;
+		}
+		
+		.portfolio.showcase {
+			margin: 0;
+		}
+		
+		.item {
+			/*height: 14rem;*/
+		}
+		
+		.itemList .caption .list-title {
+			font-size: 1rem;
+		}
+		
+		.showcase .item {
+			margin: 0 0 12rem 0;
+			width: 100%;
+			height: 14rem;
+		}
+		
+		.artistRelation.showcase .item {
+			margin: 0 0 6rem 0;
+		}
+		
+		.item-caption {
+			padding: 0;
+		}
+		
+		#featured-case .content-slider .swiper-slide p {
+			font-size: 14px;
+			line-height: 1.6em;
+		}
+		
+		#featured-case .content-slider .swiper-slide {
+			width: 65%;
+		}
+		
+		#featured-case .slider-button-prev, #featured-case .slider-button-next {
+			top: 33%;
+		}
+		
+		#interview .one_fourth {
+			margin: 0 !important;
+			width: 50% !important;
+		}
+		
+		#interview .one_fourth figure {
+			max-height: 330px;
+		}
+		
+		#interview.dark-section figcaption {
+			padding: 14px;
+			position: absolute;
+			color: rgba(238, 238, 238, 0.7);
+			font-size: 16px;
+			left: 0;
+		}
+		
+		#hero.has-image {
+			height: 75vh;
+		}
+		
+		#hero.has-image #hero-caption {
+			height: 75vh;
+			padding-top: 20px;
+			padding-bottom: 20px;
+			text-align: left;
+		}
+		
+		.zoom-wrapper-gallery li.title-wrapper {
+			text-align: center;
+			left: 0;
+			top: 45%;
+			height: auto;
+			display: block;
+		}
+		
+		.tag-group a, .custom-group span {
+			font-size: 1rem;
+			padding: 0.5rem 0.7rem;
+			margin: 0 0.5rem 0.5rem 0;
+		}
+		
+		.description, .description p {
+			font-size: 1rem;
+			line-height: 1.6em;
+		}
+		
+		/* .slowed-text {
+			position: relative;
+			height: auto;
+			min-height: auto;
+			width: 100%;
+			display: block;
+			align-items: center;
+			flex-direction: column;
+			justify-content: center;
+			box-sizing: border-box;
+			padding: 0;
+			z-index: 1;
+			pointer-events: auto;
+			margin: auto;
+			left: 0;
+			right: 0;
+			transform: translate(0px, 0) !important;
+		} */
+		
+		.slowed-images {
+			overflow: visible;
+		}
+		
+		.artistHub .slowed-image.absolute {
+			position: relative;
+			top: -110px;
+			left: 0;
+			width: calc(100% - 40px);
+			height: auto;
+			box-sizing: border-box;
+			overflow: hidden;
+			z-index: 0;
+			margin: 0 20px;
+		}
+		
+		.slowed-images figure {
+			position: absolute;
+			top: -60%;
+		}
+		
+		#whoNext .clipped-image {
+			height: 540px !important;
+			top: 100px;
+			clip-path: inset(5% 0px 5% 0px) !important;
+			-webkit-transform: scale(1) !important;
+			transform: scale(1) !important;
+		}
+		
+		.clipped-txt {
+			position: relative;
+			width: 80%;
+			left: 20px;
+			top: 260px;
+		}
+		
+		.clipped-txt2 {
+			position: absolute;
+			width: 90%;
+			left: 20px;
+			top: 400px;
+			bottom: 23%;
+			z-index: 10;
+		}
+		
+		.contact-btn a, .contact-btn a i {
+			line-height: 2rem;
+		}
+		
+		#artist-section .one_fourth figure {
+			margin: 0;
+			aspect-ratio: 4/3;
+		}
+		
+		.artistHero #hero-footer {
+			padding: 130px 20px 0;
+			position: relative;
+		}
+		
+		.artistHero #hero-caption {
+			display: none;
+		}
+		
+		.hero-below-caption #hero-image-wrapper.artistImage {
+			max-height: 300px;
+		}
+		
+		.artistHero .artistInfo {
+			font-size: 1rem;
+			line-height: 1.5em;
+		}
+		
+		.showcase .item-title {
+			font-size: 18px;
+			line-height: 1.5;
+		}
+		
+		.slowed-pin {
+			overflow: visible;
+		}
+		
+		.slowed-image img {
+			max-width: 33%;
+		}
+		
+		.slowed-image:first-of-type {
+			left: 0;
+			top: 0;
+		}
+		
+		.slowed-image:nth-of-type(2n+2) {
+			margin-top: 60px;
+			margin-right: 0;
+			width: 100%;
+		}
+		
+		.slowed-image:last-of-type {
+			margin-bottom: 150px;
+			margin-top: -150px;
+			margin-left: 0;
+		}
+		
+		.interview-title-wrapper .interview-title {
+			font-size: 4rem;
+		}
+		
+		.interview-title-wrapper .interview-title span:nth-child(3) {
+			font-size: 3rem;
+		}
+		
+		.searchItemsWrapper .portfolio-wrap {
+			padding: 0 40px;
+		}
+				.utillity-container span.navButton + span {
+			margin-left: 0.5rem;
+			margin-top: 17px;
+			margin-right: 70px;
+		}
+	}
+	
+	@media only screen and (max-width: 767px) {
+		main {
+			height: auto !important;
+		}
+		
+		#interview .one_fourth figure {
+			max-height: 300px;
+		}
+		
+		.lh01 {
+			line-height: 1;
+		}
+		
+		html > body .fs28 {
+			font-size: 1.35rem;
+		}
+		
+		.slowed-image:last-of-type {
+			margin-bottom: 0;
+			margin-top: -50px;
+			margin-left: 0;
+		}
+		
+		.all3d-banner, .all3d-banner .panels-container {
+			height: 400px !important;
+		}
+		
+		.all3d-banner .marquee-text-wrapper img {
+			width: auto;
+			max-width: none;
+			height: 400px;
+		}
+		
+		.all3d-banner #team-panels .titlearea_3d {
+			display: flex;
+			align-items: center;
+		}
+		
+		.plus-logo {
+			max-width: 13rem;
+			margin-bottom: 2rem;
+		}
+		
+		.utillity-container span.navButton + span {
+			margin-left: 0.5rem;
+			margin-top: 17px;
+			margin-right: 29px;
+		}
+		
+		.search-wrapper.fixed {
+			margin-top: 50px;
+		}
+		
+		.searchItemsWrapper .portfolio-wrap {
+			padding: 0 30px;
+		}
+		
+		.searchResults .item {
+			width: calc(50% - 20px);
+		}
+	}
+	
+	
+	@media only screen and (max-width: 479px) {
+		html, body {
+			font-size: 15px;
+		}
+		
+		.portfolio {
+			margin: 0px;
+		}
+		
+		.item {
+			margin: 0 0 1rem 0;
+			width: 100%;
+			height: 14rem;
+		}
+		
+		.infoGroup h5 {
+			margin-bottom: 10px;
+		}
+		
+		#hero-footer.contactMenuWrapper {
+			overflow-x: auto;
+			white-space: nowrap;
+			width: calc(100% + 20px);
+		}
+		
+		.hero-footer-left {
+			width: 120%;
+		}
+		
+		.contactMenu {
+			padding: 0rem 1rem 0rem 0;
+		}
+		
+		#hero-caption.contact {
+			padding-top: 140px;
+			padding-bottom: 30px;
+		}
+		
+		.contactMenu a {
+			padding-right: 1rem;
+			font-size: 1.15rem;
+			font-weight: 800;
+		}
+		
+		.contact-type > div {
+			margin: 0 0.25rem 0.5rem 0;
+		}
+		
+		#interview .one_fourth figure {
+			max-height: 200px;
+		}
+		
+		.slowed-image img {
+			max-width: 45%;
+		}
+		
+		.searchItemsWrapper .portfolio-wrap {
+			padding: 0 20px;
+		}
+		
+		.searchItemsWrapper .portfolio-wrap .portfolio {
+			margin: -10px;
+		}
+	}
+	
